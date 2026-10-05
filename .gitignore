@@ -4,3 +4,4 @@ __pycache__/
 /runs
 v2w.local.json
 MUJOCO_LOG.TXT
+.venv*/

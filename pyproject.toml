@@ -12,7 +12,12 @@ license = { file = "LICENSE" }
 dependencies = ["numpy>=1.24", "scipy", "trimesh>=4.0", "imageio[ffmpeg]>=2.31", "opencv-python-headless"]
 
 [project.optional-dependencies]
-sim = ["mani_skill>=3.0.1", "sapien>=3.0.3", "torch", "pytorch_kinematics", "mujoco==3.11.0"]
+# Evaluation environments, pinned to the versions the reference results were produced with.
+# sim: ManiSkill / SAPIEN tracks (FurnitureBench, DROID, hand, Push-T)
+sim = ["mani_skill==3.0.1", "sapien==3.0.3", "torch", "pytorch_kinematics==0.7.6", "numpy==2.4.6", "scipy==1.17.1",
+       "trimesh==5.0.0", "rtree", "embreex==4.4.0", "opencv-python-headless"]
+# twin: MuJoCo tracks (rope routing, toy packing, cloth); a separate interpreter set with `v2w setup --twin-python`
+twin = ["mujoco==3.11.0", "numpy==1.26.4", "scipy==1.17.1", "trimesh==4.12.2"]
 
 [project.scripts]
 v2w = "v2w.cli:main"

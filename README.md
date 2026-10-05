@@ -50,28 +50,32 @@ modeling and manual refinement, scored with exactly the same code.
 
 ## Installation
 
+Scoring needs only the base package. Evaluation uses three simulator environments, pinned to the versions the
+reference results were produced with:
+
 ```bash
 git clone https://github.com/AetherLabsAI/Video2World.git
 cd Video2World
-pip install -e .            # scoring
-pip install -e .[sim]       # evaluation: ManiSkill 3 / SAPIEN and MuJoCo 3.11
-python -m mani_skill.utils.download_asset xarm6   # Robotiq gripper meshes
-```
+pip install -e .                    # scoring
 
-ManiSkill pulls in the GUI build of OpenCV, which needs `libGL`. On a headless server without it, either install it
-(`apt-get install libgl1`) or switch to the headless build:
-`pip uninstall -y opencv-python && pip install --force-reinstall opencv-python-headless`.
+# ManiSkill / SAPIEN: FurnitureBench, DROID, hand, Push-T
+pip install -e .[sim]
+python -m mani_skill.utils.download_asset xarm6       # Robotiq gripper meshes
 
-The RoboDojo and in-house tracks run in **Isaac Sim 5.1 + Isaac Lab** with a RoboDojo checkout at commit `25691aa`:
+# MuJoCo: rope routing, toy packing, cloth (a separate environment)
+python -m venv .venv-twin && .venv-twin/bin/pip install -e .[twin]
+v2w setup --twin-python .venv-twin/bin/python
 
-```bash
+# Isaac Sim 5.1 + Isaac Lab: RoboDojo and in-house (with a RoboDojo checkout at commit 25691aa)
 v2w setup --isaac-python /path/to/isaac/python --robodojo-source /path/to/RoboDojo
-v2w setup            # report what is configured
+
+v2w setup                           # report what is configured
 ```
 
-`v2w setup` stores these locations in `v2w.local.json`. `--twin-python` selects a separate MuJoCo interpreter and
-`--graphics-libs` adds a library directory for headless Isaac rendering; Isaac Sim needs GPUs with a working Vulkan
-device.
+`v2w setup` stores these locations in `v2w.local.json`; `--graphics-libs DIR` adds a library directory for headless
+Isaac rendering, and Isaac Sim needs GPUs with a working Vulkan device. ManiSkill pulls in the GUI build of OpenCV,
+which needs `libGL`; on a headless server without it, install `libgl1` or replace it with the headless build
+(`pip uninstall -y opencv-python && pip install --force-reinstall opencv-python-headless`).
 
 ## Data
 
