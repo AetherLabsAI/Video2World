@@ -1,0 +1,6 @@
+__pycache__/
+*.egg-info/
+/data
+/runs
+v2w.local.json
+MUJOCO_LOG.TXT

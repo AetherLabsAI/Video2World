@@ -1,0 +1,17 @@
+<mujocoinclude>
+  <mesh name="link_base.obj" content_type="model/stl" file="robot/meshes/link_base.obj.stl" />
+  <mesh name="link1.obj" content_type="model/stl" file="robot/meshes/link1.obj.stl" />
+  <mesh name="link2.obj" content_type="model/stl" file="robot/meshes/link2.obj.stl" />
+  <mesh name="link3.obj" content_type="model/stl" file="robot/meshes/link3.obj.stl" />
+  <mesh name="link4.obj" content_type="model/stl" file="robot/meshes/link4.obj.stl" />
+  <mesh name="link5.obj" content_type="model/stl" file="robot/meshes/link5.obj.stl" />
+  <mesh name="link6.obj" content_type="model/stl" file="robot/meshes/link6.obj.stl" />
+  <mesh name="link7.obj" content_type="model/stl" file="robot/meshes/link7.obj.stl" />
+  <mesh name="base_link" content_type="model/stl" file="robot/meshes/base_link.stl" />
+  <mesh name="left_outer_knuckle" content_type="model/stl" file="robot/meshes/left_outer_knuckle.stl" />
+  <mesh name="left_finger_large_2" content_type="model/stl" file="robot/meshes/left_finger_large_2.stl" />
+  <mesh name="left_inner_knuckle" content_type="model/stl" file="robot/meshes/left_inner_knuckle.stl" />
+  <mesh name="right_outer_knuckle" content_type="model/stl" file="robot/meshes/right_outer_knuckle.stl" />
+  <mesh name="right_finger_large_2" content_type="model/stl" file="robot/meshes/right_finger_large_2.stl" />
+  <mesh name="right_inner_knuckle" content_type="model/stl" file="robot/meshes/right_inner_knuckle.stl" />
+</mujocoinclude>

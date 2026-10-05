@@ -1,0 +1,37 @@
+{
+  "revision": "xarm7-gripper/urdf-v2",
+  "source": "intake/reconstructed_twins/source_bundle/upstream/real2sim-eval/assets/robots/xarm/xarm7_with_gripper_collision.urdf",
+  "source_sha256": "2baa56553795ece14adab79404cd6d91017311a1be920fd244a7e0c45a4883a5",
+  "joint_names": [
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "joint7",
+    "drive_joint",
+    "left_finger_joint",
+    "left_inner_knuckle_joint",
+    "right_outer_knuckle_joint",
+    "right_finger_joint",
+    "right_inner_knuckle_joint"
+  ],
+  "actuator_names": [
+    "act_joint1",
+    "act_joint2",
+    "act_joint3",
+    "act_joint4",
+    "act_joint5",
+    "act_joint6",
+    "act_joint7",
+    "act_gripper"
+  ],
+  "mimic_constraints": 5,
+  "action_format": "7 arm joint targets radians + drive_joint radians 0..0.85; no slide commands",
+  "tcp": "original source link_tcp, flange + 0.172m",
+  "collision_variant": "published xarm7_with_gripper_collision.urdf, extended finger mesh left/right_finger_large_2; no replacement collision pads",
+  "recommended_physics_timestep_s": 5e-05,
+  "max_continuous_mimic_error_rad": 0.001,
+  "solver_revision": "contact-convergence/1"
+}

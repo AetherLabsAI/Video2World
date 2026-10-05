@@ -1,0 +1,478 @@
+<robot name="panda_robotiq">
+  <link name="panda_link0">
+    <visual>
+      <geometry>
+        <mesh filename="robotiq_meshes/672626c2bbf3.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="robotiq_meshes/dfc6d94330de.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.041018 -0.00014 0.049974" />
+      <mass value="0.629769" />
+      <inertia ixx="0.00315" ixy="8.2904e-07" ixz="0.00015" iyy="0.00388" iyz="8.2299e-06" izz="0.004285" />
+    </inertial>
+  </link>
+  <link name="panda_link1">
+    <visual>
+      <geometry>
+        <mesh filename="robotiq_meshes/8376fac9a80c.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="robotiq_meshes/e41a39a94108.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.003875 0.002081 -0.04762" />
+      <mass value="4.970684" />
+      <inertia ixx="0.70337" ixy="-0.000139" ixz="0.006772" iyy="0.70661" iyz="0.019169" izz="0.009117" />
+    </inertial>
+  </link>
+  <joint name="panda_joint1" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973" />
+    <origin rpy="0 0 0" xyz="0 0 0.333" />
+    <parent link="panda_link0" />
+    <child link="panda_link1" />
+    <axis xyz="0 0 1" />
+    <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750" />
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16" />
+  </joint>
+  <link name="panda_link2">
+    <visual>
+      <geometry>
+        <mesh filename="robotiq_meshes/bbab9909c2b0.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="robotiq_meshes/370f7605a0fa.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.003141 -0.02872  0.003495" />
+      <mass value="0.646926" />
+      <inertia ixx="0.007962" ixy="-0.003925" ixz="0.010254" iyy="0.02811" iyz="0.000704" izz="0.025995" />
+    </inertial>
+  </link>
+  <joint name="panda_joint2" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.7628" soft_upper_limit="1.7628" />
+    <origin rpy="-1.5707963267948966 0 0" xyz="0 0 0" />
+    <parent link="panda_link1" />
+    <child link="panda_link2" />
+    <axis xyz="0 0 1" />
+    <limit effort="87" lower="-1.7628" upper="1.7628" velocity="2.1750" />
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16" />
+  </joint>
+  <link name="panda_link3">
+    <visual>
+      <geometry>
+        <mesh filename="robotiq_meshes/f904d2d91255.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="robotiq_meshes/0a8d638b9349.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.7518e-02 3.9252e-02 -6.6502e-02" />
+      <mass value="3.228604" />
+      <inertia ixx="0.037242" ixy="-0.004761" ixz="-0.011396" iyy="0.036155" iyz="-0.012805" izz="0.01083" />
+    </inertial>
+  </link>
+  <joint name="panda_joint3" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973" />
+    <origin rpy="1.5707963267948966 0 0" xyz="0 -0.316 0" />
+    <parent link="panda_link2" />
+    <child link="panda_link3" />
+    <axis xyz="0 0 1" />
+    <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750" />
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16" />
+  </joint>
+  <link name="panda_link4">
+    <visual>
+      <geometry>
+        <mesh filename="robotiq_meshes/3e301a20f05f.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="robotiq_meshes/0180ebb5772e.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-5.317e-02 1.04419e-01 2.7454e-02" />
+      <mass value="3.587895" />
+      <inertia ixx="0.025853" ixy="0.007796" ixz="-0.001332" iyy="0.019552" iyz="0.008641" izz="0.028323" />
+    </inertial>
+  </link>
+  <joint name="panda_joint4" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718" soft_upper_limit="-0.0698" />
+    <origin rpy="1.5707963267948966 0 0" xyz="0.0825 0 0" />
+    <parent link="panda_link3" />
+    <child link="panda_link4" />
+    <axis xyz="0 0 1" />
+    <limit effort="87" lower="-3.0718" upper="-0.0698" velocity="2.1750" />
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16" />
+  </joint>
+  <link name="panda_link5">
+    <visual>
+      <geometry>
+        <mesh filename="robotiq_meshes/80d620e7d92b.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="robotiq_meshes/dd17e688c787.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-1.1953e-02 4.1065e-02 -3.8437e-02" />
+      <mass value="1.225946" />
+      <inertia ixx="0.035549" ixy="-0.002117" ixz="-0.004037" iyy="0.029474" iyz="0.000229" izz="0.008627" />
+    </inertial>
+  </link>
+  <joint name="panda_joint5" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973" />
+    <origin rpy="-1.5707963267948966 0 0" xyz="-0.0825 0.384 0" />
+    <parent link="panda_link4" />
+    <child link="panda_link5" />
+    <axis xyz="0 0 1" />
+    <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100" />
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16" />
+  </joint>
+  <link name="panda_link6">
+    <visual>
+      <geometry>
+        <mesh filename="robotiq_meshes/20f04024218f.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="robotiq_meshes/20b768e99a0e.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="6.0149e-02 -1.4117e-02 -1.0517e-02" />
+      <mass value="1.666555" />
+      <inertia ixx="0.001964" ixy="0.000109" ixz="-0.001158" iyy="0.004354" iyz="0.000341" izz="0.005433" />
+    </inertial>
+  </link>
+  <joint name="panda_joint6" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.0175" soft_upper_limit="3.7525" />
+    <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
+    <parent link="panda_link5" />
+    <child link="panda_link6" />
+    <axis xyz="0 0 1" />
+    <limit effort="12" lower="-0.0175" upper="3.7525" velocity="2.6100" />
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16" />
+  </joint>
+  <link name="panda_link7">
+    <visual>
+      <geometry>
+        <mesh filename="robotiq_meshes/a207703b9d6d.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="robotiq_meshes/92ac6afcf757.stl" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="1.0517e-02 -4.252e-03 6.1597e-02" />
+      <mass value="0.735522" />
+      <inertia ixx="0.012516" ixy="-0.000428" ixz="-0.001196" iyy="0.010027" iyz="-0.000741" izz="0.004815" />
+    </inertial>
+  </link>
+  <joint name="panda_joint7" type="revolute">
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973" />
+    <origin rpy="1.5707963267948966 0 0" xyz="0.088 0 0" />
+    <parent link="panda_link6" />
+    <child link="panda_link7" />
+    <axis xyz="0 0 1" />
+    <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100" />
+    <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16" />
+  </joint>
+  <link name="panda_link8" />
+  <joint name="panda_joint8" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.107" />
+    <parent link="panda_link7" />
+    <child link="panda_link8" />
+  </joint>
+  <link name="eef">
+    
+  </link>
+  <joint name="eef_joint" type="fixed">
+    <parent link="robotiq_arg2f_base_link" />
+    <child link="eef" />
+    <origin xyz="0 0 0.15" rpy="0 0 0" />
+  </joint>
+  <link name="robotiq_arg2f_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="8.625E-08 -4.6583E-06 0.03145" />
+      <mass value="0.22652" />
+      <inertia ixx="0.00020005" ixy="-4.2442E-10" ixz="-2.9069E-10" iyy="0.00017832" iyz="-3.4402E-08" izz="0.00013478" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/d03d6e7395b0.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/111e37f13a66.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_outer_knuckle">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/f1cc5198c9f3.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="outer_knuckle">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/8c7ce8ee4204.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_outer_finger">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/32d842e51e0d.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/5e45e7773260.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_inner_finger">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/3172e8fe000f.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/807aff52c5a1.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_inner_finger_pad">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <box size="0.022 0.00635 0.0375" />
+      </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <box size="0.022 0.00635 0.0375" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_inner_knuckle">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/19b12510eec7.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/a8e6bb0b3b5e.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_outer_knuckle">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/f1cc5198c9f3.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/8c7ce8ee4204.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_outer_finger">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/32d842e51e0d.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/5e45e7773260.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_inner_finger">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/3172e8fe000f.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/807aff52c5a1.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_inner_finger_pad">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <box size="0.022 0.00635 0.0375" />
+      </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <box size="0.022 0.00635 0.0375" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_inner_knuckle">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/19b12510eec7.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="robotiq_meshes/a8e6bb0b3b5e.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_outer_knuckle_joint" type="revolute">
+    <origin rpy="0 0 3.14159265359" xyz="0 -0.0306011 0.054904" />
+    <parent link="robotiq_arg2f_base_link" />
+    <child link="left_outer_knuckle" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" lower="0" upper="0.81" velocity="2.0" />
+  </joint>
+  <joint name="left_outer_finger_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.0315 -0.0041" />
+    <parent link="left_outer_knuckle" />
+    <child link="left_outer_finger" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <joint name="left_inner_knuckle_joint" type="revolute">
+    <origin rpy="0 0 3.14159265359" xyz="0 -0.0127 0.06142" />
+    <parent link="robotiq_arg2f_base_link" />
+    <child link="left_inner_knuckle" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" lower="0" upper="0.8757" velocity="2.0" />
+  </joint>
+  <joint name="left_inner_finger_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.0061 0.0471" />
+    <parent link="left_outer_finger" />
+    <child link="left_inner_finger" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" lower="-0.8757" upper="0" velocity="2.0" />
+  </joint>
+  <joint name="left_inner_finger_pad_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.0220203446692936 0.03242" />
+    <parent link="left_inner_finger" />
+    <child link="left_inner_finger_pad" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <joint name="right_outer_knuckle_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.0306011 0.054904" />
+    <parent link="robotiq_arg2f_base_link" />
+    <child link="right_outer_knuckle" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" lower="0" upper="0.81" velocity="2.0" />
+  </joint>
+  <joint name="right_outer_finger_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.0315 -0.0041" />
+    <parent link="right_outer_knuckle" />
+    <child link="right_outer_finger" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <joint name="right_inner_knuckle_joint" type="revolute">
+    <origin rpy="0 0 0.0" xyz="0 0.0127 0.06142" />
+    <parent link="robotiq_arg2f_base_link" />
+    <child link="right_inner_knuckle" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" lower="0" upper="0.8757" velocity="2.0" />
+  </joint>
+  <joint name="right_inner_finger_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.0061 0.0471" />
+    <parent link="right_outer_finger" />
+    <child link="right_inner_finger" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" lower="-0.8757" upper="0" velocity="2.0" />
+  </joint>
+  <joint name="right_inner_finger_pad_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.0220203446692936 0.03242" />
+    <parent link="right_inner_finger" />
+    <child link="right_inner_finger_pad" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <joint name="robotiq_mount" type="fixed">
+    <parent link="panda_link8" />
+    <child link="robotiq_arg2f_base_link" />
+    <origin xyz="0 0 0.007" rpy="0 0 0.0" />
+  </joint>
+</robot>

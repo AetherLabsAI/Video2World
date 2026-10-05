@@ -1,0 +1,1101 @@
+{
+  "version": "droid-task-relations/1",
+  "rules": {
+    "droid_guptalab_2023_05_19_11h_06m_39s_orange_hand": {
+      "kind": "on_top",
+      "instruction": "Put the orange block on top of the green block",
+      "source": "orange",
+      "target": "green",
+      "target_match": [
+        "green"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "orange",
+        "target": "green",
+        "target_match": [
+          "green"
+        ],
+        "target_pose": [
+          0.5614514350891113,
+          -0.02561277709901333,
+          0.0940445214509964,
+          0.9901904463768005,
+          0.0,
+          0.0,
+          -0.1397245079278946
+        ],
+        "gt_rel": [
+          [
+            0.9852732649919437,
+            -0.1709871144037347,
+            0.0,
+            -0.009803953702992807
+          ],
+          [
+            0.17098711440373468,
+            0.9852732649919437,
+            0.0,
+            -7.481831893785262e-05
+          ],
+          [
+            0.0,
+            0.0,
+            1.0000000000000004,
+            0.044581204652786255
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.5520095825195312,
+          -0.02297184430062771,
+          0.13862572610378265
+        ],
+        "radius": 0.05,
+        "note": "2026-09-12: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its manipulated object must end where the demonstrated one ended relative to the candidate's own receiving object, 5 cm, orientation free); the earlier absolute in_region test (phi_v1_in_region.json) failed every candidate whose whole scene sits a few cm off",
+        "snap_fit": false
+      }
+    },
+    "droid_tri_2023_08_07_17h_02m_01s_blue_hand": {
+      "kind": "in_container",
+      "instruction": "Put the blue block into the shape sorting box",
+      "source": "blue",
+      "target": "cube",
+      "target_match": [
+        "sort",
+        "cube",
+        "box",
+        "crate"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "blue",
+        "target": "cube",
+        "target_match": [
+          "sort",
+          "cube",
+          "box",
+          "crate"
+        ],
+        "target_pose": [
+          0.6383704702185918,
+          -0.10752893880455779,
+          -0.10034059478941476,
+          0.833923531765515,
+          0.0,
+          0.0,
+          0.5518800079435112
+        ],
+        "gt_rel": [
+          [
+            0.14222554749904437,
+            0.9898342758455062,
+            0.0,
+            0.04285659449396709
+          ],
+          [
+            -0.9898342758455061,
+            0.1422255474990444,
+            0.0,
+            -0.007418757928985276
+          ],
+          [
+            0.0,
+            0.0,
+            1.0000000000000002,
+            -0.02975096807774985
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.661949872970581,
+          -0.07098119705915451,
+          -0.1300915628671646
+        ],
+        "radius": 0.05,
+        "note": "2026-09-12: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its manipulated object must end where the demonstrated one ended relative to the candidate's own receiving object, 5 cm, orientation free); the earlier absolute in_region test (phi_v1_in_region.json) failed every candidate whose whole scene sits a few cm off",
+        "require_lid": {
+          "min_coverage": 0.5,
+          "note": "user 2026-09-12: the sorting box must be delivered with its top face (holes); an open container is a failure even if the block ends inside. coverage = fraction of downward rays over the receiving object footprint that meet it within 1.5 cm of its top (GT 0.85, open container ~0.25)"
+        },
+        "snap_fit": false
+      },
+      "require_lid": {
+        "min_coverage": 0.5,
+        "note": "user 2026-09-12: the sorting box must be delivered with its top face (holes); an open container is a failure even if the block ends inside. coverage = fraction of downward rays over the receiving object footprint that meet it within 1.5 cm of its top (GT 0.85, open container ~0.25)"
+      }
+    },
+    "droid_iris_2023_03_08_13h_27m_05s_marker_hand": {
+      "kind": "in_container",
+      "instruction": "Put the marker in the bowl",
+      "source": "marker",
+      "target": "bowl",
+      "target_match": [
+        "bowl"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "marker",
+        "target": "bowl",
+        "target_match": [
+          "bowl"
+        ],
+        "target_pose": [
+          0.47520266851398046,
+          -0.04455125986803816,
+          -0.03242596315757686,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gt_rel": [
+          [
+            -0.07718828476286216,
+            -0.9969287871542779,
+            -0.01322732166644204,
+            0.005781482849392339
+          ],
+          [
+            0.9826056894528464,
+            -0.07831343015792486,
+            0.16838368600252246,
+            -0.006602545238840123
+          ],
+          [
+            -0.1689024207945628,
+            6.378914202409547e-09,
+            0.9856327775849059,
+            -0.004970695054369624
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.4809841513633728,
+          -0.05115380510687828,
+          -0.03739665821194649
+        ],
+        "radius": 0.05,
+        "note": "2026-09-12: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its manipulated object must end where the demonstrated one ended relative to the candidate's own receiving object, 5 cm, orientation free); the earlier absolute in_region test (phi_v1_in_region.json) failed every candidate whose whole scene sits a few cm off",
+        "snap_fit": false
+      }
+    },
+    "droid_iris_2023_05_11_15h_34m_55s_cup_hand": {
+      "kind": "side_of",
+      "instruction": "Put the cup on the right side of the marker",
+      "source": "cup",
+      "target": "marker",
+      "target_match": [
+        "marker",
+        "pen"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "cup",
+        "target": "marker",
+        "target_match": [
+          "marker",
+          "pen"
+        ],
+        "target_pose": [
+          0.5104853525901232,
+          0.13044011241252873,
+          -0.09305038702148928,
+          0.9876920309855021,
+          0.0,
+          0.0,
+          0.1564111630534536
+        ],
+        "gt_rel": [
+          [
+            -0.9547377984395434,
+            -0.2974487119333577,
+            0.0,
+            0.005908733329828109
+          ],
+          [
+            0.2974487119333578,
+            -0.9547377984395433,
+            0.0,
+            -0.15448531828325685
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.03724514346975817
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.5638366341590881,
+          -0.014660774730145931,
+          -0.05580524355173111
+        ],
+        "radius": 0.05,
+        "note": "2026-09-12: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its manipulated object must end where the demonstrated one ended relative to the candidate's own receiving object, 5 cm, orientation free); the earlier absolute in_region test (phi_v1_in_region.json) failed every candidate whose whole scene sits a few cm off",
+        "snap_fit": false
+      },
+      "direction_world": [
+        0.34509622762698045,
+        -0.938567309082107,
+        0.0
+      ],
+      "direction_source": "REAL GT demonstrated horizontal direction; sign fixed before candidate scoring"
+    },
+    "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand": {
+      "kind": "on_top",
+      "instruction": "Put the orange block on top of the green one",
+      "source": "orange",
+      "target": "green",
+      "target_match": [
+        "green"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "orange",
+        "target": "green",
+        "target_match": [
+          "green"
+        ],
+        "target_pose": [
+          0.5626900992825679,
+          -0.11069795495295735,
+          0.08326743257715342,
+          0.990518995848942,
+          0.0,
+          0.0,
+          0.13737583070687384
+        ],
+        "gt_rel": [
+          [
+            0.5658025460268022,
+            0.8245407684945533,
+            0.0,
+            -0.008570909977861363
+          ],
+          [
+            -0.8245407684945533,
+            0.5658025460268021,
+            0.0,
+            0.009973094483122225
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.03891951876209142
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.5517285466194153,
+          -0.10343383252620697,
+          0.12218695133924484
+        ],
+        "radius": 0.05,
+        "note": "2026-09-12: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its manipulated object must end where the demonstrated one ended relative to the candidate's own receiving object, 5 cm, orientation free); the earlier absolute in_region test (phi_v1_in_region.json) failed every candidate whose whole scene sits a few cm off",
+        "snap_fit": false
+      }
+    },
+    "droid_iris_2023_05_08_16h_12m_30s_pen_hand": {
+      "kind": "in_container",
+      "instruction": "Put the pen in the cup",
+      "source": "pen",
+      "target": "cup",
+      "target_match": [
+        "cup",
+        "mug",
+        "glass",
+        "container"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "pen",
+        "target": "cup",
+        "target_match": [
+          "cup",
+          "mug",
+          "glass",
+          "container"
+        ],
+        "target_pose": [
+          0.4698061439557522,
+          0.12313744051044917,
+          0.018362799358455834,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gt_rel": [
+          [
+            0.39363921851181055,
+            -0.5230130992973093,
+            -0.755979803706973,
+            0.007758906169369861
+          ],
+          [
+            0.2415493525550655,
+            0.8523246435269969,
+            -0.46389288884052304,
+            0.004761118463816882
+          ],
+          [
+            0.8869622742426192,
+            2.106244872956964e-09,
+            0.4618418821094079,
+            0.008770477327616516
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.47756505012512207,
+          0.12789855897426605,
+          0.02713327668607235
+        ],
+        "radius": 0.05,
+        "note": "2026-09-13: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its pen must end where the demonstrated one ended relative to the candidate own cup, 5 cm, orientation free); the absolute in_region test is kept in phi_v1_in_region.json",
+        "snap_fit": false
+      }
+    },
+    "droid_autolab_2023_07_27_09h_13m_43s_cup_hand": {
+      "kind": "in_container",
+      "instruction": "Put the orange cup in the black bowl",
+      "source": "cup",
+      "target": "bowl",
+      "target_match": [
+        "bowl",
+        "dish",
+        "basin",
+        "container"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "cup",
+        "target": "bowl",
+        "target_match": [
+          "bowl",
+          "dish",
+          "basin",
+          "container"
+        ],
+        "target_pose": [
+          0.5038075489282026,
+          -0.028537842016075808,
+          0.014152028130572957,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gt_rel": [
+          [
+            0.8910498837489731,
+            0.45388288799871457,
+            0.004519806731243095,
+            -0.01567572777265447
+          ],
+          [
+            -0.44279909533149486,
+            0.8670150403460269,
+            0.22850356887231946,
+            0.011315892021511752
+          ],
+          [
+            0.09979511934233656,
+            -0.20560944481157337,
+            0.9735325831012156,
+            0.017267547083813027
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.4881318211555481,
+          -0.017221949994564056,
+          0.031419575214385986
+        ],
+        "radius": 0.05,
+        "note": "2026-09-13: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its cup must end where the demonstrated one ended relative to the candidate own bowl, 5 cm, orientation free); the absolute in_region test is kept in phi_v1_in_region.json",
+        "snap_fit": false
+      }
+    },
+    "droid_pennpal_2023_04_29_18h_20m_45s_tape_hand": {
+      "kind": "on_top",
+      "instruction": "Put the tape on the plate",
+      "source": "tape",
+      "target": "plate",
+      "target_match": [
+        "plate",
+        "dish",
+        "tray",
+        "bowl"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "tape",
+        "target": "plate",
+        "target_match": [
+          "plate",
+          "dish",
+          "tray",
+          "bowl"
+        ],
+        "target_pose": [
+          0.5120030678673361,
+          0.10473266235844188,
+          -0.02344911252294214,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gt_rel": [
+          [
+            0.999642406976845,
+            -0.0205243629167259,
+            0.017140848882218677,
+            0.001390989883365834
+          ],
+          [
+            0.019377956954162723,
+            0.9977255140219836,
+            0.06456232224643074,
+            -0.020537182607808638
+          ],
+          [
+            -0.018426962794317114,
+            -0.06420708057863928,
+            0.9977664545602571,
+            0.013320018399101807
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.5133940577507019,
+          0.08419547975063324,
+          -0.010129094123840332
+        ],
+        "radius": 0.05,
+        "note": "2026-09-13: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its tape must end where the demonstrated one ended relative to the candidate own plate, 5 cm, orientation free); the absolute in_region test is kept in phi_v1_in_region.json",
+        "snap_fit": false
+      }
+    },
+    "droid_autolab_2023_07_14_15h_59m_42s_bowl_hand": {
+      "kind": "in_container",
+      "instruction": "Put the black bowl in the peach bowl",
+      "source": "bowl",
+      "target": "peach_bowl",
+      "target_match": [
+        "peach",
+        "pink",
+        "bowl",
+        "dish",
+        "container"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "bowl",
+        "target": "peach_bowl",
+        "target_match": [
+          "peach",
+          "pink",
+          "bowl",
+          "dish",
+          "container"
+        ],
+        "target_pose": [
+          0.6025434430498967,
+          -0.09174518818392173,
+          0.022556233240370708,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gt_rel": [
+          [
+            0.945707452834886,
+            0.2455021947450005,
+            0.2129931595801596,
+            -0.005610137786377423
+          ],
+          [
+            -0.3006899864861328,
+            0.9096355448915697,
+            0.2866159582032828,
+            -0.009853573791843498
+          ],
+          [
+            -0.12338130198502831,
+            -0.33509975805005365,
+            0.9340691657876703,
+            0.03176773058056359
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.5969333052635193,
+          -0.10159876197576523,
+          0.054323963820934296
+        ],
+        "radius": 0.05,
+        "note": "2026-09-13: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its black bowl must end where the demonstrated one ended relative to the candidate own peach bowl, 5 cm, orientation free); the absolute in_region test is kept in phi_v1_in_region.json",
+        "snap_fit": false
+      }
+    },
+    "droid_rail_2023_04_12_16h_35m_45s_marker_hand": {
+      "kind": "in_container",
+      "instruction": "Put the marker in the pot",
+      "source": "marker",
+      "target": "pot",
+      "target_match": [
+        "pot",
+        "pan",
+        "bowl",
+        "container"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "marker",
+        "target": "pot",
+        "target_match": [
+          "pot",
+          "pan",
+          "bowl",
+          "container"
+        ],
+        "target_pose": [
+          0.49195709773605545,
+          0.019258551769163943,
+          0.0007282635955466584,
+          0.8982677641744022,
+          0.0,
+          0.0,
+          -0.4394485451621387
+        ],
+        "gt_rel": [
+          [
+            0.2417645117453764,
+            -0.9424623992915214,
+            0.23089943001702778,
+            -0.0084257407880583
+          ],
+          [
+            0.6815604941604858,
+            0.33431216837211974,
+            0.6509306160245083,
+            -0.010905040735817328
+          ],
+          [
+            -0.6906701192756453,
+            7.060497603239568e-09,
+            0.7231699567458301,
+            0.016715791931901997
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.4781762659549713,
+          0.019217360764741898,
+          0.017444055527448654
+        ],
+        "radius": 0.05,
+        "note": "2026-09-13: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its marker must end where the demonstrated one ended relative to the candidate own pot, 5 cm, orientation free); the absolute in_region test is kept in phi_v1_in_region.json",
+        "snap_fit": false
+      }
+    },
+    "droid_autolab_2023_07_14_16h_52m_16s_duck_hand": {
+      "kind": "in_container",
+      "instruction": "Put the rubber duck in the silver cup",
+      "source": "duck",
+      "target": "pot",
+      "target_match": [
+        "pot",
+        "pan",
+        "bowl",
+        "container",
+        "cup"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "duck",
+        "target": "pot",
+        "target_match": [
+          "pot",
+          "pan",
+          "bowl",
+          "container",
+          "cup"
+        ],
+        "target_pose": [
+          0.6006802487878975,
+          0.06783682409520271,
+          0.010376326644889876,
+          0.927710125658345,
+          0.0,
+          0.0,
+          -0.37330138326957485
+        ],
+        "gt_rel": [
+          [
+            -0.20223443217497108,
+            0.9793371403367005,
+            0.0,
+            -0.008335741980219635
+          ],
+          [
+            -0.9793371403367005,
+            -0.2022344321749711,
+            0.0,
+            -0.014316280757576405
+          ],
+          [
+            0.0,
+            0.0,
+            0.9999999999999997,
+            -0.008305342074580354
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.5847518444061279,
+          0.06328419595956802,
+          0.0020709845703095198
+        ],
+        "radius": 0.05,
+        "note": "2026-09-13: outcome relative to the RECEIVING object (the candidate is judged in its own scene: its duck must end where the demonstrated one ended relative to the candidate own pot, 5 cm, orientation free); the absolute in_region test is kept in phi_v1_in_region.json",
+        "snap_fit": false
+      }
+    },
+    "droid_rail_2023_04_12_16h_12m_50s_marker_hand": {
+      "kind": "remove_to_support",
+      "instruction": "Remove the marker from the pot and put it on the table",
+      "source": "marker",
+      "target": "pot",
+      "target_match": [
+        "pot",
+        "container",
+        "bowl",
+        "pan"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "in_region",
+        "source": "marker",
+        "center": [
+          0.5306652188301086,
+          -0.11562030017375946,
+          -0.023991331458091736
+        ],
+        "radius": 0.05,
+        "goal_kind": "placed",
+        "note": "goal = the demonstrated end position of the object (hand-built, human-reviewed annotation)"
+      }
+    },
+    "droid_iris_2023_03_02_16h_02m_41s_bowl_hand": {
+      "kind": "move_direction",
+      "instruction": "Move the bowl to the left",
+      "source": "bowl",
+      "target": null,
+      "target_match": null,
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "in_region",
+        "source": "bowl",
+        "center": [
+          0.6823537349700928,
+          -0.1127857118844986,
+          -0.01841067709028721
+        ],
+        "radius": 0.05,
+        "goal_kind": "placed",
+        "note": "goal = the demonstrated end position of the object (hand-built, human-reviewed annotation)"
+      },
+      "direction_world": [
+        0.6863856829425272,
+        0.7272377150915103,
+        0.0
+      ],
+      "direction_source": "REAL GT demonstrated horizontal direction; sign fixed before candidate scoring"
+    },
+    "droid_tri_2023_08_09_08h_56m_36s_block_hand": {
+      "kind": "in_container",
+      "instruction": "Put the red block inside the shape-sorting cube",
+      "source": "block",
+      "target": "cube",
+      "target_match": [
+        "sort",
+        "cube",
+        "box",
+        "crate"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "block",
+        "target": "cube",
+        "target_match": [
+          "sort",
+          "cube",
+          "box",
+          "crate"
+        ],
+        "target_pose": [
+          0.44035011127522095,
+          0.10007150528482225,
+          -0.10567764713267098,
+          0.9969774808201851,
+          0.0,
+          0.0,
+          0.07769107244360378
+        ],
+        "gt_rel": [
+          [
+            0.8958226870191701,
+            -0.4370432067499434,
+            -0.08059124552629707,
+            -0.018926324257546756
+          ],
+          [
+            0.4179091951739647,
+            0.890120308777587,
+            -0.18176286884493814,
+            0.048917067258860636
+          ],
+          [
+            0.15117413142069902,
+            0.1291474790130233,
+            0.9800343415685888,
+            -0.040787871113619464
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.05,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.41407439677134533,
+          0.14546613102863162,
+          -0.14646551824629045
+        ],
+        "radius": 0.05,
+        "note": "same predicate as sample 2 on the same prop: judged RELATIVE to the receiving cube in the candidate's own scene (5 cm, orientation free). The exporter default (absolute in_region) measures this sample's INFERRED end pose, not the candidate.",
+        "require_lid": {
+          "min_coverage": 0.5,
+          "note": "the sorting cube must be delivered with its top face; an open container is a failure even if the block ends inside"
+        },
+        "snap_fit": false
+      },
+      "require_lid": {
+        "min_coverage": 0.5,
+        "note": "the sorting cube must be delivered with its top face; an open container is a failure even if the block ends inside"
+      }
+    },
+    "droid_iris_2023_03_02_16h_39m_33s_marker_hand": {
+      "kind": "remove_to_support",
+      "instruction": "Take the marker out of the cup and put it on the table",
+      "source": "marker",
+      "target": "cup",
+      "target_match": [
+        "cup",
+        "container",
+        "bowl",
+        "mug"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "in_region",
+        "source": "marker",
+        "center": [
+          0.5176630020141602,
+          -0.05576782301068306,
+          -0.06448456645011902
+        ],
+        "radius": 0.05,
+        "goal_kind": "placed",
+        "note": "goal = the demonstrated end position of the object (hand-built, human-reviewed annotation)"
+      }
+    },
+    "droid_iris_2023_03_02_16h_29m_11s_cup_hand": {
+      "kind": "move_direction",
+      "instruction": "Move the glass with the pen in it to the right",
+      "source": "cup",
+      "target": null,
+      "target_match": null,
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "in_region",
+        "source": "cup",
+        "center": [
+          0.5553320646286011,
+          -0.04893745481967926,
+          -0.00866860244423151
+        ],
+        "radius": 0.05,
+        "goal_kind": "placed",
+        "note": "goal = the demonstrated end position of the object (hand-built, human-reviewed annotation)"
+      },
+      "direction_world": [
+        -0.9716980554433228,
+        0.23622635129820926,
+        0.0
+      ],
+      "direction_source": "REAL GT demonstrated horizontal direction; sign fixed before candidate scoring",
+      "coverage_note": "GT tracks the glass; pen content retention has no independent rigid annotation and is not certified."
+    },
+    "droid_iris_2023_07_11_23h_12m_17s_bottle_hand": {
+      "kind": "upright_supported",
+      "instruction": "Put the smaller bottle upright",
+      "source": "bottle",
+      "target": null,
+      "target_match": null,
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "in_region_upright",
+        "source": "bottle",
+        "center": [
+          0.7191709280014038,
+          0.1905677616596222,
+          0.07252401858568192
+        ],
+        "radius": 0.05,
+        "gt_axis": [
+          0.009177150893585062,
+          0.010284891040054145,
+          0.9999049959460001
+        ],
+        "rot_tol_deg": 30.0,
+        "axis": "x",
+        "require_released": true,
+        "goal_kind": "placed",
+        "gt_axis_tilt_deg": 0.7897909219307014,
+        "initial_axis_tilt_deg": 87.53342471946992,
+        "note": "the task is 'Put the smaller bottle upright': the goal is the ORIENTATION, so success needs the terminal symmetry axis within 30 deg of the demonstrated one (0.8 deg from vertical) as well as the position within 5 cm. With the exporter default (in_region) a bottle left LYING at the goal position would score a success -- its centre of mass barely moves between lying and standing. Axis = local x: prim_mesh(hcyl) lays the cylinder along its own x."
+      }
+    },
+    "droid_iris_2023_07_11_21h_58m_05s_spoon_hand": {
+      "kind": "in_container",
+      "instruction": "Pick up the spoon from the utensil holder and put it in the pot",
+      "source": "spoon",
+      "target": "pot",
+      "target_match": [
+        "pot",
+        "cooking pot",
+        "saucepan",
+        "pan",
+        "container",
+        "bowl"
+      ],
+      "require_released": true,
+      "require_quiescent": true,
+      "old_phi": {
+        "type": "seated",
+        "source": "spoon",
+        "target": "pot",
+        "target_match": [
+          "pot",
+          "cooking pot",
+          "saucepan",
+          "pan",
+          "container",
+          "bowl"
+        ],
+        "target_pose": [
+          0.5595476644081006,
+          -0.352648281160339,
+          0.16211379035712659,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gt_rel": [
+          [
+            -0.10438909373298554,
+            0.8921537719936912,
+            -0.4395049080807121,
+            0.04902642798005252
+          ],
+          [
+            0.5512171965942669,
+            -0.3159319925920807,
+            -0.7722347947584045,
+            0.011409246030791909
+          ],
+          [
+            -0.8278058463724229,
+            -0.322875553695579,
+            -0.4587906467414195,
+            0.05768011049030841
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pos_tol": 0.1,
+        "rot_tol_deg": 180.0,
+        "axis": null,
+        "require_released": true,
+        "goal_kind": "placed",
+        "center": [
+          0.6085740923881531,
+          -0.3412390351295471,
+          0.219793900847435
+        ],
+        "radius": 0.1,
+        "start_rel_pos_m": 0.2609009465004217,
+        "note": "judged RELATIVE to the receiving pot in the candidate's own scene (10 cm, orientation free). The exporter default (absolute in_region) would score the candidate's reconstruction of the pot rather than its placement of the spoon. Orientation is free because the pot holds an unmodelled silicone whisk in the real scene and the spoon's final lean depends on what it lands on. The tolerance is 10 cm rather than the pool's 5 cm because a 27.7 cm spoon cannot lie flat in a 20.9 cm pot: it must lean, so the legitimate resting centres form a ring of radius ~5 cm at an arbitrary azimuth and a 5 cm sphere around one member of that ring cannot cover it. It still discriminates -- a spoon flat on the cooktop is 11.9 cm away on the vertical component alone -- and the spoon starts 26 cm from the goal in this frame, so the test is not trivially satisfied.",
+        "snap_fit": false
+      }
+    }
+  }
+}

@@ -1,0 +1,2462 @@
+{
+  "inhouse_06bbe1f0_task27_rgbd_r001": {
+    "task": "book",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "task_description": "Carry the initially held object, release it onto the receiver, and leave it settled.",
+    "robot_bases_world": [
+      {
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "quat_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "dt": 0.05,
+    "gripper": "0 open, 1 closed",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true
+  },
+  "inhouse_036f057e_task46_rgbd_r001": {
+    "task": "box",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "task_description": "Carry the initially held object, release it onto the receiver, and leave it settled.",
+    "robot_bases_world": [
+      {
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "quat_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "dt": 0.05,
+    "gripper": "0 open, 1 closed",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true
+  },
+  "inhouse_1c37c7ea_task6_rgbd_r001": {
+    "task": "bottle",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "task_description": "Grasp the object, lift it and hold it above its initial height.",
+    "robot_bases_world": [
+      {
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "quat_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "dt": 0.05,
+    "gripper": "0 open, 1 closed",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true
+  },
+  "inhouse_0ef5cc1d_task37_rgbd_r001": {
+    "task": "cracker",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "task_description": "Grasp the object, lift it and hold it above its initial height.",
+    "robot_bases_world": [
+      {
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "quat_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "dt": 0.05,
+    "gripper": "0 open, 1 closed",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true
+  },
+  "inhouse_77abb16d_task31_rgbd_r001": {
+    "task": "remote",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "task_description": "Grasp the object, lift it and hold it above its initial height.",
+    "robot_bases_world": [
+      {
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "quat_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "dt": 0.05,
+    "gripper": "0 open, 1 closed",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true
+  },
+  "robodojo_arrange_largest_number_7_x5__r002": {
+    "task": "arrange_largest_number",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "digit_0",
+      "digit_1",
+      "digit_2",
+      "digit_3",
+      "digit_4"
+    ],
+    "required_entities": [
+      "digit_0",
+      "digit_1",
+      "digit_2",
+      "digit_3",
+      "digit_4",
+      "mat_0",
+      "mat_1",
+      "mat_2",
+      "mat_3",
+      "mat_4"
+    ],
+    "task_roles": [
+      {
+        "object": "digit_2",
+        "target": "mat_0"
+      },
+      {
+        "object": "digit_1",
+        "target": "mat_1"
+      },
+      {
+        "object": "digit_4",
+        "target": "mat_2"
+      },
+      {
+        "object": "digit_3",
+        "target": "mat_3"
+      },
+      {
+        "object": "digit_0",
+        "target": "mat_4"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_arrange_largest_number_7_xarm7__r003": {
+    "task": "arrange_largest_number",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "digit_0",
+      "digit_1",
+      "digit_2",
+      "digit_3",
+      "digit_4"
+    ],
+    "required_entities": [
+      "digit_0",
+      "digit_1",
+      "digit_2",
+      "digit_3",
+      "digit_4",
+      "mat_0",
+      "mat_1",
+      "mat_2",
+      "mat_3",
+      "mat_4"
+    ],
+    "task_roles": [
+      {
+        "object": "digit_2",
+        "target": "mat_0"
+      },
+      {
+        "object": "digit_1",
+        "target": "mat_1"
+      },
+      {
+        "object": "digit_4",
+        "target": "mat_2"
+      },
+      {
+        "object": "digit_3",
+        "target": "mat_3"
+      },
+      {
+        "object": "digit_0",
+        "target": "mat_4"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_classify_objects_7_x5__r002": {
+    "task": "classify_objects",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "cat0_0",
+      "cat0_1",
+      "cat1_0",
+      "cat1_1",
+      "cat2_0",
+      "cat2_1"
+    ],
+    "required_entities": [
+      "basket0",
+      "basket1",
+      "basket2",
+      "cat0_0",
+      "cat0_1",
+      "cat1_0",
+      "cat1_1",
+      "cat2_0",
+      "cat2_1"
+    ],
+    "task_roles": [
+      {
+        "object": "cat0_0",
+        "target": "basket2"
+      },
+      {
+        "object": "cat0_1",
+        "target": "basket2"
+      },
+      {
+        "object": "cat1_0",
+        "target": "basket1"
+      },
+      {
+        "object": "cat1_1",
+        "target": "basket1"
+      },
+      {
+        "object": "cat2_0",
+        "target": "basket0"
+      },
+      {
+        "object": "cat2_1",
+        "target": "basket0"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_classify_objects_7_xarm7__r002": {
+    "task": "classify_objects",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "cat0_0",
+      "cat0_1",
+      "cat1_0",
+      "cat1_1",
+      "cat2_0",
+      "cat2_1"
+    ],
+    "required_entities": [
+      "basket0",
+      "basket1",
+      "basket2",
+      "cat0_0",
+      "cat0_1",
+      "cat1_0",
+      "cat1_1",
+      "cat2_0",
+      "cat2_1"
+    ],
+    "task_roles": [
+      {
+        "object": "cat0_0",
+        "target": "basket2"
+      },
+      {
+        "object": "cat0_1",
+        "target": "basket2"
+      },
+      {
+        "object": "cat1_0",
+        "target": "basket1"
+      },
+      {
+        "object": "cat1_1",
+        "target": "basket1"
+      },
+      {
+        "object": "cat2_0",
+        "target": "basket0"
+      },
+      {
+        "object": "cat2_1",
+        "target": "basket0"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_cover_blocks_7_x5__r002": {
+    "task": "cover_blocks",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "red",
+      "green",
+      "blue",
+      "cup0",
+      "cup1",
+      "cup2"
+    ],
+    "required_entities": [
+      "blue",
+      "cup0",
+      "cup1",
+      "cup2",
+      "green",
+      "red"
+    ],
+    "task_roles": [
+      {
+        "object": "cup0"
+      },
+      {
+        "object": "cup1"
+      },
+      {
+        "object": "cup2"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_cover_blocks_7_xarm7__r002": {
+    "task": "cover_blocks",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "red",
+      "green",
+      "blue",
+      "cup0",
+      "cup1",
+      "cup2"
+    ],
+    "required_entities": [
+      "blue",
+      "cup0",
+      "cup1",
+      "cup2",
+      "green",
+      "red"
+    ],
+    "task_roles": [
+      {
+        "object": "cup0"
+      },
+      {
+        "object": "cup1"
+      },
+      {
+        "object": "cup2"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_general_pickup_7_x5__r002": {
+    "task": "general_pickup",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "task_roles": [
+      {
+        "object": "target"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_general_pickup_7_xarm7__r002": {
+    "task": "general_pickup",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "task_roles": [
+      {
+        "object": "target"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_insert_tubes_7_x5__r002": {
+    "task": "insert_tubes",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "tube0",
+      "tube1",
+      "tube2"
+    ],
+    "required_entities": [
+      "slot",
+      "tube0",
+      "tube1",
+      "tube2"
+    ],
+    "task_roles": [
+      {
+        "object": "tube0",
+        "target": "slot"
+      },
+      {
+        "object": "tube1",
+        "target": "slot"
+      },
+      {
+        "object": "tube2",
+        "target": "slot"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_insert_tubes_7_xarm7__r002": {
+    "task": "insert_tubes",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "tube0",
+      "tube1",
+      "tube2"
+    ],
+    "required_entities": [
+      "slot",
+      "tube0",
+      "tube1",
+      "tube2"
+    ],
+    "task_roles": [
+      {
+        "object": "tube0",
+        "target": "slot"
+      },
+      {
+        "object": "tube1",
+        "target": "slot"
+      },
+      {
+        "object": "tube2",
+        "target": "slot"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_plug_in_charger_7_x5__r002": {
+    "task": "plug_in_charger",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "charger",
+      "socket"
+    ],
+    "required_entities": [
+      "charger",
+      "socket"
+    ],
+    "task_roles": [
+      {
+        "object": "charger",
+        "target": "socket"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_plug_in_charger_7_xarm7__r002": {
+    "task": "plug_in_charger",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "charger",
+      "socket"
+    ],
+    "required_entities": [
+      "charger",
+      "socket"
+    ],
+    "task_roles": [
+      {
+        "object": "charger",
+        "target": "socket"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_sort_nesting_dolls_by_size_7_x5__r002": {
+    "task": "sort_nesting_dolls_by_size",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "doll0",
+      "doll1",
+      "doll2",
+      "doll3",
+      "doll4"
+    ],
+    "required_entities": [
+      "doll0",
+      "doll1",
+      "doll2",
+      "doll3",
+      "doll4"
+    ],
+    "task_roles": [
+      {
+        "object": "doll3"
+      },
+      {
+        "object": "doll1"
+      },
+      {
+        "object": "doll0"
+      },
+      {
+        "object": "doll4"
+      },
+      {
+        "object": "doll2"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_sort_nesting_dolls_by_size_7_xarm7__r002": {
+    "task": "sort_nesting_dolls_by_size",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "doll0",
+      "doll1",
+      "doll2",
+      "doll3",
+      "doll4"
+    ],
+    "required_entities": [
+      "doll0",
+      "doll1",
+      "doll2",
+      "doll3",
+      "doll4"
+    ],
+    "task_roles": [
+      {
+        "object": "doll3"
+      },
+      {
+        "object": "doll1"
+      },
+      {
+        "object": "doll0"
+      },
+      {
+        "object": "doll4"
+      },
+      {
+        "object": "doll2"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_stack_blocks_7_x5__r002": {
+    "task": "stack_blocks",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "required_entities": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "task_roles": [
+      {
+        "object": "block_0",
+        "target": "block_1"
+      },
+      {
+        "object": "block_2",
+        "target": "block_1"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_stack_blocks_7_xarm7__r002": {
+    "task": "stack_blocks",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "required_entities": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "task_roles": [
+      {
+        "object": "block_0",
+        "target": "block_1"
+      },
+      {
+        "object": "block_2",
+        "target": "block_1"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_stack_blocks_by_language_7_x5__r002": {
+    "task": "stack_blocks_by_language",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "required_entities": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "task_roles": [
+      {
+        "object": "block_0"
+      },
+      {
+        "object": "block_1",
+        "target": "block_0"
+      },
+      {
+        "object": "block_2",
+        "target": "block_1"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_stack_blocks_by_language_7_xarm7__r002": {
+    "task": "stack_blocks_by_language",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "required_entities": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "task_roles": [
+      {
+        "object": "block_0"
+      },
+      {
+        "object": "block_1",
+        "target": "block_0"
+      },
+      {
+        "object": "block_2",
+        "target": "block_1"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_stack_blocks_random_7_x5__r002": {
+    "task": "stack_blocks_random",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "required_entities": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "task_roles": [
+      {
+        "object": "block_2"
+      },
+      {
+        "object": "block_0",
+        "target": "block_2"
+      },
+      {
+        "object": "block_1",
+        "target": "block_0"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_stack_blocks_random_7_xarm7__r002": {
+    "task": "stack_blocks_random",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "required_entities": [
+      "block_0",
+      "block_1",
+      "block_2"
+    ],
+    "task_roles": [
+      {
+        "object": "block_2"
+      },
+      {
+        "object": "block_0",
+        "target": "block_2"
+      },
+      {
+        "object": "block_1",
+        "target": "block_0"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_stack_bowls_random_7_x5__r002": {
+    "task": "stack_bowls_random",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "bowl0",
+      "bowl1",
+      "bowl2"
+    ],
+    "required_entities": [
+      "bowl0",
+      "bowl1",
+      "bowl2"
+    ],
+    "task_roles": [
+      {
+        "object": "bowl1",
+        "target": "bowl0"
+      },
+      {
+        "object": "bowl2",
+        "target": "bowl0"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_stack_bowls_random_7_xarm7__r002": {
+    "task": "stack_bowls_random",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "bowl0",
+      "bowl1",
+      "bowl2"
+    ],
+    "required_entities": [
+      "bowl0",
+      "bowl1",
+      "bowl2"
+    ],
+    "task_roles": [
+      {
+        "object": "bowl1",
+        "target": "bowl0"
+      },
+      {
+        "object": "bowl2",
+        "target": "bowl0"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "robodojo_swap_T_7_x5__r002": {
+    "task": "swap_T",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "t0",
+      "t1"
+    ],
+    "required_entities": [
+      "t0",
+      "t1"
+    ],
+    "task_roles": [
+      {
+        "object": "t0"
+      },
+      {
+        "object": "t1"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "robodojo_swap_T_7_xarm7__r002": {
+    "task": "swap_T",
+    "embodiment": "xarm7",
+    "dynamic_objects": [
+      "t0",
+      "t1"
+    ],
+    "required_entities": [
+      "t0",
+      "t1"
+    ],
+    "task_roles": [
+      {
+        "object": "t0"
+      },
+      {
+        "object": "t1"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "xarm7",
+    "video_only": true
+  },
+  "inhouse_337bd80c_task8_episode_r001": {
+    "task": "episode_337bd80c",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "task_description": "Left arm approaches the silver cola can → grasps it → lifts and holds it."
+  },
+  "inhouse_06bb4696_task10_episode_r001": {
+    "task": "episode_06bb4696",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "task_description": "Left hand grasps the Sprite can from the shelf and lifts it."
+  },
+  "inhouse_071c4ac3_task18_episode_r001": {
+    "task": "episode_071c4ac3",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "initially_held_place",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "task_description": "Starting with the drink can already held: lower it, release it and withdraw the hand."
+  },
+  "inhouse_17c674b9_task19_episode_r001": {
+    "task": "episode_17c674b9",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "initially_held_place",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "task_description": "Start with the cola can held → carry it → put it down → release and withdraw."
+  },
+  "inhouse_01e339a0_task21_episode_r001": {
+    "task": "episode_01e339a0",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "task_description": "Left arm takes the green can from the shelf and lifts it."
+  },
+  "inhouse_025187a2_task22_episode_r001": {
+    "task": "episode_025187a2",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "task_description": "Right arm approaches the blue bottle with an orange cap → grasps it and carries it off the shelf."
+  },
+  "inhouse_620c7809_task31_episode_r001": {
+    "task": "episode_620c7809",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "task_description": "Right arm picks the remote control up from the sofa cushion and lifts it."
+  },
+  "inhouse_03eaa9f2_task47_episode_r001": {
+    "task": "episode_03eaa9f2",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "task_description": "Starting at the small drink bottle: the left hand approaches, grasps and lifts it."
+  },
+  "robodojo_build_tower_7_x5__r001": {
+    "task": "build_tower",
+    "embodiment": "x5",
+    "dynamic_objects": [
+      "block0",
+      "block1",
+      "block2",
+      "block3",
+      "block4",
+      "block5",
+      "block6",
+      "block7"
+    ],
+    "required_entities": [
+      "block0",
+      "block1",
+      "block2",
+      "block3",
+      "block4",
+      "block5",
+      "block6",
+      "block7"
+    ],
+    "task_roles": [
+      {
+        "object": "block0"
+      },
+      {
+        "object": "block1"
+      },
+      {
+        "object": "block2"
+      },
+      {
+        "object": "block3"
+      },
+      {
+        "object": "block4"
+      },
+      {
+        "object": "block5"
+      },
+      {
+        "object": "block6"
+      },
+      {
+        "object": "block7"
+      }
+    ],
+    "robot_bases_world": [
+      {
+        "pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      },
+      {
+        "pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "quat_wxyz": [
+          0.7071067811865476,
+          0,
+          0,
+          0.7071067811865476
+        ]
+      }
+    ],
+    "dt": 0.04,
+    "gripper": "0 closed, 1 open",
+    "robot_asset": "x5",
+    "video_only": true
+  },
+  "inhouse_3a553f73_task55_wallet_robot_r001": {
+    "task": "wallet_3a553f73",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "state_kind": "complete_deformable_surface",
+    "task_description": "Pick the wallet from the table using the right gripper and hold it lifted.",
+    "deformable_contract": "Target must be a closed triangular particle-shell mesh; no object poses or attachments after initialization. See staged wallet_contract.py and task_rules.py.",
+    "task_rules": {
+      "schema": "inhouse-wallet-task/1",
+      "kind": "pick_and_hold",
+      "hand": "r",
+      "dt": 0.05,
+      "proximity_m": 0.006,
+      "grasp_hold_s": 0.25,
+      "terminal_hold_s": 0.5,
+      "min_lift_m": 0.04,
+      "grip_closed_min": 0.4,
+      "release_open_max": 0.25,
+      "hold_center_range_m": 0.025,
+      "settle_center_range_m": 0.01,
+      "settle_speed_m_s": 0.08,
+      "containment_tolerance_m": 0.003,
+      "stages": [
+        "grasp",
+        "lift",
+        "hold"
+      ],
+      "contact_evidence": "geometric proximity to both physical fingertip collision surfaces and sustained relative hold; not measured force"
+    },
+    "control_frames": 202
+  },
+  "inhouse_f60be28b_task55_wallet_robot_r001": {
+    "task": "wallet_f60be28b",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "state_kind": "complete_deformable_surface",
+    "task_description": "Pick the wallet from the table using the right gripper and hold it lifted.",
+    "deformable_contract": "Target must be a closed triangular particle-shell mesh; no object poses or attachments after initialization. See staged wallet_contract.py and task_rules.py.",
+    "task_rules": {
+      "schema": "inhouse-wallet-task/1",
+      "kind": "pick_and_hold",
+      "hand": "r",
+      "dt": 0.05,
+      "proximity_m": 0.006,
+      "grasp_hold_s": 0.25,
+      "terminal_hold_s": 0.5,
+      "min_lift_m": 0.04,
+      "grip_closed_min": 0.4,
+      "release_open_max": 0.25,
+      "hold_center_range_m": 0.025,
+      "settle_center_range_m": 0.01,
+      "settle_speed_m_s": 0.08,
+      "containment_tolerance_m": 0.003,
+      "stages": [
+        "grasp",
+        "lift",
+        "hold"
+      ],
+      "contact_evidence": "geometric proximity to both physical fingertip collision surfaces and sustained relative hold; not measured force"
+    },
+    "control_frames": 185
+  },
+  "inhouse_042b3b16_task74_wallet_robot_r001": {
+    "task": "wallet_042b3b16",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "initially_held_insert",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "state_kind": "complete_deformable_surface",
+    "task_description": "Insert the initially held wallet fully into the open bag, release and let it settle.",
+    "deformable_contract": "Target must be a closed triangular particle-shell mesh; no object poses or attachments after initialization. See staged wallet_contract.py and task_rules.py.",
+    "task_rules": {
+      "schema": "inhouse-wallet-task/1",
+      "kind": "initially_held_insert",
+      "hand": "l",
+      "dt": 0.05,
+      "proximity_m": 0.006,
+      "grasp_hold_s": 0.25,
+      "terminal_hold_s": 0.5,
+      "min_lift_m": 0.04,
+      "grip_closed_min": 0.4,
+      "release_open_max": 0.25,
+      "hold_center_range_m": 0.025,
+      "settle_center_range_m": 0.01,
+      "settle_speed_m_s": 0.08,
+      "containment_tolerance_m": 0.003,
+      "stages": [
+        "initial_hold",
+        "carry",
+        "inside",
+        "release",
+        "settle"
+      ],
+      "contact_evidence": "geometric proximity to both physical fingertip collision surfaces and sustained relative hold; not measured force"
+    },
+    "control_frames": 104
+  },
+  "inhouse_03c154e1_task36_reviewed_r001": {
+    "task": "reviewed_03c154e1",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 118,
+    "task_description": "Left arm grasps the cylindrical snack tube and lifts it."
+  },
+  "inhouse_573c8ddb_task40_reviewed_r001": {
+    "task": "reviewed_573c8ddb",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 171,
+    "task_description": "Starting at the packaged item on the shelf: the right hand takes it out and lifts it."
+  },
+  "inhouse_0138ae6f_task57_reviewed_r001": {
+    "task": "reviewed_0138ae6f",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 289,
+    "task_description": "Right arm approaches the glasses case on the coffee table → grasps it → holds it."
+  },
+  "inhouse_1b241e0d_task53_wallet_robot_r001": {
+    "task": "wallet_1b241e0d",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 195,
+    "task_description": "Starting at the wallet on the cushion: approach, grasp and lift it.",
+    "state_kind": "complete_deformable_surface",
+    "deformable_contract": "Closed particle shell; see wallet_contract.py and task_rules.py; no post-start state injection."
+  },
+  "inhouse_00478d72_task72_reviewed_r001": {
+    "task": "reviewed_00478d72",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "initially_held_insert",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 120,
+    "task_description": "Starting with the glasses case already held: lower it, release it and withdraw the hand.",
+    "task_rules": "Initial bilateral hold, carry, complete geometry inside an open physical receiver cavity, release and settle. Candidate must declare receiver.interior matching its actual mesh."
+  },
+  "inhouse_07bcc657_task73_reviewed_r001": {
+    "task": "reviewed_07bcc657",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "initially_held_insert",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 116,
+    "task_description": "Start with the water bottle held in the left hand → carry it to the bag opening → put it in → release and withdraw.",
+    "task_rules": "Initial bilateral hold, carry, complete geometry inside an open physical receiver cavity, release and settle. Candidate must declare receiver.interior matching its actual mesh."
+  },
+  "inhouse_126f3d75_task31_point_robot_r001": {
+    "task": "point_126f3d75",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 399,
+    "task_description": "Pick up the remote control from the sofa",
+    "point_kind": "registered_model_origin",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_3ce4e167_task31_point_robot_r001": {
+    "task": "point_3ce4e167",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 428,
+    "task_description": "Pick up the remote control from the sofa",
+    "point_kind": "registered_model_origin",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_c68d8036_task31_point_robot_r001": {
+    "task": "point_c68d8036",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 269,
+    "task_description": "Pick up the remote control from the sofa",
+    "point_kind": "registered_model_origin",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_0a5c5dba_task56_point_robot_r001": {
+    "task": "point_0a5c5dba",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 278,
+    "task_description": "Pick up the remote control from the book",
+    "point_kind": "registered_model_origin",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_0048dd8e_task61_point_robot_r001": {
+    "task": "point_0048dd8e",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 151,
+    "task_description": "Pick up the remote control from the small table",
+    "point_kind": "registered_model_origin",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_0915ecc2_task17_point_robot_r001": {
+    "task": "point_0915ecc2",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "initially_held_place",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 260,
+    "task_description": "Place the blue drink on the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_072585bb_task32_point_robot_r001": {
+    "task": "point_072585bb",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 243,
+    "task_description": "Pick up the hat from the sofa",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_335d5f4c_task39_point_robot_r001": {
+    "task": "point_335d5f4c",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 138,
+    "task_description": "Take the snack box from the shelf",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_015fb5ca_task42_point_robot_r001": {
+    "task": "point_015fb5ca",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "initially_held_place",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 134,
+    "task_description": "Put the chips tube into the tray on the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_0ac6d7ce_task44_point_robot_r001": {
+    "task": "point_0ac6d7ce",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "receiver"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "initially_held_place",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 175,
+    "task_description": "Put the candy bag into the tray on the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_7217cfe2_task53_point_robot_r001": {
+    "task": "point_7217cfe2",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 185,
+    "task_description": "Pick up the wallet from the sofa cushion",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_6fa97ae0_task55_point_robot_r001": {
+    "task": "point_6fa97ae0",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 187,
+    "task_description": "Pick up the wallet from the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_7c7a3f0d_task55_point_robot_r001": {
+    "task": "point_7c7a3f0d",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 177,
+    "task_description": "Pick up the wallet from the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_d2930155_task55_point_robot_r001": {
+    "task": "point_d2930155",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 216,
+    "task_description": "Pick up the wallet from the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_30b1f5e6_task57_point_robot_r001": {
+    "task": "point_30b1f5e6",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 201,
+    "task_description": "Pick up the glasses case from the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_e95097bb_task57_point_robot_r001": {
+    "task": "point_e95097bb",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 379,
+    "task_description": "Pick up the glasses case from the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_eb0ae4c0_task57_point_robot_r001": {
+    "task": "point_eb0ae4c0",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "l",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 303,
+    "task_description": "Pick up the glasses case from the coffee table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_03066e96_task59_point_robot_r001": {
+    "task": "point_03066e96",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 323,
+    "task_description": "Pick up the glasses case from the small table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_c8dc0a33_task90_point_robot_r001": {
+    "task": "point_c8dc0a33",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pick_and_hold",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 155,
+    "task_description": "Pick up the folding umbrella from the wooden table",
+    "point_kind": "visible_surface_representative",
+    "point_metric": "Full video-clock 3D point position/displacement; physical target observation generated by the evaluator, never submit an independent point track.",
+    "task_rules": "Pick: sustained target-specific bilateral contact, lift then terminal hold. Place starts held: carry, release in the receiver and settle. Missing predicted observations are penalized on the full clock."
+  },
+  "inhouse_06766809_task66_fryer_r021": {
+    "task": "fryer_06766809",
+    "embodiment": "g1_omnipicker",
+    "dynamic_objects": [
+      "target"
+    ],
+    "required_entities": [
+      "target",
+      "housing_back",
+      "housing_left",
+      "housing_right",
+      "housing_roof",
+      "support"
+    ],
+    "dt": 0.05,
+    "hand": "r",
+    "task_type": "pull_out_and_release",
+    "robot_asset": "g1_omnipicker",
+    "video_only": true,
+    "control_frames": 270,
+    "task_description": "Grasp the handle with the right hand, pull the whole basket out through the air-fryer opening, then release it so it rests stably. The food does not need to be taken out and the basket does not need to be held up.",
+    "task_rules": "Bilateral physical pad contact, full mesh clears the original aperture, release and supported settling. Full270 control frames plus40 settling frames. Dynamic triangle meshes use convex decomposition to preserve handle gaps."
+  }
+}

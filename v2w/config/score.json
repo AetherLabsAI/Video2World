@@ -1,0 +1,41 @@
+{
+ "version": "v2w-score/1+subdimensions/1",
+ "status": "ratified",
+ "alpha": 0.5,
+ "geometry": {
+  "scene_chamfer_cm": 10.0,
+  "object.shape_cd_cm": 10.0,
+  "object.size_err_cm": 10.0,
+  "deformable.scene_points_cd_cm": 10.0,
+  "deformable.initial_surface_cd_cm": 10.0,
+  "deformable.world_aabb_size_err_cm": 10.0
+ },
+ "dynamics": {
+  "own_trajectory.ape.trans_cm": 20.0,
+  "own_trajectory.ape.rot_deg": 90.0,
+  "own_trajectory.rpe.trans_rpe_cm": 10.0,
+  "deformable.trajectory.shape_cd_cm": 20.0,
+  "point_position.mean_cm": 20.0,
+  "point_displacement.mean_cm": 10.0,
+  "observable_rotation.long_axis_deg": 90.0,
+  "observable_rotation.normal_axis_deg": 90.0,
+  "observable_rotation.frame_D2_deg": 90.0
+ },
+ "geometry_replacements": {
+  "scene_chamfer_cm": "deformable.scene_points_cd_cm",
+  "object.shape_cd_cm": "deformable.initial_surface_cd_cm",
+  "object.size_err_cm": "deformable.world_aabb_size_err_cm"
+ },
+ "subdimensions": {
+  "G_object": [
+   "object.shape_cd_cm",
+   "object.size_err_cm",
+   "deformable.initial_surface_cd_cm",
+   "deformable.world_aabb_size_err_cm"
+  ],
+  "G_scene": [
+   "scene_chamfer_cm",
+   "deformable.scene_points_cd_cm"
+  ]
+ }
+}

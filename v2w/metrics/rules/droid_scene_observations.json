@@ -1,0 +1,642 @@
+{
+ "protocol": "source-observed-table-boundary/1",
+ "pixel_coordinate_system": "640 square; active rows 140:500",
+ "role_weight": 1,
+ "formula": "length-weighted mean distance in source pixels from observed tabletop edge to projected candidate tabletop boundary, using the candidate camera; no object alignment; report alongside unchanged surface CD in cm",
+ "samples": {
+  "droid_guptalab_2023_05_19_11h_06m_39s_orange_hand": {
+   "case": 1,
+   "sample_dir": "gt_pairs/droid/samples/droid_guptalab_2023_05_19_11h_06m_39s_orange_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_01.png",
+   "source_image_sha256": "7a61ec0bafdd5013d812154d5ca5dc4b753251094f1f5279d557b53cdc032a98",
+   "source_video": "gt_pairs/droid/samples/droid_guptalab_2023_05_19_11h_06m_39s_orange_hand/video.mp4",
+   "source_video_sha256": "3ee20bce907f03a6a6fb3b03fc9c1d85d8294478e01b98de1e355c7684eaa9b6",
+   "camera": "gt_pairs/droid/samples/droid_guptalab_2023_05_19_11h_06m_39s_orange_hand/hidden/camera.json",
+   "camera_sha256": "a9c870c05581c86bbb5f5de9af302759848c75b3483f17d3d4a855e4c03c39ab",
+   "pixel_polylines": [
+    [
+     [
+      31,
+      403
+     ],
+     [
+      365,
+      294
+     ],
+     [
+      507,
+      324
+     ],
+     [
+      393,
+      495
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_01.png"
+  },
+  "droid_tri_2023_08_07_17h_02m_01s_blue_hand": {
+   "case": 2,
+   "sample_dir": "gt_pairs/droid/samples/droid_tri_2023_08_07_17h_02m_01s_blue_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_02.png",
+   "source_image_sha256": "3ac38067d678c0d73b410070f4c98049d2b92addfa5c5a10f7e768a739508c39",
+   "source_video": "gt_pairs/droid/samples/droid_tri_2023_08_07_17h_02m_01s_blue_hand/video.mp4",
+   "source_video_sha256": "0827499424ee9fbb21db9b5905b088445e7cf3656baf509d331c7469197cde03",
+   "camera": "gt_pairs/droid/samples/droid_tri_2023_08_07_17h_02m_01s_blue_hand/hidden/camera.json",
+   "camera_sha256": "756797124ae013b1489da62399d595cc7a1512ae9510a2a6f590916aa7e42e3d",
+   "pixel_polylines": [
+    [
+     [
+      10,
+      491
+     ],
+     [
+      424,
+      432
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_02.png"
+  },
+  "droid_iris_2023_03_08_13h_27m_05s_marker_hand": {
+   "case": 3,
+   "sample_dir": "gt_pairs/droid/samples/droid_iris_2023_03_08_13h_27m_05s_marker_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_03.png",
+   "source_image_sha256": "dd98e773dd1181c4a99f60e5053d9ba3ae23db8ff1489a0bada876cf9d50b2ee",
+   "source_video": "gt_pairs/droid/samples/droid_iris_2023_03_08_13h_27m_05s_marker_hand/video.mp4",
+   "source_video_sha256": "0f1000c2014cf6a16f9776b3fbd76daac265deef1280fd006123740798259c89",
+   "camera": "gt_pairs/droid/samples/droid_iris_2023_03_08_13h_27m_05s_marker_hand/hidden/camera.json",
+   "camera_sha256": "9933abd25a7c2afacad72b33488bc6dd7daf7a51c6ed38bf176bc9b2a13ee06f",
+   "pixel_polylines": [
+    [
+     [
+      303,
+      282
+     ],
+     [
+      418,
+      273
+     ]
+    ],
+    [
+     [
+      297,
+      313
+     ],
+     [
+      338,
+      491
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_03.png"
+  },
+  "droid_iris_2023_05_11_15h_34m_55s_cup_hand": {
+   "case": 4,
+   "sample_dir": "gt_pairs/droid/samples/droid_iris_2023_05_11_15h_34m_55s_cup_hand",
+   "status": "not_annotated",
+   "reason": "cloth occludes most tabletop perimeter; curved edge not reliably localized",
+   "source_image": "releases/scene-geometry-repair-20260924/source_04.png",
+   "source_image_sha256": "137fe882e2ce96325fc43ed4d4371c8af1bad6f1054a8129f8d09a23c0c7c1ed",
+   "source_video": "gt_pairs/droid/samples/droid_iris_2023_05_11_15h_34m_55s_cup_hand/video.mp4",
+   "source_video_sha256": "34c451a6256437c9708d80f3389bb1d8d48ce7fc6354ee52dc28f7e1ec753efd",
+   "camera": "gt_pairs/droid/samples/droid_iris_2023_05_11_15h_34m_55s_cup_hand/hidden/camera.json",
+   "camera_sha256": "eadec189ff4c8bdde5069fe2cbb3a77961fc42fa309004e9f727927ea764afb4",
+   "pixel_polylines": [],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_04.png"
+  },
+  "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand": {
+   "case": 5,
+   "sample_dir": "gt_pairs/droid/samples/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_05.png",
+   "source_image_sha256": "3eb7bcc1060bf3ec4e6d1e38ee0df8c0138ed4686495a417ad5fb02feb99372a",
+   "source_video": "gt_pairs/droid/samples/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/video.mp4",
+   "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+   "camera": "gt_pairs/droid/samples/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/hidden/camera.json",
+   "camera_sha256": "e6d94b02f6af33aa5d71179148eca3ab9120edb312eacdad3924748202cc35d6",
+   "pixel_polylines": [
+    [
+     [
+      31,
+      401
+     ],
+     [
+      365,
+      294
+     ],
+     [
+      507,
+      326
+     ],
+     [
+      394,
+      495
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_05.png"
+  },
+  "droid_iris_2023_05_08_16h_12m_30s_pen_hand": {
+   "case": 6,
+   "sample_dir": "gt_pairs/droid/samples/droid_iris_2023_05_08_16h_12m_30s_pen_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_06.png",
+   "source_image_sha256": "0dd086afb3698527daa49781799278e878cf6dc437d073a04a871a5f88e45856",
+   "source_video": "gt_pairs/droid/samples/droid_iris_2023_05_08_16h_12m_30s_pen_hand/video.mp4",
+   "source_video_sha256": "fd614d4b6ee55f989465dd6ebdffaf0706cc214b694cc2c081f698a2e24c603b",
+   "camera": "gt_pairs/droid/samples/droid_iris_2023_05_08_16h_12m_30s_pen_hand/hidden/camera.json",
+   "camera_sha256": "3054791d93c2c23b1f63b14d1865817c5581bfe10238db626af87da14ae441ae",
+   "pixel_polylines": [
+    [
+     [
+      392,
+      307
+     ],
+     [
+      394,
+      492
+     ]
+    ],
+    [
+     [
+      145,
+      423
+     ],
+     [
+      365,
+      496
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_06.png"
+  },
+  "droid_autolab_2023_07_27_09h_13m_43s_cup_hand": {
+   "case": 7,
+   "sample_dir": "gt_pairs/droid/samples/droid_autolab_2023_07_27_09h_13m_43s_cup_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_07.png",
+   "source_image_sha256": "bf7b80bae0bfc16cfdc2ef1a2972cf4aed660e47bce6d46e714083d08052b2e7",
+   "source_video": "gt_pairs/droid/samples/droid_autolab_2023_07_27_09h_13m_43s_cup_hand/video.mp4",
+   "source_video_sha256": "10940e7e2fa66878ee60fa3cd0752c8c03e155e1fb0399ffb61b44f20349063d",
+   "camera": "gt_pairs/droid/samples/droid_autolab_2023_07_27_09h_13m_43s_cup_hand/hidden/camera.json",
+   "camera_sha256": "f4ae868bbfdedca193c33038ad2128a48208feb95fb3ae581fa2a2c1ad651413",
+   "pixel_polylines": [
+    [
+     [
+      8,
+      450
+     ],
+     [
+      273,
+      280
+     ],
+     [
+      394,
+      294
+     ],
+     [
+      380,
+      494
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_07.png"
+  },
+  "droid_pennpal_2023_04_29_18h_20m_45s_tape_hand": {
+   "case": 8,
+   "sample_dir": "gt_pairs/droid/samples/droid_pennpal_2023_04_29_18h_20m_45s_tape_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_08.png",
+   "source_image_sha256": "1af6267e50fbd6282cb2f94a47712a009978ea3c8fa32be75efca4e16420c3f3",
+   "source_video": "gt_pairs/droid/samples/droid_pennpal_2023_04_29_18h_20m_45s_tape_hand/video.mp4",
+   "source_video_sha256": "48c999be3eaee0f6b8500d00f73363cad1a6c032351bdb0e0860a512191d431a",
+   "camera": "gt_pairs/droid/samples/droid_pennpal_2023_04_29_18h_20m_45s_tape_hand/hidden/camera.json",
+   "camera_sha256": "474999a03be6bc953576323757512046b465d01749509bc34d2b6bacc5a53e9e",
+   "pixel_polylines": [
+    [
+     [
+      12,
+      395
+     ],
+     [
+      147,
+      423
+     ]
+    ],
+    [
+     [
+      306,
+      457
+     ],
+     [
+      494,
+      496
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_08.png"
+  },
+  "droid_autolab_2023_07_14_15h_59m_42s_bowl_hand": {
+   "case": 9,
+   "sample_dir": "gt_pairs/droid/samples/droid_autolab_2023_07_14_15h_59m_42s_bowl_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_09.png",
+   "source_image_sha256": "7c0df772ee4bc7a4b30b81d8d5d9f8d1e28cc46bdcdf679227c320943237f91b",
+   "source_video": "gt_pairs/droid/samples/droid_autolab_2023_07_14_15h_59m_42s_bowl_hand/video.mp4",
+   "source_video_sha256": "9bdf1604fd447117fad248afa1aa48350585276b1414959beca52f944fdb58cb",
+   "camera": "gt_pairs/droid/samples/droid_autolab_2023_07_14_15h_59m_42s_bowl_hand/hidden/camera.json",
+   "camera_sha256": "ad5bcb7def2e0bad389d2b5e1f52f42bcb04c9a682039ab9428aa4e8fea0924b",
+   "pixel_polylines": [
+    [
+     [
+      10,
+      404
+     ],
+     [
+      276,
+      284
+     ],
+     [
+      395,
+      306
+     ],
+     [
+      333,
+      494
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_09.png"
+  },
+  "droid_rail_2023_04_12_16h_35m_45s_marker_hand": {
+   "case": 10,
+   "sample_dir": "gt_pairs/droid/samples/droid_rail_2023_04_12_16h_35m_45s_marker_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_10.png",
+   "source_image_sha256": "639e02f604616064e4e9f46fbd98613ad478508aede0f69004c1bbbe89c758be",
+   "source_video": "gt_pairs/droid/samples/droid_rail_2023_04_12_16h_35m_45s_marker_hand/video.mp4",
+   "source_video_sha256": "6e4d55267833d0dbcae9cbdd7b073e8e666efa67ceecc17ce3a800fbfacd3889",
+   "camera": "gt_pairs/droid/samples/droid_rail_2023_04_12_16h_35m_45s_marker_hand/hidden/camera.json",
+   "camera_sha256": "71da51a3ee5959203e07676a41711bd3300dbe311eddccfcb5775cc07adfb5ce",
+   "pixel_polylines": [
+    [
+     [
+      229,
+      327
+     ],
+     [
+      299,
+      387
+     ]
+    ],
+    [
+     [
+      341,
+      419
+     ],
+     [
+      411,
+      456
+     ],
+     [
+      501,
+      345
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_10.png"
+  },
+  "droid_autolab_2023_07_14_16h_52m_16s_duck_hand": {
+   "case": 11,
+   "sample_dir": "gt_pairs/droid/samples/droid_autolab_2023_07_14_16h_52m_16s_duck_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_11.png",
+   "source_image_sha256": "830fd87fc17e9a73448dcfc6450be7eafcf0538a63de2b564d2b181fcabe9066",
+   "source_video": "gt_pairs/droid/samples/droid_autolab_2023_07_14_16h_52m_16s_duck_hand/video.mp4",
+   "source_video_sha256": "1bd2e600221a4aa8ee77e389ff1ed543b84bf3a822984f97b8abf647df8d808a",
+   "camera": "gt_pairs/droid/samples/droid_autolab_2023_07_14_16h_52m_16s_duck_hand/hidden/camera.json",
+   "camera_sha256": "ccf9e28e172ee3a6f8e98d0102074e1f0587ac70be5a0901dc42b17801cac787",
+   "pixel_polylines": [
+    [
+     [
+      9,
+      414
+     ],
+     [
+      277,
+      286
+     ],
+     [
+      395,
+      310
+     ],
+     [
+      335,
+      493
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_11.png"
+  },
+  "droid_rail_2023_04_12_16h_12m_50s_marker_hand": {
+   "case": 12,
+   "sample_dir": "gt_pairs/droid/samples/droid_rail_2023_04_12_16h_12m_50s_marker_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_12.png",
+   "source_image_sha256": "d8e8f163a095d5aa20e2c329f2a8f7117d1a4716c42c11bb2ecf14e96ae99ebd",
+   "source_video": "gt_pairs/droid/samples/droid_rail_2023_04_12_16h_12m_50s_marker_hand/video.mp4",
+   "source_video_sha256": "25e99ac4d6e5552252b5746d6cecc75233a750cb54f4d2177c3c0743a50645c8",
+   "camera": "gt_pairs/droid/samples/droid_rail_2023_04_12_16h_12m_50s_marker_hand/hidden/camera.json",
+   "camera_sha256": "85720e0c99875711b61c27ae81df95c0fc229e574d9034a37d2fa8d9cf73cade",
+   "pixel_polylines": [
+    [
+     [
+      229,
+      327
+     ],
+     [
+      299,
+      387
+     ]
+    ],
+    [
+     [
+      341,
+      419
+     ],
+     [
+      411,
+      456
+     ],
+     [
+      501,
+      345
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_12.png"
+  },
+  "droid_iris_2023_03_02_16h_02m_41s_bowl_hand": {
+   "case": 13,
+   "sample_dir": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_02m_41s_bowl_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_13.png",
+   "source_image_sha256": "5b22bc3303690a4af3948cc978ff12a3b6d9aa62b8a3664be52a15474052ebf5",
+   "source_video": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_02m_41s_bowl_hand/video.mp4",
+   "source_video_sha256": "23fa57efee267f32d8d73b2ff17611aba08713678f6c5fed967a9525c7e79631",
+   "camera": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_02m_41s_bowl_hand/hidden/camera.json",
+   "camera_sha256": "ba7dbcf649eca861f6eda286c3dcc1c3bbeef05afc9457537a907a23840736e1",
+   "pixel_polylines": [
+    [
+     [
+      315,
+      373
+     ],
+     [
+      327,
+      400
+     ],
+     [
+      339,
+      426
+     ],
+     [
+      351,
+      451
+     ],
+     [
+      365,
+      478
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_13.png"
+  },
+  "droid_tri_2023_08_09_08h_56m_36s_block_hand": {
+   "case": 14,
+   "sample_dir": "gt_pairs/droid/samples/droid_tri_2023_08_09_08h_56m_36s_block_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_14.png",
+   "source_image_sha256": "0b5ee028d834a73bba3028a2f6af8e7be1d2a51d9a0be41500c0a5bab9b58712",
+   "source_video": "gt_pairs/droid/samples/droid_tri_2023_08_09_08h_56m_36s_block_hand/video.mp4",
+   "source_video_sha256": "56413f865934701289e12322bec88d05110ce62dd2f060aca5abb3d7f0816849",
+   "camera": "gt_pairs/droid/samples/droid_tri_2023_08_09_08h_56m_36s_block_hand/hidden/camera.json",
+   "camera_sha256": "a9e02efeb1360aefa6cf492d70ec0285a38ab82577373a384228962530b3954a",
+   "pixel_polylines": [
+    [
+     [
+      513,
+      280
+     ],
+     [
+      400,
+      490
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_14.png"
+  },
+  "droid_iris_2023_03_02_16h_39m_33s_marker_hand": {
+   "case": 15,
+   "sample_dir": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_39m_33s_marker_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_15.png",
+   "source_image_sha256": "be2b509b0ef3780c89ac23cae89027bc3977060e436c11222687320f9e9a1315",
+   "source_video": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_39m_33s_marker_hand/video.mp4",
+   "source_video_sha256": "0ea6b1c4776d3e38eb05191541548fdfb0d24d1a37e570f332a62af8268d3daf",
+   "camera": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_39m_33s_marker_hand/hidden/camera.json",
+   "camera_sha256": "d9a2b150e206b9825edc1c3c871621499c77c82cb2209fb8cb9f3514019b7480",
+   "pixel_polylines": [
+    [
+     [
+      371,
+      355
+     ],
+     [
+      338,
+      370
+     ],
+     [
+      311,
+      393
+     ],
+     [
+      298,
+      417
+     ],
+     [
+      296,
+      445
+     ],
+     [
+      303,
+      475
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_15.png"
+  },
+  "droid_iris_2023_03_02_16h_29m_11s_cup_hand": {
+   "case": 16,
+   "sample_dir": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_29m_11s_cup_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_16.png",
+   "source_image_sha256": "4b5c527337df56f0ca6f85db07d5bfc837585f9641a7fe10c7fea30f661bea8a",
+   "source_video": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_29m_11s_cup_hand/video.mp4",
+   "source_video_sha256": "a7aae8a14b8c492de8118fe7c1e96c5d8c5d686457ec8998c269fb6d04a81c3a",
+   "camera": "gt_pairs/droid/samples/droid_iris_2023_03_02_16h_29m_11s_cup_hand/hidden/camera.json",
+   "camera_sha256": "ff8a810519babdba3d9de4f4c4e19c97504ab59d0770864be17deebb3a4a4be4",
+   "pixel_polylines": [
+    [
+     [
+      314,
+      378
+     ],
+     [
+      325,
+      400
+     ],
+     [
+      337,
+      425
+     ],
+     [
+      352,
+      453
+     ],
+     [
+      367,
+      480
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_16.png"
+  },
+  "droid_iris_2023_07_11_23h_12m_17s_bottle_hand": {
+   "case": 17,
+   "sample_dir": "gt_pairs/droid/samples/droid_iris_2023_07_11_23h_12m_17s_bottle_hand",
+   "status": "observed_partial_boundary",
+   "reason": null,
+   "source_image": "releases/scene-geometry-repair-20260924/source_17.png",
+   "source_image_sha256": "9ab1fc0c8b4645db663b8467f47366b049b26269530a4c58f8c514a29c9da748",
+   "source_video": "gt_pairs/droid/samples/droid_iris_2023_07_11_23h_12m_17s_bottle_hand/video.mp4",
+   "source_video_sha256": "8aab7086bd3c021c1d9324aaa258e8d01860b4fc2689954436b0d255277649e4",
+   "camera": "gt_pairs/droid/samples/droid_iris_2023_07_11_23h_12m_17s_bottle_hand/hidden/camera.json",
+   "camera_sha256": "e63b61dd2412b1ef8a1038f2b30f8e0d1bd4d6f5141b4aa8dfce0cfaad04b1c2",
+   "pixel_polylines": [
+    [
+     [
+      247,
+      288
+     ],
+     [
+      256,
+      302
+     ],
+     [
+      277,
+      321
+     ],
+     [
+      302,
+      343
+     ],
+     [
+      329,
+      362
+     ],
+     [
+      353,
+      373
+     ],
+     [
+      383,
+      360
+     ],
+     [
+      415,
+      340
+     ],
+     [
+      447,
+      319
+     ],
+     [
+      477,
+      303
+     ]
+    ]
+   ],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_17.png"
+  },
+  "droid_iris_2023_07_11_21h_58m_05s_spoon_hand": {
+   "case": 18,
+   "sample_dir": "gt_pairs/droid/samples/droid_iris_2023_07_11_21h_58m_05s_spoon_hand",
+   "status": "not_annotated",
+   "reason": "multiple support levels and utensil/robot occlusion; no verified single tabletop boundary",
+   "source_image": "releases/scene-geometry-repair-20260924/source_18.png",
+   "source_image_sha256": "62b9e00f1c64aae8b5ced5188d938254fab589e7993c29962da1b6144a69c401",
+   "source_video": "gt_pairs/droid/samples/droid_iris_2023_07_11_21h_58m_05s_spoon_hand/video.mp4",
+   "source_video_sha256": "b51bd2e2b50a28070a4674bad4d0c684ae73ca8edb6ed15b6945b8fe24e36218",
+   "camera": "gt_pairs/droid/samples/droid_iris_2023_07_11_21h_58m_05s_spoon_hand/hidden/camera.json",
+   "camera_sha256": "aefebf7014b68af127f72f42d5902be0e4750e72a055fd4323f87a90685c9d6d",
+   "pixel_polylines": [],
+   "annotation_uncertainty_px": 4,
+   "geometry_assumption": "source-image boundary only; no inferred 3D table extent or plane orientation",
+   "annotation_evidence": "releases/scene-geometry-repair-20260924/boundary_annotation_18.png"
+  }
+ }
+}

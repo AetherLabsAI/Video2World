@@ -1,0 +1,16 @@
+{
+  "protocol": "furniture-clip-goal/1",
+  "decided": "2026-10-02, benchmark owner, after per-clip review of the source videos",
+  "rule": "These seven FurnitureBench clips do not complete an assembly; each shows a part being picked, reoriented and set down (or still held at the end). Success compares the part's terminal pose relative to the receiving part with the demonstrated terminal relative pose (phi gt_rel, pos_tol / rot_tol unchanged). Release and quiescence are required only where the clip shows them. The original hidden/phi.json files are unchanged; this registry overrides goal_kind and the release requirement at scoring time.",
+  "public_contract": "The agent brief already states that success is judged by where the part ends relative to the receiving prop, the way the video shows it. It also asks for release; clips 45 and 54 do not require release, which never fails an agent that releases at the demonstrated pose.",
+  "goal_kind": "clip_relative_pose",
+  "clips": {
+    "fbraw_2023-01-24-01_05_55_cabinet_top": {"index": 43, "observed": "top picked up, stood upright and set down beside the cabinet body, released", "require_released": true, "require_quiescent": true, "previous_goal_kind": "top_on_body"},
+    "fbraw_2023-01-24-01_12_20_cabinet_top": {"index": 45, "observed": "top picked up and turned over; still in the gripper when the clip ends", "require_released": false, "require_quiescent": false, "previous_goal_kind": "top_on_body"},
+    "fbraw_2023-01-27-00_28_15_chair_back": {"index": 48, "observed": "back picked up, stood upright beside the seat, released", "require_released": true, "require_quiescent": true, "previous_goal_kind": "back_in_seat"},
+    "fbraw_2023-01-27-00_44_43_chair_leg2": {"index": 54, "observed": "leg picked up and turned from vertical to horizontal; the end of the clip is occluded by the wrist, so release is not observable", "require_released": false, "require_quiescent": false, "previous_goal_kind": "leg_in_top", "unobservable": ["release", "quiescence"]},
+    "fbraw_2023-01-27-00_50_47_chair_nut1": {"index": 55, "observed": "nut picked up and set down on the bench beside the seat, released", "require_released": true, "require_quiescent": true, "previous_goal_kind": "nut_on_seat"},
+    "fbraw_2023-01-27-01_26_07_chair_nut2": {"index": 58, "observed": "nut picked up and set down on the bench beside the seat, released", "require_released": true, "require_quiescent": true, "previous_goal_kind": "nut_on_seat"},
+    "fbraw_2023-01-23-04_23_21_round_table_base": {"index": 70, "observed": "base picked up, turned over and set down beside the table top, released", "require_released": true, "require_quiescent": true, "previous_goal_kind": "base_on_leg"}
+  }
+}

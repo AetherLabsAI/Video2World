@@ -1,0 +1,553 @@
+{
+  "protocol": "furniture-goal-parameters/1",
+  "rules": {
+    "fbraw_2023-01-24-00_54_49_cabinet_door_right": {
+      "goal_kind": "door_on_body",
+      "parameters": {
+        "demo_door_axis_world": [
+          0.3327586789803314,
+          0.09474398653485505,
+          -0.9382405014593798
+        ],
+        "demo_door_offset_norm": [
+          -0.6771160243728653,
+          -0.20984496254237378,
+          -0.5869408567312128
+        ],
+        "demo_body_axes_world": [
+          [
+            0.027319719729583074,
+            -0.00688010185199814,
+            -0.9996030697794017
+          ],
+          [
+            -0.01757431132493643,
+            -0.9998250680802026,
+            0.006401313917680532
+          ],
+          [
+            -0.9994722489871098,
+            0.017392453447533252,
+            -0.02743585369045674
+          ]
+        ]
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 38
+    },
+    "fbraw_2023-01-24-01_02_29_cabinet_door_left": {
+      "goal_kind": "door_on_body",
+      "parameters": {
+        "demo_door_axis_world": [
+          -0.5517779597450678,
+          0.35308760708264614,
+          -0.7555595442215135
+        ],
+        "demo_door_offset_norm": [
+          -1.6000386634710728,
+          0.630840598040501,
+          -0.7537317760322066
+        ],
+        "demo_body_axes_world": [
+          [
+            0.06741151827643223,
+            0.005745412708829229,
+            -0.9977087137218315
+          ],
+          [
+            -0.015667716137204867,
+            -0.9998540191840362,
+            -0.006816376792137737
+          ],
+          [
+            -0.9976022302875582,
+            0.016091319222911696,
+            -0.06731165999257588
+          ]
+        ]
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 40
+    },
+    "fbraw_2023-01-24-01_02_29_cabinet_door_right": {
+      "goal_kind": "door_on_body",
+      "parameters": {
+        "demo_door_axis_world": [
+          -0.47293859564542495,
+          0.5225201199583458,
+          -0.7094376709674004
+        ],
+        "demo_door_offset_norm": [
+          -1.6609209961759186,
+          -0.1651181648195197,
+          -0.8604069192201158
+        ],
+        "demo_body_axes_world": [
+          [
+            0.06908301903449585,
+            -0.005088954301189293,
+            -0.9975979345533952
+          ],
+          [
+            -0.017884450410294055,
+            -0.99983260219719,
+            0.003861867050706717
+          ],
+          [
+            -0.9974505917160014,
+            0.017574701354959303,
+            -0.06916246783973785
+          ]
+        ]
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 41
+    },
+    "fbraw_2023-01-24-01_12_20_cabinet_door_left": {
+      "goal_kind": "door_on_body",
+      "parameters": {
+        "demo_door_axis_world": [
+          -0.5747632843883375,
+          0.36984677954193146,
+          -0.7299729629113623
+        ],
+        "demo_door_offset_norm": [
+          -2.0464399942007465,
+          0.7508943312235128,
+          -0.7624280228992146
+        ],
+        "demo_body_axes_world": [
+          [
+            -0.002565387363022054,
+            0.018809714496954934,
+            -0.9998197904763741
+          ],
+          [
+            -0.03598131331912561,
+            -0.9991773899602983,
+            -0.018705306304810466
+          ],
+          [
+            -0.9993491701500076,
+            0.03592684278737712,
+            0.003240075280379743
+          ]
+        ]
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 44
+    },
+    "fbraw_2023-01-24-01_17_34_cabinet_door_right": {
+      "goal_kind": "door_on_body",
+      "parameters": {
+        "demo_door_axis_world": [
+          -0.4433744256200083,
+          0.5089248730406638,
+          -0.7378445583635295
+        ],
+        "demo_door_offset_norm": [
+          1.619317741610245,
+          -0.07487310664924644,
+          0.8584901085835729
+        ],
+        "demo_body_axes_world": [
+          [
+            -0.11128264915366728,
+            -0.018224193533337776,
+            0.9936216839257288
+          ],
+          [
+            0.01313735378883517,
+            -0.9997714538884777,
+            -0.016865643336274234
+          ],
+          [
+            0.9937019583017681,
+            0.011176706123848964,
+            0.11149663361488697
+          ]
+        ]
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 46
+    },
+    "fbraw_2023-01-23-04_10_30_drawer_container_top": {
+      "goal_kind": "container_in_box",
+      "parameters": {
+        "demo_slot_height_m": 0.020748758024268146
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 49
+    },
+    "fbraw_2023-01-23-22_50_14_drawer_container_bottom": {
+      "goal_kind": "container_in_box",
+      "parameters": {
+        "demo_slot_height_m": 0.02465565608503018
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 50
+    },
+    "fbraw_2023-01-23-22_50_14_drawer_container_top": {
+      "goal_kind": "container_in_box",
+      "parameters": {
+        "demo_slot_height_m": 0.06604988657854516
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 51
+    },
+    "fbraw_2023-01-23-22_54_16_drawer_container_bottom": {
+      "goal_kind": "container_in_box",
+      "parameters": {
+        "demo_slot_height_m": 0.06602143444156829
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 52
+    },
+    "fbraw_2023-01-23-22_54_16_drawer_container_top": {
+      "goal_kind": "container_in_box",
+      "parameters": {
+        "demo_slot_height_m": 0.01761314181563264
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 53
+    },
+    "fbraw_2023-01-27-00_44_43_chair_leg2": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          -0.9958525303225593,
+          0.09098207433421157
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 54
+    },
+    "fbraw_2023-01-27-01_15_58_chair_leg1": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.8501314225588454,
+          0.5265705692289246
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 56
+    },
+    "fbraw_2023-01-27-01_26_07_chair_leg1": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.7929880485217948,
+          0.6092371910033034
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 57
+    },
+    "fbraw_2023-01-27-02_23_19_chair_leg2": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.7008637602734581,
+          0.7132951629832833
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 59
+    },
+    "fbraw_2023-01-25-23_52_07_desk_leg1": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.4698012069084993,
+          -0.8827722390216615
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 61
+    },
+    "fbraw_2023-01-25-23_52_07_desk_leg3": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.4866235723899324,
+          0.873611755183308
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 62
+    },
+    "fbraw_2023-01-25-23_56_49_desk_leg4": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.4296627152085814,
+          -0.9029894524077176
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 63
+    },
+    "fbraw_2023-01-26-00_00_38_desk_leg2": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.4457737496881906,
+          -0.8951456664079486
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 64
+    },
+    "fbraw_2023-01-26-00_08_29_desk_leg1": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.31927872598698337,
+          -0.9476608544896895
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 65
+    },
+    "fbraw_2023-01-26-00_12_35_desk_leg3": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.43277749416116634,
+          -0.9015007712407026
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 66
+    },
+    "fbraw_2023-01-26-00_21_21_desk_leg2": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.4688500395977548,
+          -0.8832777821100132
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 67
+    },
+    "fbraw_2023-01-26-00_21_21_desk_leg4": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.3455802380474247,
+          -0.9383892044727952
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 68
+    },
+    "fbraw_2023-01-16-16_40_11_square_table_leg2": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.5686660801893169,
+          0.8225684708534102
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 69
+    },
+    "fbraw_2023-01-23-04_28_58_round_table_leg": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "center",
+        "demo_corner_dir": [
+          -0.5294791940722088,
+          -0.8483229238000375
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 71
+    },
+    "fbraw_2023-01-23-04_53_55_round_table_leg": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "center",
+        "demo_corner_dir": [
+          -0.8111166432477338,
+          -0.5848844253752434
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 73
+    },
+    "fbraw_2023-01-25-00_04_53_square_table_leg1": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.5246461730222971,
+          -0.8513203821905463
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 74
+    },
+    "fbraw_2023-01-25-00_16_54_square_table_leg1": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.7184179771207305,
+          -0.695611680573118
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 75
+    },
+    "fbraw_2023-01-25-00_16_54_square_table_leg3": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.66473045263171,
+          -0.7470832787206805
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 76
+    },
+    "fbraw_2023-01-25-00_16_54_square_table_leg4": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.6938557680116468,
+          0.7201140001395387
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 77
+    },
+    "fbraw_2023-01-25-00_29_47_square_table_leg3": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.6978654520873318,
+          -0.7162288815615746
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 78
+    },
+    "fbraw_2023-01-25-00_33_55_square_table_leg2": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.6836254546367074,
+          0.7298330204730087
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 79
+    },
+    "fbraw_2023-01-25-00_33_55_square_table_leg4": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.6717789545501086,
+          -0.7407516697406514
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 80
+    },
+    "fbraw_2023-01-26-05_43_14_stool_leg1": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.9546970853960062,
+          0.29757935939236585
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 81
+    },
+    "fbraw_2023-01-26-05_43_14_stool_leg3": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          -0.9992050566529015,
+          0.03986545822227489
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 82
+    },
+    "fbraw_2023-01-26-05_52_27_stool_leg2": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.6399242469285948,
+          -0.7684379989256588
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 83
+    },
+    "fbraw_2023-01-26-05_52_27_stool_leg3": {
+      "goal_kind": "leg_in_top",
+      "parameters": {
+        "placement_site": "demonstrated_corner",
+        "demo_corner_dir": [
+          0.7003335933434339,
+          0.7138157031297881
+        ],
+        "center_xy_tol_m": 0.03
+      },
+      "source": "existing GT terminal geometry; no candidate execution or score used",
+      "index": 84
+    }
+  }
+}

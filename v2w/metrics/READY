@@ -1,0 +1,11 @@
+v2w.metrics is importable (metrics fork). Interface for other tracks:
+- geometry.py  = old eval2/metrics2 (+ support_geometry.support_planes, scene_observations.apply_coverage). All metrics2 names kept (scene_cd_v2..v5, object_level, rpe, ape_capped, terminal_relative, context_weights, depth_image, scene_points_v2, ...).
+- task.py      = canon + phi2 + progress + lid + semantic_axis + task_geometry + completion + clip_goals + object_roles + receiver_matching + scene_scope + snap
+                 + scene-access helpers moved from run_eval2: jload, gt_scene_objects, gt_clock, cand_scene, gt_target, find_target_parts, find_target.
+                 Renames: clip_goals.apply -> task.clip_goal; per-module VERSION -> PROGRESS_VERSION, COMPLETION_VERSION, ... ; progress.task_progress -> task.task_progress.
+- trajectory.py = relative_protocol + terminal_position (demo_clock_metrics, relative_pose_metrics, terminal_position, anchor_kind, record_terminal_position).
+- record.py    = record_contract (metric_error, set_scene_result) + rigid_record(sd, pkg, scene_j, rollout_j, kind_hint, require_hand_physics)
+                 (no replay_j argument any more: the hidden replay is not part of the record) + rigid_metrics(family, sample_dir, eval_dir, pkg_name='pkg').
+                 artic_record / towel_record / scene_cd_v2/v3/v4 diagnostics removed from the record.
+Hand phi patch: patch task.eval_phi2, task.verdict and task.find_target_parts (all callers resolve them through the task module at call time).
+hand_validity() in record.py imports `gate_success` from v2w.tracks.hand.physics (hand fork: provide it there, old hand/lib/physics_contract.gate_success).

@@ -1,0 +1,6 @@
+<mujocoinclude>
+  <exclude body1="left_outer_knuckle" body2="left_inner_knuckle" />
+  <exclude body1="left_finger" body2="left_inner_knuckle" />
+  <exclude body1="right_outer_knuckle" body2="right_inner_knuckle" />
+  <exclude body1="right_finger" body2="right_inner_knuckle" />
+</mujocoinclude>

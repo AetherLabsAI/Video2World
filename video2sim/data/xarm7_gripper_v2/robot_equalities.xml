@@ -1,0 +1,7 @@
+<mujocoinclude>
+  <joint name="mimic_left_finger_joint" joint1="left_finger_joint" joint2="drive_joint" polycoef="0 1 0 0 0" solref=".0001 1" solimp=".999 .9999 .0001" />
+  <joint name="mimic_left_inner_knuckle_joint" joint1="left_inner_knuckle_joint" joint2="drive_joint" polycoef="0 1 0 0 0" solref=".0001 1" solimp=".999 .9999 .0001" />
+  <joint name="mimic_right_outer_knuckle_joint" joint1="right_outer_knuckle_joint" joint2="drive_joint" polycoef="0 1 0 0 0" solref=".0001 1" solimp=".999 .9999 .0001" />
+  <joint name="mimic_right_finger_joint" joint1="right_finger_joint" joint2="drive_joint" polycoef="0 1 0 0 0" solref=".0001 1" solimp=".999 .9999 .0001" />
+  <joint name="mimic_right_inner_knuckle_joint" joint1="right_inner_knuckle_joint" joint2="drive_joint" polycoef="0 1 0 0 0" solref=".0001 1" solimp=".999 .9999 .0001" />
+</mujocoinclude>

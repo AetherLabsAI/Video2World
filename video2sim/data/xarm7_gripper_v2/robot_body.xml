@@ -1,0 +1,80 @@
+<mujocoinclude>
+  <body name="xarm_base" pos="0 0 0" quat="1 0 0 0">
+    <inertial pos="-0.021131 -0.0016302 0.056488" quat="0.696843 0.20176 0.10388 0.680376" mass="0.88556" diaginertia="0.00382023 0.00335282 0.00167725" />
+    <geom type="mesh" rgba="1 1 1 1" mesh="link_base.obj" />
+    <body name="link1" pos="0 0 0.267" quat="1.0 0.0 0.0 0.0">
+      <inertial pos="-0.0002 0.02905 -0.01233" quat="0.978953 -0.202769 -0.00441617 -0.0227264" mass="2.382" diaginertia="0.00569127 0.00533384 0.00293865" />
+      <joint name="joint1" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-50 50" damping="10" frictionloss="1" ref="0.0" />
+      <geom type="mesh" rgba="1 1 1 1" mesh="link1.obj" />
+      <body name="link2" quat="0.6532800966168686 -0.6532828682565682 -0.27059862409786645 -0.2705974760471129">
+        <inertial pos="0.00022 -0.12856 0.01735" quat="0.50198 0.86483 -0.00778841 0.00483285" mass="1.869" diaginertia="0.00959898 0.00937717 0.00201315" />
+        <joint name="joint2" pos="0 0 0" axis="0 0 1" range="-2.059 2.0944" actuatorfrcrange="-50 50" damping="10" frictionloss="1" ref="-0.7853981633974483" />
+        <geom type="mesh" rgba="1 1 1 1" mesh="link2.obj" />
+        <body name="link3" pos="0 -0.293 0" quat="0.7071052811843601 0.707108281185553 0.0 0.0">
+          <inertial pos="0.0466 -0.02463 -0.00768" quat="0.913819 0.289775 0.281481 -0.0416455" mass="1.6383" diaginertia="0.00351721 0.00294089 0.00195868" />
+          <joint name="joint3" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-30 30" damping="5" frictionloss="1" ref="0.0" />
+          <geom type="mesh" rgba="1 1 1 1" mesh="link3.obj" />
+          <body name="link4" pos="0.0525 0 0" quat="0.683011253001367 0.6830141507799982 -0.18301309012052958 0.1830123136630855">
+            <inertial pos="0.07047 -0.11575 0.012" quat="0.422108 0.852026 -0.126025 0.282832" mass="1.7269" diaginertia="0.00657137 0.00647948 0.00186763" />
+            <joint name="joint4" pos="0 0 0" axis="0 0 1" range="-0.19198 3.927" actuatorfrcrange="-30 30" damping="5" frictionloss="1" ref="0.5235987755982988" />
+            <geom type="mesh" rgba="1 1 1 1" mesh="link4.obj" />
+            <body name="link5" pos="0.0775 -0.3425 0" quat="0.7071052811843601 0.707108281185553 0.0 0.0">
+              <inertial pos="-0.00032 0.01604 -0.026" quat="0.999311 -0.0304457 0.000577067 0.0212082" mass="1.3203" diaginertia="0.00534729 0.00499076 0.0013489" />
+              <joint name="joint5" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-30 30" damping="5" frictionloss="1" ref="0.0" />
+              <geom type="mesh" rgba="1 1 1 1" mesh="link5.obj" />
+              <body name="link6" quat="0.5609843367651852 0.5609867168261524 -0.4304602477184175 0.4304584214334043">
+                <inertial pos="0.06469 0.03278 0.02141" quat="-0.217672 0.772419 0.16258 0.574069" mass="1.325" diaginertia="0.00245421 0.00221646 0.00107273" />
+                <joint name="joint6" pos="0 0 0" axis="0 0 1" range="-1.69297 3.14159" actuatorfrcrange="-20 20" damping="2" frictionloss="1" ref="1.3089969389957472" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="link6.obj" />
+                <body name="link7" pos="0.076 0.097 0" quat="0.7071052811843601 -0.707108281185553 0.0 0.0">
+                  <inertial pos="0 -0.00677 -0.01098" quat="0.487612 0.512088 -0.512088 0.487612" mass="0.17" diaginertia="0.000132176 9.3e-05 5.85236e-05" />
+                  <joint name="joint7" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-20 20" damping="2" frictionloss="1" ref="0.0" />
+                  <geom type="mesh" rgba="0.753 0.753 0.753 1" mesh="link7.obj" />
+                  <body name="link_eef">
+                    <body name="xarm_gripper_base_link">
+                      <inertial pos="-0.00065489 -0.0018497 0.048028" quat="0.997403 -0.0717512 -0.0061836 0.000477479" mass="0.54156" diaginertia="0.000471093 0.000332307 0.000254799" />
+                      <geom type="mesh" rgba="1 1 1 1" mesh="base_link" />
+                      <body name="left_outer_knuckle" pos="0 0.035 0.059098">
+                        <inertial pos="0 0.021559 0.015181" quat="0.47789 0.87842 0 0" mass="0.033618" diaginertia="1.9111e-05 1.79089e-05 1.90167e-06" />
+                        <joint name="drive_joint" pos="0 0 0" axis="1 0 0" range="0 0.85" actuatorfrcrange="-50 50" />
+                        <geom type="mesh" rgba="0.753 0.753 0.753 1" mesh="left_outer_knuckle" />
+                        <body name="left_finger" pos="0 0.035465 0.042039">
+                          <inertial pos="0 -0.016413 0.029258" quat="0.697634 0.115353 -0.115353 0.697634" mass="0.048304" diaginertia="1.88037e-05 1.7493e-05 3.56792e-06" />
+                          <joint name="left_finger_joint" pos="0 0 0" axis="-1 0 0" range="0 0.85" actuatorfrcrange="-50 50" />
+                          <geom type="mesh" rgba="0.753 0.753 0.753 1" mesh="left_finger_large_2" />
+                        </body>
+                      </body>
+                      <body name="left_inner_knuckle" pos="0 0.02 0.074098">
+                        <inertial pos="1.86601e-06 0.0220468 0.0261335" quat="0.664139 -0.242732 0.242713 0.664146" mass="0.0230126" diaginertia="8.34216e-06 6.0949e-06 2.75601e-06" />
+                        <joint name="left_inner_knuckle_joint" pos="0 0 0" axis="1 0 0" range="0 0.85" actuatorfrcrange="-50 50" />
+                        <geom type="mesh" rgba="0.753 0.753 0.753 1" mesh="left_inner_knuckle" />
+                      </body>
+                      <body name="right_outer_knuckle" pos="0 -0.035 0.059098">
+                        <inertial pos="0 -0.021559 0.015181" quat="0.87842 0.47789 0 0" mass="0.033618" diaginertia="1.9111e-05 1.79089e-05 1.90167e-06" />
+                        <joint name="right_outer_knuckle_joint" pos="0 0 0" axis="-1 0 0" range="0 0.85" actuatorfrcrange="-50 50" />
+                        <geom type="mesh" rgba="0.753 0.753 0.753 1" mesh="right_outer_knuckle" />
+                        <body name="right_finger" pos="0 -0.035465 0.042039">
+                          <inertial pos="0 0.016413 0.029258" quat="0.697634 -0.115356 0.115356 0.697634" mass="0.048304" diaginertia="1.88038e-05 1.7493e-05 3.56779e-06" />
+                          <joint name="right_finger_joint" pos="0 0 0" axis="1 0 0" range="0 0.85" actuatorfrcrange="-50 50" />
+                          <geom type="mesh" rgba="0.753 0.753 0.753 1" mesh="right_finger_large_2" />
+                        </body>
+                      </body>
+                      <body name="right_inner_knuckle" pos="0 -0.02 0.074098">
+                        <inertial pos="1.866e-06 -0.022047 0.026133" quat="0.66415 0.242702 -0.242721 0.664144" mass="0.023013" diaginertia="8.34209e-06 6.0949e-06 2.75601e-06" />
+                        <joint name="right_inner_knuckle_joint" pos="0 0 0" axis="-1 0 0" range="0 0.85" actuatorfrcrange="-50 50" />
+                        <geom type="mesh" rgba="0.753 0.753 0.753 1" mesh="right_inner_knuckle" />
+                      </body>
+                      <body name="link_tcp" pos="0 0 0.172">
+                        <site name="tcp" pos="0 0 0" size=".003" />
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </body>
+</mujocoinclude>

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video2world"
+version = "1.0.0"
+description = "Video2World: a benchmark for reconstructing manipulation videos as executable simulations"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = ["numpy>=1.24", "scipy", "trimesh>=4.0", "imageio[ffmpeg]>=2.31", "opencv-python-headless"]
+
+[project.optional-dependencies]
+sim = ["mani_skill>=3.0.1", "sapien>=3.0.3", "torch", "pytorch_kinematics", "mujoco==3.11.0"]
+
+[project.scripts]
+v2w = "v2w.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["v2w*", "video2sim*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.md", "*.txt", "*.xml", "*.urdf", "*.obj", "*.stl"]

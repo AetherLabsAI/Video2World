@@ -1,0 +1,454 @@
+{
+ "provider_tasks": {
+  "inhouse_06bbe1f0_task27_rgbd_r001": {
+   "task": "book",
+   "embodiment": "g1_omnipicker",
+   "dynamic_objects": [
+    "target"
+   ],
+   "required_entities": [
+    "target",
+    "receiver"
+   ],
+   "task_description": "Carry the initially held object, release it onto the receiver, and leave it settled.",
+   "robot_bases_world": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "quat_wxyz": [
+      1,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "dt": 0.05,
+   "gripper": "0 open, 1 closed",
+   "robot_asset": "g1_omnipicker",
+   "video_only": true
+  },
+  "inhouse_036f057e_task46_rgbd_r001": {
+   "task": "box",
+   "embodiment": "g1_omnipicker",
+   "dynamic_objects": [
+    "target"
+   ],
+   "required_entities": [
+    "target",
+    "receiver"
+   ],
+   "task_description": "Carry the initially held object, release it onto the receiver, and leave it settled.",
+   "robot_bases_world": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "quat_wxyz": [
+      1,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "dt": 0.05,
+   "gripper": "0 open, 1 closed",
+   "robot_asset": "g1_omnipicker",
+   "video_only": true
+  },
+  "inhouse_1c37c7ea_task6_rgbd_r001": {
+   "task": "bottle",
+   "embodiment": "g1_omnipicker",
+   "dynamic_objects": [
+    "target"
+   ],
+   "required_entities": [
+    "target"
+   ],
+   "task_description": "Grasp the object, lift it and hold it above its initial height.",
+   "robot_bases_world": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "quat_wxyz": [
+      1,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "dt": 0.05,
+   "gripper": "0 open, 1 closed",
+   "robot_asset": "g1_omnipicker",
+   "video_only": true
+  },
+  "inhouse_0ef5cc1d_task37_rgbd_r001": {
+   "task": "cracker",
+   "embodiment": "g1_omnipicker",
+   "dynamic_objects": [
+    "target"
+   ],
+   "required_entities": [
+    "target"
+   ],
+   "task_description": "Grasp the object, lift it and hold it above its initial height.",
+   "robot_bases_world": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "quat_wxyz": [
+      1,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "dt": 0.05,
+   "gripper": "0 open, 1 closed",
+   "robot_asset": "g1_omnipicker",
+   "video_only": true
+  },
+  "inhouse_77abb16d_task31_rgbd_r001": {
+   "task": "remote",
+   "embodiment": "g1_omnipicker",
+   "dynamic_objects": [
+    "target"
+   ],
+   "required_entities": [
+    "target"
+   ],
+   "task_description": "Grasp the object, lift it and hold it above its initial height.",
+   "robot_bases_world": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "quat_wxyz": [
+      1,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "dt": 0.05,
+   "gripper": "0 open, 1 closed",
+   "robot_asset": "g1_omnipicker",
+   "video_only": true
+  }
+ },
+ "visible_scene": {
+  "inhouse_06bbe1f0_task27_rgbd_r001": {
+   "path": "sources/inhouse/rgbd_formal/gt_supplement/inhouse_06bbe1f0_task27_rgbd_r001",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_036f057e_task46_rgbd_r001": {
+   "path": "sources/inhouse/rgbd_formal/gt_supplement/inhouse_036f057e_task46_rgbd_r001",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_1c37c7ea_task6_rgbd_r001": {
+   "path": "sources/inhouse/rgbd_formal/gt_supplement/inhouse_1c37c7ea_task6_rgbd_r001",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_0ef5cc1d_task37_rgbd_r001": {
+   "path": "sources/inhouse/rgbd_formal/gt_supplement/inhouse_0ef5cc1d_task37_rgbd_r001",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_77abb16d_task31_rgbd_r001": {
+   "path": "sources/inhouse/rgbd_formal/gt_supplement/inhouse_77abb16d_task31_rgbd_r001",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_337bd80c_task8_episode_r001": {
+   "path": "samples/inhouse_337bd80c_task8_episode_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_06bb4696_task10_episode_r001": {
+   "path": "samples/inhouse_06bb4696_task10_episode_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_071c4ac3_task18_episode_r001": {
+   "path": "samples/inhouse_071c4ac3_task18_episode_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_17c674b9_task19_episode_r001": {
+   "path": "samples/inhouse_17c674b9_task19_episode_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_01e339a0_task21_episode_r001": {
+   "path": "samples/inhouse_01e339a0_task21_episode_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_025187a2_task22_episode_r001": {
+   "path": "samples/inhouse_025187a2_task22_episode_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_620c7809_task31_episode_r001": {
+   "path": "samples/inhouse_620c7809_task31_episode_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_03eaa9f2_task47_episode_r001": {
+   "path": "samples/inhouse_03eaa9f2_task47_episode_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_3a553f73_task55_wallet_robot_r001": {
+   "path": "sources/inhouse/visible_scene/3a553f73/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_042b3b16_task74_wallet_robot_r001": {
+   "path": "sources/inhouse/visible_scene/042b3b16/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_03c154e1_task36_reviewed_r001": {
+   "path": "samples/inhouse_03c154e1_task36_reviewed_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_573c8ddb_task40_reviewed_r001": {
+   "path": "samples/inhouse_573c8ddb_task40_reviewed_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_00478d72_task72_reviewed_r001": {
+   "path": "samples/inhouse_00478d72_task72_reviewed_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_07bcc657_task73_reviewed_r001": {
+   "path": "samples/inhouse_07bcc657_task73_reviewed_r001/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  },
+  "inhouse_126f3d75_task31_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/126f3d75/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_3ce4e167_task31_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/3ce4e167/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_c68d8036_task31_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/c68d8036/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_0a5c5dba_task56_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/0a5c5dba/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_0048dd8e_task61_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/0048dd8e/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_0915ecc2_task17_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/0915ecc2/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_072585bb_task32_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/072585bb/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_335d5f4c_task39_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/335d5f4c/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_015fb5ca_task42_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/015fb5ca/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_0ac6d7ce_task44_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/0ac6d7ce/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_7217cfe2_task53_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/7217cfe2/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_d2930155_task55_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/d2930155/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_30b1f5e6_task57_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/30b1f5e6/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_e95097bb_task57_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/e95097bb/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_eb0ae4c0_task57_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/eb0ae4c0/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_03066e96_task59_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/03066e96/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_c8dc0a33_task90_point_robot_r001": {
+   "path": "sources/inhouse/visible_scene/c8dc0a33/scene_gt",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Single observed-context group; not an entity-count census."
+  },
+  "inhouse_06766809_task66_fryer_r021": {
+   "path": "samples/inhouse_06766809_task66_fryer_r021/scene_supplement",
+   "scope": "Owner-approved REAL RGB-D local visible surfaces; no complete-room truth. Existing task-visible GT entity annotations."
+  }
+ },
+ "observable_rotation": {
+  "inhouse_3a553f73_task55_wallet_robot_r001": {
+   "gt": "sources/inhouse/orientation/3a553f73/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_042b3b16_task74_wallet_robot_r001": {
+   "gt": "sources/inhouse/orientation/042b3b16/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_126f3d75_task31_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/126f3d75/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_3ce4e167_task31_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/3ce4e167/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_c68d8036_task31_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/c68d8036/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_0a5c5dba_task56_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/0a5c5dba/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_0048dd8e_task61_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/0048dd8e/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_0915ecc2_task17_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/0915ecc2/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_072585bb_task32_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/072585bb/real_orientation.npz",
+   "primary_axis": 2
+  },
+  "inhouse_335d5f4c_task39_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/335d5f4c/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_015fb5ca_task42_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/015fb5ca/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_0ac6d7ce_task44_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/0ac6d7ce/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_7217cfe2_task53_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/7217cfe2/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_d2930155_task55_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/d2930155/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_30b1f5e6_task57_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/30b1f5e6/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_e95097bb_task57_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/e95097bb/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_eb0ae4c0_task57_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/eb0ae4c0/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_03066e96_task59_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/03066e96/real_orientation.npz",
+   "primary_axis": 0
+  },
+  "inhouse_c8dc0a33_task90_point_robot_r001": {
+   "gt": "sources/inhouse/orientation/c8dc0a33/real_orientation.npz",
+   "primary_axis": 0
+  }
+ },
+ "object_model": {
+  "inhouse_126f3d75_task31_point_robot_r001": {
+   "scene": "samples/inhouse_126f3d75_task31_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_3ce4e167_task31_point_robot_r001": {
+   "scene": "samples/inhouse_3ce4e167_task31_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_c68d8036_task31_point_robot_r001": {
+   "scene": "samples/inhouse_c68d8036_task31_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_0a5c5dba_task56_point_robot_r001": {
+   "scene": "samples/inhouse_0a5c5dba_task56_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_0048dd8e_task61_point_robot_r001": {
+   "scene": "samples/inhouse_0048dd8e_task61_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_0915ecc2_task17_point_robot_r001": {
+   "scene": "samples/inhouse_0915ecc2_task17_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_072585bb_task32_point_robot_r001": {
+   "scene": "samples/inhouse_072585bb_task32_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_335d5f4c_task39_point_robot_r001": {
+   "scene": "samples/inhouse_335d5f4c_task39_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_015fb5ca_task42_point_robot_r001": {
+   "scene": "samples/inhouse_015fb5ca_task42_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_0ac6d7ce_task44_point_robot_r001": {
+   "scene": "samples/inhouse_0ac6d7ce_task44_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_7217cfe2_task53_point_robot_r001": {
+   "scene": "samples/inhouse_7217cfe2_task53_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_d2930155_task55_point_robot_r001": {
+   "scene": "samples/inhouse_d2930155_task55_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_30b1f5e6_task57_point_robot_r001": {
+   "scene": "samples/inhouse_30b1f5e6_task57_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_e95097bb_task57_point_robot_r001": {
+   "scene": "samples/inhouse_e95097bb_task57_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_eb0ae4c0_task57_point_robot_r001": {
+   "scene": "samples/inhouse_eb0ae4c0_task57_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_03066e96_task59_point_robot_r001": {
+   "scene": "samples/inhouse_03066e96_task59_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  },
+  "inhouse_c8dc0a33_task90_point_robot_r001": {
+   "scene": "samples/inhouse_c8dc0a33_task90_point_robot_r001/native_package/scene.json",
+   "entity": "target"
+  }
+ }
+}

@@ -1,0 +1,25 @@
+Wallet task supplement (rigid and elastic submissions are both supported):
+Rigid: protocol.json state_kind="rigid_object_pose"; submit a dynamic triangle
+mesh named target, omit target.deformable. The evaluator creates a dynamic rigid
+body with a convex-hull collider and observes the full submitted surface.
+Elastic: state_kind="complete_deformable_surface"; submit a closed, consistently
+oriented triangular shell and target.deformable.model="closed_particle_shell".
+Example elastic parameters: particle_radius_m=0.001, stretch_stiffness=1000,
+bend_stiffness=1, shear_stiffness=500, damping=0.1, pressure=0.
+Both modes use metres/kg/seconds and at most 5000 vertices / 20000 triangles.
+Author only initial object state; robot joint drives produce later motion.
+No pinning, object attachment or post-start pose/shape injection is accepted.
+
+For insertion, submit a physically open receiver mesh with side walls and bottom.
+receiver.interior uses entity_local center, half_extents_xy, bottom_z and rim_z;
+its cavity metadata must agree with the physical mesh. The object center must
+pass through the mouth, release and remain stable inside for the final 1 second.
+Protrusion above the rim is allowed. Complete surface containment is not required.
+Pick stages are grasp, lift at least 3cm, and terminal holding at least 5cm high;
+use the mesh bottom, not an arbitrary model origin. Public task_rules gives times.
+Both rigid and elastic wallet candidates use fingertip proximity and sustained
+relative holding as evidence; no contact forces are invented.
+
+Validate with staged wallet_contract.py. Actions must have exactly
+public_task.control_frames rows at 20Hz, followed by a fixed evaluator-owned
+2-second settle window. Do not lengthen actions to add attempts.

@@ -1,0 +1,10 @@
+<mujocoinclude>
+  <position name="act_joint1" joint="joint1" kp="1500" kv="80" ctrlrange="-6.28319 6.28319" />
+  <position name="act_joint2" joint="joint2" kp="1500" kv="80" ctrlrange="-2.059 2.0944" />
+  <position name="act_joint3" joint="joint3" kp="1500" kv="80" ctrlrange="-6.28319 6.28319" />
+  <position name="act_joint4" joint="joint4" kp="1500" kv="80" ctrlrange="-0.19198 3.927" />
+  <position name="act_joint5" joint="joint5" kp="1500" kv="80" ctrlrange="-6.28319 6.28319" />
+  <position name="act_joint6" joint="joint6" kp="1500" kv="80" ctrlrange="-1.69297 3.14159" />
+  <position name="act_joint7" joint="joint7" kp="1500" kv="80" ctrlrange="-6.28319 6.28319" />
+  <position name="act_gripper" joint="drive_joint" kp="100" kv="5" ctrlrange="0 .85" forcerange="-50 50" />
+</mujocoinclude>
