@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" fill="none">
+<defs>
+  <pattern id="grid" width="44" height="26" patternUnits="userSpaceOnUse" patternTransform="matrix(1 .48 -1 .48 450 275)"><path d="M44 0H0V26" stroke="#80937b" stroke-width=".65" opacity=".34"/></pattern>
+  <clipPath id="right"><path d="M486 0H900V700H486Z"/></clipPath>
+  <g id="world" stroke-linejoin="round">
+    <path d="M80 441 422 286 829 466 487 639Z" fill="#e2e5d8" stroke="#8c9b82" stroke-width="1.5"/>
+    <path d="M80 441v17l407 184v-3M487 639v3l342-158v-18" stroke="#8c9b82"/>
+    <path d="M104 441 423 298 805 467 487 615Z" fill="url(#grid)"/>
+    <ellipse cx="340" cy="454" rx="126" ry="34" fill="#afbaa3" fill-opacity=".22"/>
+    <path d="M270 435 325 409 402 441 346 469Z" fill="#b0baa4" stroke="#71836b" stroke-width="2"/>
+    <path d="M270 435v23l77 33 55-26v-24l-56 28Z" fill="#cad1bf" stroke="#71836b" stroke-width="2"/>
+    <path d="M346 469v22" stroke="#71836b" stroke-width="2"/>
+    <path d="M303 434v-81c0-25 59-27 60-3v85c0 21-59 20-60-1Z" fill="#dbe0d1" stroke="#61765c" stroke-width="2"/>
+    <ellipse cx="333" cy="352" rx="30" ry="14" fill="#a8b69c" stroke="#61765c" stroke-width="2"/>
+    <path d="m308 353-39-104c-8-25 39-46 52-22l38 108c9 29-34 41-51 18Z" fill="#dce1d2" stroke="#61765c" stroke-width="2"/>
+    <path d="m282 259 32 83c4 8 10 10 15 11" stroke="#f4f2ea" stroke-width="6"/>
+    <ellipse cx="294" cy="242" rx="33" ry="29" transform="rotate(-20 294 242)" fill="#8fa381" stroke="#61765c" stroke-width="2"/>
+    <ellipse cx="294" cy="242" rx="17" ry="15" fill="#d6ddcb" stroke="#61765c" stroke-width="2"/>
+    <path d="m292 212 143-78c28-15 55 21 30 42l-146 85c-24 10-48-35-27-49Z" fill="#e1e5d7" stroke="#61765c" stroke-width="2"/>
+    <path d="m315 224 126-71" stroke="#f4f2ea" stroke-width="6"/>
+    <ellipse cx="453" cy="155" rx="28" ry="29" fill="#a2b396" stroke="#61765c" stroke-width="2"/>
+    <ellipse cx="453" cy="155" rx="14" ry="16" fill="#dce2d2" stroke="#61765c" stroke-width="2"/>
+    <path d="m470 134 97 111c17 22-19 52-37 31l-99-108c-17-20 18-56 39-34Z" fill="#dce2d1" stroke="#61765c" stroke-width="2"/>
+    <path d="m470 154 76 89" stroke="#f4f2ea" stroke-width="6"/>
+    <ellipse cx="550" cy="262" rx="29" ry="25" transform="rotate(-40 550 262)" fill="#a8b99c" stroke="#61765c" stroke-width="2"/>
+    <path d="m548 284 18 32 23-11-17-35Z" fill="#bdcbb0" stroke="#61765c" stroke-width="2"/>
+    <path d="m564 313 15 16 22-13-13-15Z" fill="#677e5d" stroke="#61765c" stroke-width="2"/>
+    <path d="m576 327 3 28 9 6 5-7-5-22m12-15 13 21-1 14-10 1-2-17" stroke="#536a4b" stroke-width="5"/>
+    <ellipse cx="656" cy="478" rx="62" ry="27" fill="#aebd9f" fill-opacity=".2"/>
+    <ellipse cx="655" cy="463" rx="53" ry="24" fill="#c7d4bb" stroke="#68875b" stroke-width="2"/>
+    <path d="M602 463v8c0 33 106 33 106 0v-8M651 463V365h9v98" stroke="#68875b" stroke-width="2"/>
+    <path d="m609 360 24-58h44l26 58c-15 22-79 22-94 0Z" fill="#d4dfcb" stroke="#68875b" stroke-width="2"/>
+    <ellipse cx="655" cy="302" rx="22" ry="8" fill="#c0d0b4" stroke="#68875b" stroke-width="2"/>
+  </g>
+</defs>
+<use href="#world"/>
+<g clip-path="url(#right)">
+  <path d="M486 60H850V650H486Z" fill="#f4f2ea" fill-opacity=".4"/>
+  <use href="#world" fill="none" opacity=".65"/>
+  <g stroke="#4b7553" stroke-width="1" opacity=".8">
+    <path d="m488 154 57 122m-48-111 57 121m-46-108 57 94m-42-79 51 70M534 241l32-17m-24 28 34-18m-28 29 37-18m-18 58 22-11m-15 22 21-11"/>
+    <path d="m633 302-8 68m30-68v74m22-74 10 67m-75-21c24 15 62 15 87-1m-83-10c24 15 52 15 79-1m-73-10c18 10 45 10 68-1m-63-10c20 7 36 7 56-1M602 463l106 8m-91-23 79 37m-41-46v49m-41-11 81-28"/>
+  </g>
+  <g fill="#4e7f52"><circle cx="550" cy="262" r="3"/><circle cx="566" cy="316" r="3"/><circle cx="633" cy="302" r="3"/><circle cx="677" cy="302" r="3"/><circle cx="609" cy="360" r="3"/><circle cx="703" cy="360" r="3"/><circle cx="655" cy="463" r="3"/><circle cx="487" cy="639" r="3"/><circle cx="829" cy="466" r="3"/></g>
+</g>
+<path d="M486 84V614" stroke="#527255" stroke-dasharray="3 7" opacity=".55"/>
+<path d="M573 342c-21 54 36 61 66 30" stroke="#5b7a52" stroke-width="1.5" stroke-dasharray="4 7"/>
+<g stroke="#839579" stroke-width="1"><path d="M178 261h-43v63M715 192h52v65M738 552h40v-42M231 539h-44v-39"/></g>
+<g fill="#65765c" font-family="Arial, sans-serif" font-size="10" letter-spacing="1"><text x="132" y="246">OBSERVATION SPACE</text><text x="607" y="177">RECONSTRUCTED GEOMETRY</text></g>
+<g stroke="#6b825f" stroke-width="1.4"><path d="M764 582v-37m0 37 32-16m-32 16-26-14"/></g>
+<g fill="#65765c" font-family="Arial, sans-serif" font-size="10"><text x="760" y="537">z</text><text x="800" y="568">x</text><text x="726" y="567">y</text></g>
+</svg>
