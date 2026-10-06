@@ -9,7 +9,7 @@ Minghao Fu<sup>1,2</sup>, Fan Feng<sup>1</sup>, Biwei Huang<sup>1,2</sup>
 <sup>1</sup>Aether AI &nbsp;&nbsp; <sup>2</sup>University of California, San Diego<br>
 <sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding author and project lead
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](docs/paper.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2610.04432-b31b1b.svg)](https://arxiv.org/abs/2610.04432)
 [![Project Page](https://img.shields.io/badge/Project-Page-4c8bf5.svg)](https://aetherlabsai.github.io/Video2World)
 [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Video2World-ffcc4d.svg)](https://huggingface.co/datasets/AetherLabs-AI/Video2World)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
@@ -161,6 +161,7 @@ docs/          benchmark protocol, custom-agent tutorial
   author  = {Tang, Jinzhou and Zhang, Zijun and Yang, Jing and Yan, Yuchen and Zhou, Kun and Mao, Lingjun and
              Han, Ruobing and Cao, Jinglin and Xu, Wenpeng and He, Lukun and Fu, Minghao and Feng, Fan and
              Huang, Biwei},
+  journal = {arXiv preprint arXiv:2610.04432},
   year    = {2026}
 }
 ```

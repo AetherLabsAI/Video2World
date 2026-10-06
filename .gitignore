@@ -5,3 +5,4 @@ __pycache__/
 v2w.local.json
 MUJOCO_LOG.TXT
 .venv*/
+docs/paper.pdf
