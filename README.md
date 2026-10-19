@@ -11,6 +11,7 @@ Minghao Fu<sup>1,2</sup>, Fan Feng<sup>1</sup>, Biwei Huang<sup>1,2</sup>
 
 [![arXiv](https://img.shields.io/badge/arXiv-2610.04432-b31b1b.svg)](https://arxiv.org/abs/2610.04432)
 [![Project Page](https://img.shields.io/badge/Project-Page-4c8bf5.svg)](https://aetherlabsai.github.io/Video2World)
+[![Leaderboard](https://img.shields.io/badge/Leaderboard-Live-d97757.svg)](https://aetherlabsai.github.io/Video2World/leaderboard/)
 [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Video2World-ffcc4d.svg)](https://huggingface.co/datasets/AetherLabs-AI/Video2World)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
