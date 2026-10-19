@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-17",
+  "model_ids": [
+    "gpt-6-1-sol",
+    "fable-5-1",
+    "meta-muse",
+    "opus-5-5"
+  ],
+  "selection": {
+    "common_cases": 222,
+    "selected_cases": 5,
+    "note": "One source video, four coding agents. These five illustrative cases were selected for an earlier Opus 5.5 versus Fable 5.1 comparison; use the full leaderboard for aggregate performance.",
+    "criterion": "Retains the five previously featured cases; all four measured models use the same source video on each case. Selection originally required Opus success and Fable failure; this is not a random sample.",
+    "source": "Owner-published V2 records, retrieved 2026-10-17; formal task_success judgments and model rollout assets."
+  },
+  "cases": [
+    {
+      "id": "fbraw_2023-01-26-00_00_38_desk_leg2",
+      "family": "leg-insert",
+      "title": "Desk leg insertion",
+      "description": "Desk-leg insertion, from a FurnitureBench robot video.",
+      "dataset": "FurnitureBench",
+      "source": {
+        "video": "assets/cases/opus55/05_desk_leg_insert/human_assisted.mp4",
+        "poster": "assets/cases/opus55/05_desk_leg_insert/human_assisted.webp"
+      },
+      "models": {
+        "gpt-6-1-sol": {
+          "status": "verified",
+          "name": "GPT-6.1 Sol",
+          "video": "assets/cases/frontier/fbraw_2023-01-26-00_00_38_desk_leg2/gpt-6-1-sol.mp4",
+          "poster": "assets/cases/frontier/fbraw_2023-01-26-00_00_38_desk_leg2/gpt-6-1-sol.webp",
+          "success": true,
+          "progress": 1.0,
+          "metrics": {
+            "scene_cd": 2.516285430223584,
+            "terminal_trans": 4.334091702054795
+          },
+          "description": "Formal evaluation: task success.",
+          "provenance": {
+            "run_label": "gpt61sol_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+            "original_rollout_sha256": "3fcd7d3101fe8e088338ba137afca947a8f8ab8e6a4b67f8cc277fe3f2dd7dc2",
+            "web_rollout_sha256": "02b42196a1dc67ec8f7b4e2897f9d9c7af8ada544c28e46ed6cc6a060d5ec239",
+            "published_record_sha256": "9af60d3979e1923638d3f751043975e3b8a1efb87a848e57aeb4775abbc7aa71",
+            "published_at": "2026-10-17T15:07:46Z"
+          }
+        },
+        "fable-5-1": {
+          "status": "verified",
+          "name": "Claude Fable 5.1",
+          "video": "assets/cases/opus55/05_desk_leg_insert/fable51_failure_sim.mp4",
+          "poster": "assets/cases/opus55/05_desk_leg_insert/fable51_failure_sim.webp",
+          "success": false,
+          "progress": 0.25,
+          "metrics": {
+            "scene_cd": 2.400224107242652,
+            "terminal_trans": 32.45536006351686
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "fable51_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+            "original_rollout_sha256": "2b8cc6e242a7e4f81eecb1b9e669623626545c9d9087c0eefd6dd6f56f52e693",
+            "web_rollout_sha256": "2b8cc6e242a7e4f81eecb1b9e669623626545c9d9087c0eefd6dd6f56f52e693",
+            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "meta-muse": {
+          "status": "verified",
+          "name": "Meta Muse Wonder",
+          "video": "assets/cases/frontier/fbraw_2023-01-26-00_00_38_desk_leg2/meta-muse.mp4",
+          "poster": "assets/cases/frontier/fbraw_2023-01-26-00_00_38_desk_leg2/meta-muse.webp",
+          "success": false,
+          "progress": 0.25,
+          "metrics": {
+            "scene_cd": 9.721084434574243,
+            "terminal_trans": 8.93032434440812
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "musewonder_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+            "original_rollout_sha256": "d1c7cb0d20c2e2143b7942f0dfb72f3c861dc5f352778e13946e3cf0e33d6a6f",
+            "web_rollout_sha256": "ad3efd52683a6fd732e66e86fab4c1444fe3560ab5c0ce9a77e76d710a745b5f",
+            "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "opus-5-5": {
+          "status": "verified",
+          "name": "Claude Opus 5.5",
+          "video": "assets/cases/opus55/05_desk_leg_insert/opus55_success_sim.mp4",
+          "poster": "assets/cases/opus55/05_desk_leg_insert/opus55_success_sim.webp",
+          "success": true,
+          "progress": 1.0,
+          "metrics": {
+            "scene_cd": 2.86322980612236,
+            "terminal_trans": 2.44188999038955
+          },
+          "description": "Formal evaluation: task success.",
+          "provenance": {
+            "run_label": "opus55_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+            "original_rollout_sha256": "3b348ce4743ef53c29a147fac8ec8385fc8c91844e6b72697005d2c1b6c10649",
+            "web_rollout_sha256": "3b348ce4743ef53c29a147fac8ec8385fc8c91844e6b72697005d2c1b6c10649",
+            "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+      "family": "droid-pick-place",
+      "title": "Pick-and-place",
+      "description": "Pick-and-place, from a DROID robot video.",
+      "dataset": "DROID",
+      "source": {
+        "video": "assets/cases/opus55/01_droid_orange_pick_place/human_assisted.mp4",
+        "poster": "assets/cases/opus55/01_droid_orange_pick_place/human_assisted.webp"
+      },
+      "models": {
+        "gpt-6-1-sol": {
+          "status": "verified",
+          "name": "GPT-6.1 Sol",
+          "video": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/gpt-6-1-sol.mp4",
+          "poster": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/gpt-6-1-sol.webp",
+          "success": true,
+          "progress": 1.0,
+          "metrics": {
+            "scene_cd": 1.571011053639731,
+            "terminal_trans": 0.7855874374614401
+          },
+          "description": "Formal evaluation: task success.",
+          "provenance": {
+            "run_label": "gpt61sol_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+            "original_rollout_sha256": "6b5ea588d2bfca7b81263589b6de1218d6c35fa1f649fa57772a6097c377c60c",
+            "web_rollout_sha256": "dba3939eb1a1249d5071192f5b2e2c4eef52d618bc8161d2ab52ad9af858e8df",
+            "published_record_sha256": "9af60d3979e1923638d3f751043975e3b8a1efb87a848e57aeb4775abbc7aa71",
+            "published_at": "2026-10-17T15:07:46Z"
+          }
+        },
+        "fable-5-1": {
+          "status": "verified",
+          "name": "Claude Fable 5.1",
+          "video": "assets/cases/opus55/01_droid_orange_pick_place/fable51_failure_sim.mp4",
+          "poster": "assets/cases/opus55/01_droid_orange_pick_place/fable51_failure_sim.webp",
+          "success": false,
+          "progress": 0.0,
+          "metrics": {
+            "scene_cd": 14.171407409192069,
+            "terminal_trans": 100.0
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "fable51_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+            "original_rollout_sha256": "5e9767ddd99288a0ecba06847dd13ce6f6334c472da0eef9abd359d87a165442",
+            "web_rollout_sha256": "5e9767ddd99288a0ecba06847dd13ce6f6334c472da0eef9abd359d87a165442",
+            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "meta-muse": {
+          "status": "verified",
+          "name": "Meta Muse Wonder",
+          "video": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/meta-muse.mp4",
+          "poster": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/meta-muse.webp",
+          "success": true,
+          "progress": 1.0,
+          "metrics": {
+            "scene_cd": 2.001384960906405,
+            "terminal_trans": 0.7034068701682137
+          },
+          "description": "Formal evaluation: task success.",
+          "provenance": {
+            "run_label": "musewonder_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+            "original_rollout_sha256": "70758a07ca526f517cf58ce2540e2694474d5c7f356d9598115baa814add4125",
+            "web_rollout_sha256": "68aa580d10b2c731fd39a6c367c71effb50ebdfe1b6de9712602efd3d4f5003d",
+            "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "opus-5-5": {
+          "status": "verified",
+          "name": "Claude Opus 5.5",
+          "video": "assets/cases/opus55/01_droid_orange_pick_place/opus55_success_sim.mp4",
+          "poster": "assets/cases/opus55/01_droid_orange_pick_place/opus55_success_sim.webp",
+          "success": true,
+          "progress": 1.0,
+          "metrics": {
+            "scene_cd": 1.0831215502223375,
+            "terminal_trans": 1.2214986869764022
+          },
+          "description": "Formal evaluation: task success.",
+          "provenance": {
+            "run_label": "opus55_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+            "original_rollout_sha256": "0567ba6ae25bebdcd276fdfe7bb6af84fd1223765c24541bce899210f9ba78ba",
+            "web_rollout_sha256": "0567ba6ae25bebdcd276fdfe7bb6af84fd1223765c24541bce899210f9ba78ba",
+            "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "dexycb_s01_142517",
+      "family": "dexycb-lift-bimanual",
+      "title": "Two-handed lift",
+      "description": "Two-handed lift, from a DexYCB video.",
+      "dataset": "DexYCB",
+      "source": {
+        "video": "assets/cases/opus55/02_dexycb_bimanual_lift/human_assisted.mp4",
+        "poster": "assets/cases/opus55/02_dexycb_bimanual_lift/human_assisted.webp"
+      },
+      "models": {
+        "gpt-6-1-sol": {
+          "status": "verified",
+          "name": "GPT-6.1 Sol",
+          "video": "assets/cases/frontier/dexycb_s01_142517/gpt-6-1-sol.mp4",
+          "poster": "assets/cases/frontier/dexycb_s01_142517/gpt-6-1-sol.webp",
+          "success": false,
+          "progress": 0.3333333333333333,
+          "metrics": {
+            "scene_cd": 6.737200511846967
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "gpt61sol_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "5ff6701e5d0fb085b69b184906e15d5e0fe9782f6ddfcf4c238c1f0d832c3c87",
+            "original_rollout_sha256": "d64c6bc9c2eacf08b27a056da213125740f8b732685cd92861c33d0f0755d447",
+            "web_rollout_sha256": "113ec28f90ec84f4cceed34135f5d82047cec29e37c53c3bbc7804580d595132",
+            "published_record_sha256": "9af60d3979e1923638d3f751043975e3b8a1efb87a848e57aeb4775abbc7aa71",
+            "published_at": "2026-10-17T15:07:46Z"
+          }
+        },
+        "fable-5-1": {
+          "status": "verified",
+          "name": "Claude Fable 5.1",
+          "video": "assets/cases/opus55/02_dexycb_bimanual_lift/fable51_failure_sim.mp4",
+          "poster": "assets/cases/opus55/02_dexycb_bimanual_lift/fable51_failure_sim.webp",
+          "success": false,
+          "progress": 0.3333333333333333,
+          "metrics": {
+            "scene_cd": 11.39024195510882
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "fable51_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "5ff6701e5d0fb085b69b184906e15d5e0fe9782f6ddfcf4c238c1f0d832c3c87",
+            "original_rollout_sha256": "e0ee341f20ea2614abb54732eb4061ab85aecc350c0395c01cf3e5f6fcda79c9",
+            "web_rollout_sha256": "8c74d169de0a5544a1e985942a6aa91c390be2269a00ecf75ee4831eeac1c2ac",
+            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "meta-muse": {
+          "status": "verified",
+          "name": "Meta Muse Wonder",
+          "video": "assets/cases/frontier/dexycb_s01_142517/meta-muse.mp4",
+          "poster": "assets/cases/frontier/dexycb_s01_142517/meta-muse.webp",
+          "success": false,
+          "progress": 0.0,
+          "metrics": {
+            "scene_cd": 4.918095213825429
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "musewonder_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "5ff6701e5d0fb085b69b184906e15d5e0fe9782f6ddfcf4c238c1f0d832c3c87",
+            "original_rollout_sha256": "a71df9b7551b18f09051855d5ef0f916d5f2172076c98807d5f42576d2142149",
+            "web_rollout_sha256": "7f681d2b404fced150a0d5f0e5545447524cdbf15f9adcb7aa63108b1d365ceb",
+            "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "opus-5-5": {
+          "status": "verified",
+          "name": "Claude Opus 5.5",
+          "video": "assets/cases/opus55/02_dexycb_bimanual_lift/opus55_success_sim.mp4",
+          "poster": "assets/cases/opus55/02_dexycb_bimanual_lift/opus55_success_sim.webp",
+          "success": true,
+          "progress": 1.0,
+          "metrics": {
+            "scene_cd": 3.6205310965013315
+          },
+          "description": "Formal evaluation: task success.",
+          "provenance": {
+            "run_label": "opus55_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "5ff6701e5d0fb085b69b184906e15d5e0fe9782f6ddfcf4c238c1f0d832c3c87",
+            "original_rollout_sha256": "6e2604005a49e17789182a33f820dede76920c6dbfbfad49fa35c2cbd7a61a7b",
+            "web_rollout_sha256": "cc291ea43d5649e360970e6da262b0207edfdbb908dc41d48d7b22606c113d1d",
+            "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "hot3d_002498",
+      "family": "hot3d-pickplace-bimanual",
+      "title": "Two-handed pick-and-place",
+      "description": "Two-handed pick-and-place, from a HOT3D video.",
+      "dataset": "HOT3D",
+      "source": {
+        "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/human_assisted.mp4",
+        "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/human_assisted.webp"
+      },
+      "models": {
+        "gpt-6-1-sol": {
+          "status": "verified",
+          "name": "GPT-6.1 Sol",
+          "video": "assets/cases/frontier/hot3d_002498/gpt-6-1-sol.mp4",
+          "poster": "assets/cases/frontier/hot3d_002498/gpt-6-1-sol.webp",
+          "success": false,
+          "progress": 0.25,
+          "metrics": {
+            "scene_cd": 1.9332853835554578,
+            "terminal_trans": 30.071510959758314
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "gpt61sol_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+            "original_rollout_sha256": "b4ae0cdc3ef650f815f77749fd51de6ffc7e6954acc7eb896f7bf202ec126e1d",
+            "web_rollout_sha256": "4c2ed4e341b9cd85d9d3dfe58338d64ce54ca20d4ed2dc6394231ec4a76f4f90",
+            "published_record_sha256": "9af60d3979e1923638d3f751043975e3b8a1efb87a848e57aeb4775abbc7aa71",
+            "published_at": "2026-10-17T15:07:46Z"
+          }
+        },
+        "fable-5-1": {
+          "status": "verified",
+          "name": "Claude Fable 5.1",
+          "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/fable51_failure_sim.mp4",
+          "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/fable51_failure_sim.webp",
+          "success": false,
+          "progress": 0.25,
+          "metrics": {
+            "scene_cd": 3.159203551308527,
+            "terminal_trans": 24.307016236318514
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "fable51_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+            "original_rollout_sha256": "23d0fdf6aba35b9198bbc718f05b4434ec988b6528c341ce543edb9e6843f13b",
+            "web_rollout_sha256": "d8b9ff013787fecdf40350fc647b44415191e07a7076e6dfa988d8571505fb1f",
+            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "meta-muse": {
+          "status": "verified",
+          "name": "Meta Muse Wonder",
+          "video": "assets/cases/frontier/hot3d_002498/meta-muse.mp4",
+          "poster": "assets/cases/frontier/hot3d_002498/meta-muse.webp",
+          "success": false,
+          "progress": 0.0,
+          "metrics": {
+            "scene_cd": 12.747564902640569,
+            "terminal_trans": 100.0
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "musewonder_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+            "original_rollout_sha256": "d95fbf84cef3fd27d884268eece6e98d0ec2da508d47008f8c48859cc3c500b7",
+            "web_rollout_sha256": "07eded3ccf94dd0645a8d0752ece34656fad4604b42b7d8e1e631a80b5e6d86c",
+            "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "opus-5-5": {
+          "status": "verified",
+          "name": "Claude Opus 5.5",
+          "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/opus55_success_sim.mp4",
+          "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/opus55_success_sim.webp",
+          "success": true,
+          "progress": 1.0,
+          "metrics": {
+            "scene_cd": 2.1807538775038653,
+            "terminal_trans": 5.047565460721531
+          },
+          "description": "Formal evaluation: task success.",
+          "provenance": {
+            "run_label": "opus55_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+            "original_rollout_sha256": "b7a1576715a36a47daa8e068c6e655e28fa6ea18acc1ec682c8600eb8e54613c",
+            "web_rollout_sha256": "d6d3f4cdefd0ca5559aca842db2e44c6629d733198957fd02022233b19f41e1d",
+            "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "fbraw_2023-01-22-22_45_54_lamp_bulb",
+      "family": "bulb-insert",
+      "title": "Lamp bulb insertion",
+      "description": "Lamp-bulb insertion, from a FurnitureBench robot video.",
+      "dataset": "FurnitureBench",
+      "source": {
+        "video": "assets/cases/opus55/04_lamp_bulb_insert/human_assisted.mp4",
+        "poster": "assets/cases/opus55/04_lamp_bulb_insert/human_assisted.webp"
+      },
+      "models": {
+        "gpt-6-1-sol": {
+          "status": "verified",
+          "name": "GPT-6.1 Sol",
+          "video": "assets/cases/frontier/fbraw_2023-01-22-22_45_54_lamp_bulb/gpt-6-1-sol.mp4",
+          "poster": "assets/cases/frontier/fbraw_2023-01-22-22_45_54_lamp_bulb/gpt-6-1-sol.webp",
+          "success": false,
+          "progress": 0.0,
+          "metrics": {
+            "scene_cd": 4.768344659912789,
+            "terminal_trans": 18.747596514736017
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "gpt61sol_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+            "original_rollout_sha256": "f26e338ca138afbbf318a87bd422f67baf06398fda51314560d5fecb0bd49ee7",
+            "web_rollout_sha256": "b40f6883aa7cee5f16d0719917cc578fc51f38111d8ea352bd6fb983beeb2179",
+            "published_record_sha256": "9af60d3979e1923638d3f751043975e3b8a1efb87a848e57aeb4775abbc7aa71",
+            "published_at": "2026-10-17T15:07:46Z"
+          }
+        },
+        "fable-5-1": {
+          "status": "verified",
+          "name": "Claude Fable 5.1",
+          "video": "assets/cases/opus55/04_lamp_bulb_insert/fable51_failure_sim.mp4",
+          "poster": "assets/cases/opus55/04_lamp_bulb_insert/fable51_failure_sim.webp",
+          "success": false,
+          "progress": 0.75,
+          "metrics": {
+            "scene_cd": 5.07350344768459,
+            "terminal_trans": 100.0
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "fable51_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+            "original_rollout_sha256": "ee025f7290bc791a8b7b48430e88c625bf628510bdf3638c78bc012f938197bf",
+            "web_rollout_sha256": "ee025f7290bc791a8b7b48430e88c625bf628510bdf3638c78bc012f938197bf",
+            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "meta-muse": {
+          "status": "verified",
+          "name": "Meta Muse Wonder",
+          "video": "assets/cases/frontier/fbraw_2023-01-22-22_45_54_lamp_bulb/meta-muse.mp4",
+          "poster": "assets/cases/frontier/fbraw_2023-01-22-22_45_54_lamp_bulb/meta-muse.webp",
+          "success": false,
+          "progress": 0.0,
+          "metrics": {
+            "scene_cd": 9.967510366670572,
+            "terminal_trans": 100.0
+          },
+          "description": "Formal evaluation: task failed.",
+          "provenance": {
+            "run_label": "musewonder_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+            "original_rollout_sha256": "2f48eaccf2f50ee961d8f92050b00ef0723e585b5039c2c269026dcca09af87d",
+            "web_rollout_sha256": "952ec998e29334551bda6802c885fc2629b056d75cfa9c36ce69417315592b3a",
+            "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        },
+        "opus-5-5": {
+          "status": "verified",
+          "name": "Claude Opus 5.5",
+          "video": "assets/cases/opus55/04_lamp_bulb_insert/opus55_success_sim.mp4",
+          "poster": "assets/cases/opus55/04_lamp_bulb_insert/opus55_success_sim.webp",
+          "success": true,
+          "progress": 1.0,
+          "metrics": {
+            "scene_cd": 3.0785697242999985,
+            "terminal_trans": 1.406821049967381
+          },
+          "description": "Formal evaluation: task success.",
+          "provenance": {
+            "run_label": "opus55_v2",
+            "evaluator_version": "eval2/4 (rev5 scoring tree)",
+            "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+            "original_rollout_sha256": "099f95477a9f07ddb1d212b2eff51bf91f7fad38052634980614909c2fa08ba9",
+            "web_rollout_sha256": "099f95477a9f07ddb1d212b2eff51bf91f7fad38052634980614909c2fa08ba9",
+            "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+            "published_at": "2026-10-15T08:44:39Z"
+          }
+        }
+      }
+    }
+  ]
+}

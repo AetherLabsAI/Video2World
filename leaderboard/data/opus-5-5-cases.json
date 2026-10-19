@@ -1,0 +1,257 @@
+{
+  "model_id": "opus-5-5",
+  "status": "verified",
+  "selection": {
+    "criterion": "same case and source video; opus55 task_success=true; fable51 task_success=false",
+    "common_cases": 222,
+    "matching_cases": 24,
+    "selected_cases": 5,
+    "baseline_model": "Claude Fable 5.1",
+    "note": "Videos copied from opus55_cases (hash-verified); H.264 clips re-muxed for web streaming, case 01 source transcoded from MPEG-4 Part 2 to H.264."
+  },
+  "cases": [
+    {
+      "id": "fbraw_2023-01-26-00_00_38_desk_leg2",
+      "family": "leg-insert",
+      "title": "Desk leg insertion",
+      "description": "Desk-leg insertion, from a FurnitureBench robot video.",
+      "dataset": "FurnitureBench",
+      "provenance": {
+        "run_label": "opus55_v2 vs fable51_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+        "opus_rollout_sha256": "3b348ce4743ef53c29a147fac8ec8385fc8c91844e6b72697005d2c1b6c10649",
+        "baseline_rollout_sha256": "2b8cc6e242a7e4f81eecb1b9e669623626545c9d9087c0eefd6dd6f56f52e693"
+      },
+      "source": {
+        "video": "assets/cases/opus55/05_desk_leg_insert/human_assisted.mp4",
+        "poster": "assets/cases/opus55/05_desk_leg_insert/human_assisted.webp"
+      },
+      "model": {
+        "video": "assets/cases/opus55/05_desk_leg_insert/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/05_desk_leg_insert/opus55_success_sim.webp",
+        "success": true,
+        "progress": null,
+        "description": "Formal evaluation: task success.",
+        "final": "terminal error 2.44 cm · scene CD 2.86 cm"
+      },
+      "baseline": {
+        "name": "Claude Fable 5.1",
+        "video": "assets/cases/opus55/05_desk_leg_insert/fable51_failure_sim.mp4",
+        "poster": "assets/cases/opus55/05_desk_leg_insert/fable51_failure_sim.webp",
+        "success": false,
+        "progress": null,
+        "description": "Formal evaluation: task failed.",
+        "final": "terminal error 32.46 cm · scene CD 2.40 cm"
+      },
+      "analysis": "Fable 5.1 has slightly lower scene CD (2.40 cm vs 2.86 cm), yet its formal task judgment is a failure; Opus 5.5 passes. Reported terminal errors are 32.46 cm and 2.44 cm respectively. Similar scene-level geometry scores can accompany different task outcomes; these metrics alone do not isolate the cause.",
+      "highlights": [
+        {
+          "label": "Terminal error",
+          "unit": "cm",
+          "better": "lower",
+          "model": 2.44,
+          "baseline": 32.46
+        }
+      ]
+    },
+    {
+      "id": "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+      "family": "droid-pick-place",
+      "title": "Pick-and-place",
+      "description": "Pick-and-place, from a DROID robot video.",
+      "dataset": "DROID",
+      "provenance": {
+        "run_label": "opus55_v2 vs fable51_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+        "opus_rollout_sha256": "0567ba6ae25bebdcd276fdfe7bb6af84fd1223765c24541bce899210f9ba78ba",
+        "baseline_rollout_sha256": "5e9767ddd99288a0ecba06847dd13ce6f6334c472da0eef9abd359d87a165442"
+      },
+      "source": {
+        "video": "assets/cases/opus55/01_droid_orange_pick_place/human_assisted.mp4",
+        "poster": "assets/cases/opus55/01_droid_orange_pick_place/human_assisted.webp"
+      },
+      "model": {
+        "video": "assets/cases/opus55/01_droid_orange_pick_place/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/01_droid_orange_pick_place/opus55_success_sim.webp",
+        "success": true,
+        "progress": null,
+        "description": "Formal evaluation: task success.",
+        "final": "terminal error 1.22 cm · scene CD 1.08 cm"
+      },
+      "baseline": {
+        "name": "Claude Fable 5.1",
+        "video": "assets/cases/opus55/01_droid_orange_pick_place/fable51_failure_sim.mp4",
+        "poster": "assets/cases/opus55/01_droid_orange_pick_place/fable51_failure_sim.webp",
+        "success": false,
+        "progress": null,
+        "description": "Formal evaluation: task failed.",
+        "final": "terminal error 100.00 cm · scene CD 14.17 cm"
+      },
+      "analysis": "Opus 5.5 passes the formal task evaluation, with scene CD 1.08 cm and reported terminal error 1.22 cm. Fable 5.1 fails, with scene CD 14.17 cm and reported terminal error 100.00 cm. The error is shown as reported by the evaluator; inspect the rollouts alongside the task judgments.",
+      "highlights": [
+        {
+          "label": "Terminal error",
+          "unit": "cm",
+          "better": "lower",
+          "model": 1.22,
+          "baseline": 100.0,
+          "baseline_capped": true
+        },
+        {
+          "label": "Scene CD",
+          "unit": "cm",
+          "better": "lower",
+          "model": 1.08,
+          "baseline": 14.17
+        }
+      ]
+    },
+    {
+      "id": "dexycb_s01_142517",
+      "family": "dexycb-lift-bimanual",
+      "title": "Two-handed lift",
+      "description": "Two-handed lift, from a DexYCB video.",
+      "dataset": "DexYCB",
+      "provenance": {
+        "run_label": "opus55_v2 vs fable51_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "5ff6701e5d0fb085b69b184906e15d5e0fe9782f6ddfcf4c238c1f0d832c3c87",
+        "opus_rollout_sha256": "6e2604005a49e17789182a33f820dede76920c6dbfbfad49fa35c2cbd7a61a7b",
+        "baseline_rollout_sha256": "e0ee341f20ea2614abb54732eb4061ab85aecc350c0395c01cf3e5f6fcda79c9"
+      },
+      "source": {
+        "video": "assets/cases/opus55/02_dexycb_bimanual_lift/human_assisted.mp4",
+        "poster": "assets/cases/opus55/02_dexycb_bimanual_lift/human_assisted.webp"
+      },
+      "model": {
+        "video": "assets/cases/opus55/02_dexycb_bimanual_lift/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/02_dexycb_bimanual_lift/opus55_success_sim.webp",
+        "success": true,
+        "progress": null,
+        "description": "Formal evaluation: task success.",
+        "final": "hidden replay passed · scene CD 3.62 cm"
+      },
+      "baseline": {
+        "name": "Claude Fable 5.1",
+        "video": "assets/cases/opus55/02_dexycb_bimanual_lift/fable51_failure_sim.mp4",
+        "poster": "assets/cases/opus55/02_dexycb_bimanual_lift/fable51_failure_sim.webp",
+        "success": false,
+        "progress": null,
+        "description": "Formal evaluation: task failed.",
+        "final": "hidden replay failed · scene CD 11.39 cm"
+      },
+      "analysis": "Opus 5.5's two-handed lift passes the hidden replay check; Fable 5.1's does not. Opus 5.5 also reconstructs the scene more closely (scene CD 3.62 cm vs 11.39 cm).",
+      "highlights": [
+        {
+          "label": "Hidden replay",
+          "model": "Passed",
+          "baseline": "Failed"
+        },
+        {
+          "label": "Scene CD",
+          "unit": "cm",
+          "better": "lower",
+          "model": 3.62,
+          "baseline": 11.39
+        }
+      ]
+    },
+    {
+      "id": "hot3d_002498",
+      "family": "hot3d-pickplace-bimanual",
+      "title": "Two-handed pick-and-place",
+      "description": "Two-handed pick-and-place, from a HOT3D video.",
+      "dataset": "HOT3D",
+      "provenance": {
+        "run_label": "opus55_v2 vs fable51_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+        "opus_rollout_sha256": "b7a1576715a36a47daa8e068c6e655e28fa6ea18acc1ec682c8600eb8e54613c",
+        "baseline_rollout_sha256": "23d0fdf6aba35b9198bbc718f05b4434ec988b6528c341ce543edb9e6843f13b"
+      },
+      "source": {
+        "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/human_assisted.mp4",
+        "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/human_assisted.webp"
+      },
+      "model": {
+        "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/opus55_success_sim.webp",
+        "success": true,
+        "progress": null,
+        "description": "Formal evaluation: task success.",
+        "final": "terminal error 5.05 cm · scene CD 2.18 cm"
+      },
+      "baseline": {
+        "name": "Claude Fable 5.1",
+        "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/fable51_failure_sim.mp4",
+        "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/fable51_failure_sim.webp",
+        "success": false,
+        "progress": null,
+        "description": "Formal evaluation: task failed.",
+        "final": "terminal error 24.31 cm · scene CD 3.16 cm"
+      },
+      "analysis": "Scene CD is 2.18 cm for Opus 5.5 and 3.16 cm for Fable 5.1. Opus 5.5 passes the formal task evaluation and Fable 5.1 fails, with reported terminal errors of 5.05 cm and 24.31 cm. The source video and both rollouts let you inspect the observed outcome.",
+      "highlights": [
+        {
+          "label": "Terminal error",
+          "unit": "cm",
+          "better": "lower",
+          "model": 5.05,
+          "baseline": 24.31
+        }
+      ]
+    },
+    {
+      "id": "fbraw_2023-01-22-22_45_54_lamp_bulb",
+      "family": "bulb-insert",
+      "title": "Lamp bulb insertion",
+      "description": "Lamp-bulb insertion, from a FurnitureBench robot video.",
+      "dataset": "FurnitureBench",
+      "provenance": {
+        "run_label": "opus55_v2 vs fable51_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+        "opus_rollout_sha256": "099f95477a9f07ddb1d212b2eff51bf91f7fad38052634980614909c2fa08ba9",
+        "baseline_rollout_sha256": "ee025f7290bc791a8b7b48430e88c625bf628510bdf3638c78bc012f938197bf"
+      },
+      "source": {
+        "video": "assets/cases/opus55/04_lamp_bulb_insert/human_assisted.mp4",
+        "poster": "assets/cases/opus55/04_lamp_bulb_insert/human_assisted.webp"
+      },
+      "model": {
+        "video": "assets/cases/opus55/04_lamp_bulb_insert/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/04_lamp_bulb_insert/opus55_success_sim.webp",
+        "success": true,
+        "progress": null,
+        "description": "Formal evaluation: task success.",
+        "final": "terminal error 1.41 cm · scene CD 3.08 cm"
+      },
+      "baseline": {
+        "name": "Claude Fable 5.1",
+        "video": "assets/cases/opus55/04_lamp_bulb_insert/fable51_failure_sim.mp4",
+        "poster": "assets/cases/opus55/04_lamp_bulb_insert/fable51_failure_sim.webp",
+        "success": false,
+        "progress": null,
+        "description": "Formal evaluation: task failed.",
+        "final": "terminal error 100.00 cm · scene CD 5.07 cm"
+      },
+      "analysis": "Opus 5.5 passes the formal insertion-task evaluation, with reported terminal error 1.41 cm. Fable 5.1 fails, with reported terminal error 100.00 cm. Scene CD is 3.08 cm and 5.07 cm respectively. These are the evaluator's reported errors, rather than an independent measurement of distance in the videos.",
+      "highlights": [
+        {
+          "label": "Terminal error",
+          "unit": "cm",
+          "better": "lower",
+          "model": 1.41,
+          "baseline": 100.0,
+          "baseline_capped": true
+        }
+      ]
+    }
+  ],
+  "analysis_status": "Evidence descriptions reviewed for metric and selection boundaries; visual case interpretation remains subject to research review.",
+  "featured_case": "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+  "intro": "Five selected tasks where Opus 5.5 passes and Fable 5.1 fails on the same input video. These examples illustrate observed differences in formal task outcomes; they are not a representative sample of the benchmark.",
+  "failure_cases": []
+}

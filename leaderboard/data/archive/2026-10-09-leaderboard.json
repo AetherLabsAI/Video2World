@@ -1,0 +1,610 @@
+{
+  "schema_version": 1,
+  "title": "Video2World",
+  "snapshot_id": "v2-supplied-2026-10-09",
+  "snapshot_date": "2026-10-09",
+  "site_updated": "2026-10-13",
+  "status": "supplied_snapshot",
+  "instances": 222,
+  "families": 39,
+  "videos": 189,
+  "source": {
+    "type": "user_supplied_table",
+    "name": "Video2World evaluation screenshot supplied 2026-10-09",
+    "notes": "Values and per-metric n are transcribed from the supplied table. The run timestamp, exact agent settings and complete-manifest scoring status were not included."
+  },
+  "links": {
+    "paper": "https://arxiv.org/abs/2610.04432",
+    "project": "https://aetherlabsai.github.io/Video2World/",
+    "code": "https://github.com/AetherLabsAI/Video2World",
+    "dataset": "https://huggingface.co/datasets/AetherLabs-AI/Video2World"
+  },
+  "metrics": [
+    {
+      "key": "score",
+      "label": "V2WScore",
+      "short": "V2WScore",
+      "unit": "0–100",
+      "direction": "up",
+      "digits": 2,
+      "group": "Overall",
+      "description": "Aggregate of functionality, geometry and dynamics, with build as a gate. Equal task-family weighting."
+    },
+    {
+      "key": "success",
+      "label": "Task Success",
+      "short": "Success",
+      "unit": "%",
+      "direction": "up",
+      "digits": 1,
+      "group": "Functionality",
+      "description": "Completion of task requirements under physical execution. Reported aggregate, not a count of passed instances."
+    },
+    {
+      "key": "progress",
+      "label": "Stage Progress",
+      "short": "Progress",
+      "unit": "0–1",
+      "direction": "up",
+      "digits": 2,
+      "group": "Functionality",
+      "description": "Progress through the interaction milestones."
+    },
+    {
+      "key": "scene_cd",
+      "label": "Scene CD",
+      "short": "Scene CD",
+      "unit": "cm",
+      "direction": "down",
+      "digits": 2,
+      "group": "Geometry",
+      "description": "Interaction-weighted Chamfer distance for scene reconstruction."
+    },
+    {
+      "key": "shape_cd",
+      "label": "Object Shape CD",
+      "short": "Shape CD",
+      "unit": "cm",
+      "direction": "down",
+      "digits": 2,
+      "group": "Geometry",
+      "description": "Object shape Chamfer distance."
+    },
+    {
+      "key": "size_err",
+      "label": "Object Size Error",
+      "short": "Size error",
+      "unit": "cm",
+      "direction": "down",
+      "digits": 2,
+      "group": "Geometry",
+      "description": "Difference in physical object dimensions."
+    },
+    {
+      "key": "terminal_trans",
+      "label": "Terminal Relative Translation Error",
+      "short": "Terminal trans.",
+      "unit": "cm",
+      "direction": "down",
+      "digits": 2,
+      "group": "Dynamics",
+      "description": "Terminal relative translation error as labeled in the supplied snapshot."
+    },
+    {
+      "key": "terminal_rot",
+      "label": "Terminal Relative Rotation Error",
+      "short": "Terminal rot.",
+      "unit": "deg",
+      "direction": "down",
+      "digits": 2,
+      "group": "Dynamics",
+      "description": "Terminal relative rotation error as labeled in the supplied snapshot."
+    },
+    {
+      "key": "fixed_success",
+      "label": "Fixed-ref Task",
+      "short": "Fixed-ref task",
+      "unit": "%",
+      "direction": "up",
+      "digits": 1,
+      "group": "Diagnostics",
+      "description": "Fixed-reference task diagnostic. The exact execution configuration should accompany the full evaluation receipt."
+    },
+    {
+      "key": "fixed_progress",
+      "label": "Fixed-ref Progress",
+      "short": "Fixed-ref progress",
+      "unit": "0–1",
+      "direction": "up",
+      "digits": 2,
+      "group": "Diagnostics",
+      "description": "Progress under the fixed-reference diagnostic."
+    },
+    {
+      "key": "fixed_ape",
+      "label": "Fixed-ref Translation APE",
+      "short": "Fixed-ref APE",
+      "unit": "cm",
+      "direction": "down",
+      "digits": 2,
+      "group": "Diagnostics",
+      "description": "Translation APE under the fixed-reference diagnostic."
+    },
+    {
+      "key": "build",
+      "label": "Build Rate",
+      "short": "Build",
+      "unit": "%",
+      "direction": "up",
+      "digits": 1,
+      "group": "Build",
+      "description": "Reported executability rate. Coverage counts are preserved from the snapshot."
+    }
+  ],
+  "models": [
+    {
+      "id": "opus-5-5",
+      "name": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "model_id": "claude-opus-5-5",
+      "run_label": "opus55_v2",
+      "metrics": {
+        "score": 52.41,
+        "success": 29.4,
+        "progress": 0.57,
+        "scene_cd": 4.82,
+        "shape_cd": 0.83,
+        "size_err": 2.15,
+        "terminal_trans": 26.65,
+        "terminal_rot": 98.26,
+        "fixed_success": 8.6,
+        "fixed_progress": 0.3,
+        "fixed_ape": 15.28,
+        "build": 90.3
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 191,
+        "scene_cd": 189,
+        "shape_cd": 189,
+        "size_err": 189,
+        "terminal_trans": 158,
+        "terminal_rot": 70,
+        "fixed_success": 174,
+        "fixed_progress": 174,
+        "fixed_ape": 174,
+        "build": 199
+      },
+      "validated": 199,
+      "featured": true,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "fable-5-1",
+      "name": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "model_id": "claude-fable-5-1",
+      "run_label": "fable51_v2",
+      "metrics": {
+        "score": 44.13,
+        "success": 20.2,
+        "progress": 0.45,
+        "scene_cd": 4.84,
+        "shape_cd": 0.83,
+        "size_err": 2.21,
+        "terminal_trans": 27.2,
+        "terminal_rot": 109.83,
+        "fixed_success": 11.4,
+        "fixed_progress": 0.3,
+        "fixed_ape": 16.65,
+        "build": 83.9
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 191,
+        "scene_cd": 186,
+        "shape_cd": 185,
+        "size_err": 185,
+        "terminal_trans": 154,
+        "terminal_rot": 74,
+        "fixed_success": 174,
+        "fixed_progress": 174,
+        "fixed_ape": 174,
+        "build": 200
+      },
+      "validated": 200,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "model_id": "gpt-6-astra",
+      "run_label": "gpt6astra_v2",
+      "metrics": {
+        "score": 38.27,
+        "success": 6.5,
+        "progress": 0.29,
+        "scene_cd": 5.78,
+        "shape_cd": 0.94,
+        "size_err": 2.21,
+        "terminal_trans": 34.76,
+        "terminal_rot": 114.41,
+        "fixed_success": 9.6,
+        "fixed_progress": 0.23,
+        "fixed_ape": 17.31,
+        "build": 83.9
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 182,
+        "scene_cd": 171,
+        "shape_cd": 170,
+        "size_err": 170,
+        "terminal_trans": 144,
+        "terminal_rot": 71,
+        "fixed_success": 154,
+        "fixed_progress": 154,
+        "fixed_ape": 154,
+        "build": 190
+      },
+      "validated": 190,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "provider": "Anthropic",
+      "model_id": "openrouter/anthropic/claude-opus-5",
+      "run_label": "opus5_v2",
+      "metrics": {
+        "score": 37.91,
+        "success": 11.5,
+        "progress": 0.34,
+        "scene_cd": 5.96,
+        "shape_cd": 1.43,
+        "size_err": 3.6,
+        "terminal_trans": 26.09,
+        "terminal_rot": 110.87,
+        "fixed_success": 7.1,
+        "fixed_progress": 0.24,
+        "fixed_ape": 19.23,
+        "build": 86.8
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 185,
+        "scene_cd": 181,
+        "shape_cd": 182,
+        "size_err": 182,
+        "terminal_trans": 153,
+        "terminal_rot": 72,
+        "fixed_success": 165,
+        "fixed_progress": 165,
+        "fixed_ape": 165,
+        "build": 194
+      },
+      "validated": 194,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "provider": "Moonshot AI",
+      "model_id": "openrouter/moonshotai/kimi-k3",
+      "run_label": "kimik3_v2",
+      "metrics": {
+        "score": 29.47,
+        "success": 4.2,
+        "progress": 0.17,
+        "scene_cd": 7.44,
+        "shape_cd": 1.35,
+        "size_err": 4.41,
+        "terminal_trans": 46.88,
+        "terminal_rot": 117.36,
+        "fixed_success": 2.7,
+        "fixed_progress": 0.13,
+        "fixed_ape": 30.95,
+        "build": 82.8
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 186,
+        "scene_cd": 178,
+        "shape_cd": 179,
+        "size_err": 179,
+        "terminal_trans": 149,
+        "terminal_rot": 68,
+        "fixed_success": 164,
+        "fixed_progress": 163,
+        "fixed_ape": 163,
+        "build": 194
+      },
+      "validated": 194,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "name": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "model_id": "openrouter/openai/gpt-5.6-sol",
+      "run_label": "gpt56_v2",
+      "metrics": {
+        "score": 27.97,
+        "success": 2.3,
+        "progress": 0.11,
+        "scene_cd": 7.74,
+        "shape_cd": 1.53,
+        "size_err": 4.52,
+        "terminal_trans": 50.44,
+        "terminal_rot": 95.33,
+        "fixed_success": 4.6,
+        "fixed_progress": 0.11,
+        "fixed_ape": 33.0,
+        "build": 83.3
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 190,
+        "scene_cd": 186,
+        "shape_cd": 188,
+        "size_err": 188,
+        "terminal_trans": 158,
+        "terminal_rot": 68,
+        "fixed_success": 173,
+        "fixed_progress": 173,
+        "fixed_ape": 173,
+        "build": 200
+      },
+      "validated": 200,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "deepseek-v4-1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "model_id": "openrouter/deepseek/deepseek-v4.1-flash",
+      "run_label": "dsv41flash_v2",
+      "metrics": {
+        "score": 27.9,
+        "success": 3.6,
+        "progress": 0.15,
+        "scene_cd": 7.9,
+        "shape_cd": 1.47,
+        "size_err": 4.06,
+        "terminal_trans": 58.15,
+        "terminal_rot": 113.26,
+        "fixed_success": 3.7,
+        "fixed_progress": 0.12,
+        "fixed_ape": 40.79,
+        "build": 80.0
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 187,
+        "scene_cd": 182,
+        "shape_cd": 183,
+        "size_err": 183,
+        "terminal_trans": 153,
+        "terminal_rot": 69,
+        "fixed_success": 169,
+        "fixed_progress": 169,
+        "fixed_ape": 169,
+        "build": 198
+      },
+      "validated": 198,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "gemini-3-8-flash",
+      "name": "Gemini 3.8 Flash",
+      "provider": "Google",
+      "model_id": "openrouter/google/gemini-3.8-flash",
+      "run_label": "gemini38flash_v2",
+      "metrics": {
+        "score": 26.55,
+        "success": 1.9,
+        "progress": 0.1,
+        "scene_cd": 8.71,
+        "shape_cd": 1.46,
+        "size_err": 3.76,
+        "terminal_trans": 55.73,
+        "terminal_rot": 119.07,
+        "fixed_success": 0.5,
+        "fixed_progress": 0.06,
+        "fixed_ape": 48.12,
+        "build": 82.3
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 191,
+        "scene_cd": 187,
+        "shape_cd": 188,
+        "size_err": 188,
+        "terminal_trans": 157,
+        "terminal_rot": 71,
+        "fixed_success": 169,
+        "fixed_progress": 168,
+        "fixed_ape": 169,
+        "build": 200
+      },
+      "validated": 200,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "qwen-3-8-max",
+      "name": "Qwen 3.8 Max",
+      "provider": "Alibaba",
+      "model_id": "openrouter/qwen/qwen3.8-max-0902",
+      "run_label": "qwen38max_v2",
+      "metrics": {
+        "score": 24.27,
+        "success": 1.4,
+        "progress": 0.13,
+        "scene_cd": 7.84,
+        "shape_cd": 1.45,
+        "size_err": 4.0,
+        "terminal_trans": 56.66,
+        "terminal_rot": 101.34,
+        "fixed_success": 1.4,
+        "fixed_progress": 0.1,
+        "fixed_ape": 37.7,
+        "build": 78.0
+      },
+      "coverage": {
+        "score": null,
+        "success": 200,
+        "progress": 185,
+        "scene_cd": 168,
+        "shape_cd": 170,
+        "size_err": 170,
+        "terminal_trans": 151,
+        "terminal_rot": 67,
+        "fixed_success": 154,
+        "fixed_progress": 154,
+        "fixed_ape": 154,
+        "build": 198
+      },
+      "validated": 198,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    },
+    {
+      "id": "glm-5-3-flash",
+      "name": "GLM 5.3 Flash",
+      "provider": "Z.ai",
+      "model_id": "openrouter/z-ai/glm-5.3-flash",
+      "run_label": "glm53flash_v2",
+      "metrics": {
+        "score": 19.91,
+        "success": 1.8,
+        "progress": 0.07,
+        "scene_cd": 9.66,
+        "shape_cd": 1.56,
+        "size_err": 4.45,
+        "terminal_trans": 59.65,
+        "terminal_rot": 109.61,
+        "fixed_success": 0.5,
+        "fixed_progress": 0.09,
+        "fixed_ape": 46.9,
+        "build": 74.7
+      },
+      "coverage": {
+        "score": null,
+        "success": 203,
+        "progress": 170,
+        "scene_cd": 154,
+        "shape_cd": 154,
+        "size_err": 154,
+        "terminal_trans": 127,
+        "terminal_rot": 64,
+        "fixed_success": 143,
+        "fixed_progress": 142,
+        "fixed_ape": 143,
+        "build": 180
+      },
+      "validated": 180,
+      "featured": false,
+      "configuration": null,
+      "source": {
+        "type": "user_supplied_table",
+        "name": "supplied evaluation screenshot",
+        "date": "2026-10-09"
+      }
+    }
+  ],
+  "pending_models": [
+    {
+      "id": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "provider": "Google",
+      "status": "testing",
+      "metrics": null
+    },
+    {
+      "id": "meta-muse",
+      "name": "Meta Muse",
+      "provider": "Meta",
+      "status": "testing",
+      "metrics": null
+    },
+    {
+      "id": "gpt-6-1-sol",
+      "name": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "status": "testing",
+      "metrics": null
+    }
+  ],
+  "updates": [
+    {
+      "slug": "opus-5-5",
+      "model_id": "opus-5-5",
+      "title": "Opus 5.5 sets a new high on Video2World",
+      "date": "2026-10-09",
+      "status": "results",
+      "snapshot_id": "v2-supplied-2026-10-09"
+    }
+  ],
+  "archive_note": "Earlier user-supplied screenshot snapshot, retained for provenance. Its component metrics have different coverage from the published 222-instance snapshot refreshed on 2026-10-17; it is separate from both that current snapshot and the paper results."
+}

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Video2World: Can Coding Agents Turn a Video into a World You Can Intervene On? | Robot Learning Notes</title>
+<meta name="description" content="A video is an observation; a simulator is a causal model you can intervene on. Video2World benchmarks whether coding agents can build one from the other: 222 instances, 39 task families, nine systems. Most worlds run; far fewer work." />
+<meta name="keywords" content="Video2World, causality, intervention, counterfactual, embodied AI, Real-to-Sim, Video-to-Sim, coding agents, world models, robotic manipulation, simulator reconstruction" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Video2World: From Watching to Intervening" />
+<meta property="og:description" content="Can coding agents turn an embodied video, a single observation, into a simulator whose mechanisms hold up under intervention? 222 instances say: the worlds run, but the causes are often wrong." />
+<meta property="og:image" content="img/og_teaser.jpg" />
+<link rel="preload" as="image" href="img/hero_video2world_poster.jpg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Video2World: Can Coding Agents Turn a Video into a World You Can Intervene On?","author":[{"@type":"Person","name":"Jinzhou Tang"},{"@type":"Person","name":"Zijun Zhang"},{"@type":"Person","name":"Jing Yang"},{"@type":"Person","name":"Yuchen Yan"},{"@type":"Person","name":"Kun Zhou"},{"@type":"Person","name":"Lingjun Mao"},{"@type":"Person","name":"Ruobing Han"},{"@type":"Person","name":"Jinglin Cao"},{"@type":"Person","name":"Wenpeng Xu"},{"@type":"Person","name":"Lukun He"},{"@type":"Person","name":"Minghao Fu"},{"@type":"Person","name":"Fan Feng"},{"@type":"Person","name":"Biwei Huang"}],"publisher":{"@type":"Organization","name":"Aether AI"},"datePublished":"2026-10-09","url":"https://arxiv.org/abs/2610.04432","keywords":"Video2World, Real-to-Sim, causal models, intervention, counterfactual, coding agents, embodied AI"}
+</script>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+  svg: { fontCache: 'global' },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script defer src="assets/tex-svg.js"></script>
+<style>
+
+@import url('assets/fonts.css');
+
+:root {
+  --bg: #efe7d9;
+  --bg-2: #e6ddcf;
+  --bg-3: #d8cdbd;
+  --fg: #151722;
+  --fg-2: #343234;
+  --muted: #7b746c;
+  --muted-2: #aaa095;
+  --rule: #d4c9b8;
+  --accent: #8f564b;
+  --accent-soft: rgb(143 86 75 / 0.14);
+  --do: #8f564b;
+  --do-soft: rgb(143 86 75 / 0.14);
+  --blue: #5c7478;
+  --blue-soft: rgb(92 116 120 / 0.14);
+
+  --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  --pad: clamp(20px, 4vw, 56px);
+  --col: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+
+/* ---------- top bar ---------- */
+.topbar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 20px var(--pad);
+  gap: 24px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+}
+.topbar .brand { display: flex; align-items: center; gap: 12px; }
+.topbar .brand .brand-txt { font-family: var(--sans); font-weight: 600; font-size: 19px; letter-spacing: -0.02em; color: var(--fg); }
+.topbar .brand .brand-mark { width: 22px; height: 22px; border-radius: 6px; background: var(--fg); display: inline-block; }
+.topbar nav { display: flex; gap: 4px; justify-content: flex-end; align-items: center; }
+.topbar nav a {
+  font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: 0.01em;
+  color: var(--fg-2); padding: 8px 14px; border-radius: 999px;
+  transition: background 140ms, color 140ms;
+}
+.topbar nav a:hover { color: var(--fg); background: var(--bg-2); }
+.topbar nav a.active { background: var(--fg); color: var(--bg); }
+
+@media (max-width: 720px) {
+  .topbar { grid-template-columns: 1fr; gap: 14px; }
+  .topbar nav { justify-content: flex-start; flex-wrap: wrap; gap: 2px; }
+  .topbar nav a { font-size: 13px; padding: 7px 10px; }
+}
+
+/* ---------- generic ---------- */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 var(--pad); }
+.prose { max-width: var(--col); margin: 0 auto; }
+.label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+h1, h2, h3 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.015em; }
+h2 { font-size: clamp(28px, 3.2vw, 36px); line-height: 1.18; margin: 0 0 12px; }
+h3 { font-size: 20px; line-height: 1.28; margin: 0 0 8px; }
+
+p { margin: 0 0 18px; text-wrap: pretty; }
+em { font-style: italic; }
+
+hr.rule { border: 0; border-top: 1px solid var(--rule); margin: 64px 0; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border: 1px solid var(--fg); background: var(--fg); color: var(--bg);
+  font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0;
+  border-radius: 999px; cursor: pointer; transition: background 120ms, color 120ms;
+}
+.btn:hover { background: var(--bg); color: var(--fg); }
+.btn.ghost { background: transparent; color: var(--fg); }
+.btn.ghost:hover { background: var(--fg); color: var(--bg); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 8px; }
+
+/* ---------- footer ---------- */
+.footer {
+  border-top: 1px solid var(--rule); margin-top: 96px; padding: 32px var(--pad);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+}
+.footer .brand-mini { display: flex; align-items: center; gap: 8px; }
+.footer .links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer .links a:hover { color: var(--fg); }
+
+/* ============================================
+   ARTICLE PAGE
+   ============================================ */
+.article-head { max-width: 1280px; margin: 0 auto; padding: clamp(40px, 6vw, 80px) var(--pad) clamp(28px, 4vw, 48px); }
+.article-head .crumb {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 32px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+}
+.article-head .crumb a { color: var(--muted); }
+.article-head .crumb a:hover { color: var(--fg); }
+.article-head .crumb .sep { color: var(--rule); }
+.article-head h1 {
+  font-family: var(--sans); font-size: clamp(32px, 4.3vw, 52px); line-height: 1.1;
+  letter-spacing: -0.018em; font-weight: 500; margin: 0 0 18px; max-width: none; text-wrap: pretty;
+}
+.article-head .lede {
+  font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; color: var(--fg-2);
+  margin: 0 0 28px; max-width: 76ch; text-wrap: pretty;
+}
+.article-head .meta-row {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+  padding-top: 18px; border-top: 1px solid var(--rule);
+}
+.article-head .meta-row .k { color: var(--muted-2); margin-right: 8px; }
+.article-head .meta-row .v { color: var(--fg-2); }
+
+.article-cover { max-width: 1280px; margin: 0 auto; padding: 0 var(--pad); }
+.article-cover .panel {
+  aspect-ratio: 21/10; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--bg-2);
+}
+.article-cover .panel.fit-diagram { aspect-ratio: 1672/941; }
+.article-cover .panel img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.article-cover .panel.fit-diagram > img { object-fit: contain; }
+.article-cover .panel.video-strip { aspect-ratio: 1280/320; background: #000; }
+.article-cover .panel.video-strip video { width: 100%; height: 100%; display: block; object-fit: cover; }
+.article-cover .panel.video-strip.hero-pairs { aspect-ratio: 1920/640; background: #151722; }
+.article-cover .cover-note {
+  margin-top: 10px; font-family: var(--mono); font-size: 11px; line-height: 1.5;
+  letter-spacing: 0.06em; color: var(--muted);
+}
+
+.article-shell {
+  max-width: 1280px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--pad) clamp(48px, 8vw, 96px);
+  display: grid; grid-template-columns: minmax(0, 720px); justify-content: center; gap: 48px;
+}
+@media (min-width: 1120px) {
+  .article-shell { grid-template-columns: 220px minmax(0, 720px); justify-content: start; gap: 64px; }
+}
+.article-toc { display: none; }
+@media (min-width: 1120px) {
+  .article-toc { display: block; position: sticky; top: 28px; align-self: start; max-height: calc(100vh - 56px); overflow: auto; padding-right: 8px; }
+}
+.article-toc .toc-title {
+  display: block; margin-bottom: 14px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+}
+.article-toc a {
+  display: block; padding: 8px 0; border-top: 1px solid var(--rule);
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; line-height: 1.45; text-transform: uppercase; color: var(--muted);
+}
+.article-toc a:hover { color: var(--fg); }
+.article { font-size: 17.5px; line-height: 1.65; color: var(--fg); }
+.article h2 { scroll-margin-top: 28px; }
+.article h2 {
+  font-family: var(--sans); font-size: clamp(24px, 2.8vw, 32px); font-weight: 500;
+  letter-spacing: -0.018em; line-height: 1.2; margin: 56px 0 18px; text-wrap: balance;
+}
+.article h2:first-of-type { margin-top: 0; }
+.article h2 .num {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--muted);
+  margin-right: 14px; font-weight: 400; display: inline-block; transform: translateY(-3px);
+}
+.article h3 { scroll-margin-top: 28px; }
+.article h3 {
+  font-family: var(--sans); font-size: clamp(21px, 2.3vw, 25px); font-weight: 500;
+  letter-spacing: -0.014em; line-height: 1.22; margin: 44px 0 14px; text-wrap: balance;
+}
+.article p { margin: 0 0 20px; color: var(--fg); text-wrap: pretty; }
+.article ul, .article ol { margin: 0 0 22px; padding-left: 1.35em; color: var(--fg); }
+.article li { margin-bottom: 10px; }
+.article p.muted { color: var(--fg-2); }
+.article em { font-style: italic; }
+.article strong { font-weight: 600; }
+.article .u {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: auto;
+}
+.article code { font-family: var(--mono); font-size: 0.86em; background: rgb(255 255 255 / 0.4); border: 1px solid var(--rule); border-radius: 5px; padding: 1px 6px; }
+.article figure { margin: 36px 0; }
+.article figure img {
+  width: 100%; display: block; border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--bg-2); box-shadow: 0 14px 40px rgb(21 23 34 / 0.06);
+}
+.article figure.figure-sm {
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+.article figure.figure-sm img {
+  box-shadow: 0 8px 24px rgb(21 23 34 / 0.05);
+}
+.article figcaption {
+  margin-top: 10px; font-family: var(--mono); font-size: 11px; line-height: 1.55;
+  letter-spacing: 0.06em; color: var(--muted);
+}
+.article .math {
+  margin: 20px 0 22px; padding: 18px 20px; border: 1px solid var(--rule); border-radius: 8px;
+  background: rgb(255 255 255 / 0.34); color: var(--fg); font-family: var(--sans);
+  font-size: 16px; line-height: 1.6; overflow-x: auto; white-space: normal;
+}
+.article .math mjx-container { margin: 0 !important; }
+.article li .math { margin: 14px 0 16px; }
+.article .pull {
+  font-family: var(--sans); font-weight: 500; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.3;
+  letter-spacing: -0.012em; margin: 36px 0; border-left: 2px solid var(--fg); padding-left: 22px;
+  color: var(--fg); text-wrap: balance;
+}
+
+/* ---------- TL;DR callout ---------- */
+.tldr {
+  border: 1px solid var(--rule); border-left: 3px solid var(--blue); border-radius: 10px;
+  background: rgb(255 255 255 / 0.5);
+  padding: 22px 24px 12px; margin: 0 0 40px;
+}
+.tldr .tldr-label {
+  display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue);
+  background: var(--blue-soft); border-radius: 999px; padding: 4px 13px; margin-bottom: 14px;
+}
+.tldr p { font-size: 16px; line-height: 1.62; color: var(--fg-2); margin: 0 0 12px; }
+.tldr ul { margin: 0 0 10px; padding-left: 1.2em; }
+.tldr li { font-size: 15.5px; line-height: 1.62; color: var(--fg-2); margin-bottom: 9px; }
+.tldr strong { color: var(--fg); font-weight: 600; }
+
+/* ===== embedded media: video, figure grids, comparisons ===== */
+.teaser-video{width:100%;display:block;border:1px solid var(--rule);border-radius:8px;background:#000;}
+.article .figure-caption{font-family:var(--mono);font-size:11px;line-height:1.55;letter-spacing:.04em;text-transform:none;color:var(--muted);margin-top:10px;}
+.label-chip{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:5px 16px;}
+.label-chip.blue{color:var(--blue);background:var(--blue-soft);}
+
+/* head-to-head video comparison */
+.vs2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0 10px;}
+@media(max-width:640px){.vs2{grid-template-columns:1fr;}}
+.vs3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:26px 0 10px;}
+@media(max-width:720px){.vs3{grid-template-columns:1fr;}}
+.vs-card{border:1px solid var(--rule);border-radius:12px;padding:12px 12px 14px;background:var(--bg-2);text-align:center;box-shadow:0 1px 3px rgb(21 23 34 / 0.04);}
+.vs-card video{width:100%;display:block;border-radius:8px;border:1px solid var(--rule);background:#000;}
+.vs-card .cap{margin-top:11px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+.vs-card .cap .sub{display:block;margin-top:3px;letter-spacing:.03em;text-transform:none;color:var(--muted-2);}
+.vs-card.win{border-color:var(--accent);}
+.vs-card.win .cap{color:var(--accent);font-weight:600;}
+.vs-card.win .cap .sub{color:var(--accent);font-weight:400;opacity:.85;}
+
+/* results table */
+.rtable-wrap{overflow-x:auto;margin:28px 0 12px;-webkit-overflow-scrolling:touch;}
+.rtable{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:13.5px;white-space:nowrap;}
+.rtable th,.rtable td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--rule);}
+.rtable th:first-child,.rtable td:first-child{text-align:left;white-space:normal;color:var(--fg);}
+.rtable thead th{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;border-top:1px solid var(--fg);border-bottom:1px solid var(--fg);}
+.rtable td{font-variant-numeric:tabular-nums;color:var(--fg-2);}
+.rtable tbody tr:last-child td{border-bottom:1px solid var(--fg);}
+.rtable tr.divider td{padding:0;height:0;border:0;border-top:1px solid var(--rule);}
+.rtable td.ours{background:var(--accent-soft);color:var(--accent);font-weight:600;}
+.rtable tr.gain td.ours{background:rgb(143 86 75 / 0.24);}
+.rtable tr.tgroup td{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--muted);text-align:left;padding-top:16px;border-bottom:1px solid var(--rule);text-transform:uppercase;}
+.rtable td .delta{font-family:var(--mono);font-size:10.5px;color:var(--accent);margin-left:6px;}
+
+/* paper info card */
+.paper-card{border:1px solid var(--rule);border-radius:12px;background:var(--bg-2);padding:24px 26px 20px;margin:34px 0;box-shadow:0 1px 3px rgb(21 23 34 / 0.04);}
+.paper-card .pc-label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.paper-card ul{list-style:none;margin:0;padding:0;}
+.paper-card li{margin:0;padding:10px 0;border-top:1px solid var(--rule);font-size:14.5px;line-height:1.55;color:var(--fg-2);}
+.paper-card li:first-child{border-top:0;padding-top:0;}
+.paper-card .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:10px;}
+.paper-card a{color:var(--fg);border-bottom:1px solid var(--rule);word-break:break-all;transition:color 120ms,border-color 120ms;}
+.paper-card a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+
+/* Video2World media adaptations. All other article styles come directly from the reference. */
+.article-cover .panel.video-strip img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.article .rtable td.highlight { background: var(--accent-soft); color: var(--accent); font-weight:600; }
+.article .rtable tr.reference td { background:rgb(92 116 120 / 0.09); }
+.article .rtable tr.reference td:first-child { font-weight:600; }
+.article .small-note { font-size:14px; color:var(--muted); line-height:1.6; }
+.article .metric-callout { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:28px 0 12px; }
+.article .metric-callout > div { padding:20px 16px 13px; border:1px solid var(--rule); border-radius:9px; background:var(--bg-2); }
+.article .metric-callout b { font-family:var(--sans); font-size:clamp(23px,3.4vw,35px); font-weight:600; letter-spacing:-.04em; display:block; line-height:1.1; }
+.article .metric-callout span { color:var(--muted); font-family:var(--mono); font-size:10px; line-height:1.5; letter-spacing:.07em; text-transform:uppercase; display:block; margin-top:9px; }
+.article a.inline-link { border-bottom:1px solid var(--accent); text-decoration:none; }
+.article a.inline-link:hover { color:var(--accent); }
+.article .tagline { font-family:var(--mono); color:var(--muted); letter-spacing:.09em; text-transform:uppercase; font-size:11px; margin-bottom:12px; }
+.article figure img.transparent-image { border:0;box-shadow:none; background:none; }
+.article figure.wide-figure { margin:31px 0; }
+.article .section-kicker { color:var(--muted); font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.12em; margin-top:28px; }
+@media(max-width:620px){.article .metric-callout {grid-template-columns:1fr 1fr 1fr;gap:7px} .article .metric-callout > div {padding:14px 10px 11px;} .article .metric-callout span {font-size:9px;} .article {font-size:16.5px;} }
+@media(max-width:410px){.article .metric-callout {grid-template-columns:1fr;gap:8px;} }
+
+
+/* head byline + links, TL;DR key findings, resources (restructure) */
+.article-head .byline { max-width: 980px; margin: 22px 0 0; font-size: 15px; line-height: 1.6; color: var(--fg-2); }
+.article-head .byline .aff { color: var(--muted); }
+.head-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 30px; }
+.head-links .btn { padding: 9px 16px; }
+.tldr { border: 0; border-top: 1px solid var(--fg); border-bottom: 1px solid var(--rule); border-radius: 0; background: none; padding: 20px 0 22px; margin: 0 0 48px; }
+.resources { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--fg); }
+.resources .res-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.resources .head-links { margin: 16px 0 18px; }
+.resources .bibtex { margin: 0; padding: 16px 18px; border: 1px solid var(--rule); border-radius: 8px; background: var(--bg-2); font-family: var(--mono); font-size: 11.5px; line-height: 1.6; color: var(--fg-2); overflow-x: auto; white-space: pre; }
+
+/* TL;DR findings with mini bars */
+.tldr .tldr-lede { font-size: 17px; line-height: 1.6; color: var(--fg); margin: 0 0 20px; }
+.keyfind { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.kf h4 { min-height: 2.7em; margin: 0 0 14px; font-family: var(--sans); font-size: 16px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; color: var(--fg); }
+.kf .kf-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin-right: 8px; border-radius: 50%; background: var(--fg); color: var(--bg); font-family: var(--mono); font-size: 11px; font-weight: 500; vertical-align: 2px; }
+.kf .bar { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "bl bv" "bt bt"; column-gap: 8px; row-gap: 4px; margin: 0 0 10px; }
+.kf .bl { grid-area: bl; font-size: 12.5px; line-height: 1.3; color: var(--muted); }
+.kf .bv { grid-area: bv; font-size: 13px; font-weight: 600; color: var(--fg-2); font-variant-numeric: tabular-nums; }
+.kf .bt { grid-area: bt; display: block; height: 8px; border-radius: 4px; background: var(--bg-3); overflow: hidden; }
+.kf .bt i { display: block; height: 100%; min-width: 2px; border-radius: 4px; background: var(--muted-2); }
+.kf .bar.hi .bt i { background: var(--accent); }
+.kf .bar.hi .bv { color: var(--accent); }
+.kf .kf-note { margin: 12px 0 0; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+@media (max-width: 760px) { .keyfind { grid-template-columns: 1fr; gap: 26px; } .kf h4 { min-height: 0; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#" class="brand" aria-label="Robot Learning Notes"><span class="brand-mark"></span><span class="brand-txt">Robot&nbsp;Learning&nbsp;Notes</span></a>
+  <nav>
+    <a href="https://arxiv.org/abs/2610.04432" target="_blank" rel="noopener">Paper</a>
+    <a href="https://github.com/AetherLabsAI/Video2World" target="_blank" rel="noopener">Code</a>
+    <a href="#" class="active">Blog</a>
+    <a href="#results">Results</a>
+  </nav>
+</header>
+
+<section class="article-head">
+  <div class="crumb"><span>Blog</span><span class="sep">/</span><span>Causal World Modeling</span></div>
+  <h1>Video2World: Can Coding Agents Turn a Video into a World You Can Intervene On?</h1>
+  <p class="lede"><em>A video of a robot placing a marker into a pot records one thing that happened. A simulator of the same scene has to answer a different question: what would happen if the robot acted, or if the pot stood a little to the left? Video2World asks whether coding agents can get from the first to the second. Most of the worlds they build run; far fewer get the causes right.</em></p>
+  <p class="byline">Jinzhou Tang, Zijun Zhang, Jing Yang, Yuchen Yan, Kun Zhou, Lingjun Mao, Ruobing Han, Jinglin Cao, Wenpeng Xu, Lukun He, Minghao Fu, Fan Feng, Biwei Huang <span class="aff">· Aether AI</span></p>
+  <div class="head-links">
+    <a class="btn" href="https://arxiv.org/abs/2610.04432" target="_blank" rel="noopener">Paper</a>
+    <a class="btn ghost" href="https://github.com/AetherLabsAI/Video2World" target="_blank" rel="noopener">Code</a>
+    <a class="btn ghost" href="https://huggingface.co/datasets/AetherLabs-AI/Video2World" target="_blank" rel="noopener">Dataset</a>
+    <a class="btn ghost" href="https://aetherlabsai.github.io/Video2World/" target="_blank" rel="noopener">Project page</a>
+  </div>
+  <div class="meta-row">
+    <span><span class="k">Published</span><span class="v">2026 · 10 · 09</span></span>
+    <span><span class="k">Reading</span><span class="v">~ 15 min</span></span>
+    <span><span class="k">Topics</span><span class="v">Causality · Real-to-Sim · Agents</span></span>
+  </div>
+</section>
+
+<div class="article-cover">
+  <div class="panel video-strip hero-pairs">
+    <video src="img/hero_video2world.mp4" poster="img/hero_video2world_poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Six Video2World benchmark sources. Top row: source embodied videos (DROID, FurnitureBench, HOT3D, DexYCB, RoboDojo, Poway). Bottom row: the matching executable simulator worlds."></video>
+  </div>
+  <p class="cover-note">Top: source videos from six of the benchmark's data sources, spanning robot arms, egocentric and third-person human hands, bimanual and mobile manipulation. Bottom: the matching executable simulator worlds, shown as benchmark reference executions. Each pair is time-normalized for display.</p>
+</div>
+
+<div class="article-shell">
+  <aside class="article-toc" aria-label="Table of contents">
+    <span class="toc-title">In this post</span>
+    <a href="#tldr">TL;DR</a>
+    <a href="#challenge">01 · A video is an observation</a>
+    <a href="#benchmark">02 · The benchmark</a>
+    <a href="#evaluation">03 · Evaluation as a ladder</a>
+    <a href="#results">04 · How far up do agents get?</a>
+    <a href="#counterfactual">05 · Rung three: intervention</a>
+    <a href="#implications">06 · What it takes to climb</a>
+    <a href="#resources">Paper, code &amp; citation</a>
+  </aside>
+
+  <article class="article">
+
+    <div id="tldr" class="tldr">
+      <span class="tldr-label">TL;DR</span>
+      <p class="tldr-lede">We give a coding agent <strong>one video</strong> of a manipulation task and ask it to write a <strong>simulator</strong> in which a robot can redo that task. Three findings:</p>
+      <div class="keyfind">
+        <div class="kf">
+          <h4><span class="kf-n">1</span>The simulators run, but rarely work.</h4>
+          <div class="bar"><span class="bl">Code runs</span><span class="bt"><i style="width:93.1%"></i></span><span class="bv">93.1%</span></div>
+          <div class="bar hi"><span class="bl">Robot completes the task</span><span class="bt"><i style="width:25.5%"></i></span><span class="bv">25.5%</span></div>
+          <p class="kf-note">Best agent (Claude Fable 5.1) on 222 tasks.</p>
+        </div>
+        <div class="kf">
+          <h4><span class="kf-n">2</span>Accurate shapes are not enough.</h4>
+          <div class="bar"><span class="bl">GPT-6 Astra · task success</span><span class="bt"><i style="width:10.7%"></i></span><span class="bv">10.7%</span></div>
+          <div class="bar hi"><span class="bl">Fable 5.1 · task success</span><span class="bt"><i style="width:25.5%"></i></span><span class="bv">25.5%</span></div>
+          <p class="kf-note">Astra reconstructs object shapes more accurately (0.69 vs. 1.00 cm error), yet completes fewer tasks.</p>
+        </div>
+        <!--CF_TLDR--><div class="kf"><h4><span class="kf-n">3</span>Working worlds hold up when things move.</h4><div class="bar"><span class="bl">Replay the original motion</span><span class="bt"><i style="width:0.0%"></i></span><span class="bv">0%</span></div><div class="bar hi"><span class="bl">GPT-6 Astra's own control code</span><span class="bt"><i style="width:83.3%"></i></span><span class="bv">83%</span></div><div class="bar hi"><span class="bl">Fable 5.1's own control code</span><span class="bt"><i style="width:91.7%"></i></span><span class="bv">92%</span></div><p class="kf-note">Object or target moved 10 cm, in worlds that worked before the move (new experiment, §05).</p></div><!--/CF_TLDR-->
+      </div>
+    </div>
+
+    <h2 id="challenge"><span class="num">01</span>A Video Is an Observation. A World Must Answer “What If?”</h2>
+    <p>Embodied AI needs data from interacting with the physical world. Simulation can supply that data at scale, but building a useful environment is still slow, skilled work: someone has to recover object shapes, assemble the scene, set physical properties, calibrate coordinates, and write the robot's controls. A video shows what happened. It leaves out almost everything a simulator needs to make it happen again.</p>
+    <p>Judea Pearl's <em>ladder of causation</em> makes the gap precise. It separates three kinds of questions. <strong>Seeing</strong>: what usually comes next, given what I observe? <strong>Doing</strong>: what happens if I act? <strong>Imagining</strong>: what would have happened if things had been different? A demonstration video sits on the first rung: a single sample of one trajectory under one set of conditions. A simulator is useful precisely because it answers questions on the second and third rungs.</p>
+
+    <p class="pull">A video tells you what happened. A world has to tell you what would happen if.</p>
+
+    <p>Formally, given a video \(V\), a target simulator \(\mathcal{S}\) and general-purpose tools \(\mathcal{L}\), the agent \(\mathcal{A}\) writes a program \(P = (\eta, \pi)\). The scene specification \(\eta\) fixes the variables: which objects exist, their shapes, poses, masses and frictions. The simulator dynamics \(F_\eta\) map a state and an action to the next state. The behavior \(\pi\) issues the robot's commands. Executing \(P\) unrolls a trajectory:</p>
+    <div class="math">\[
+      \begin{aligned}
+        P &= (\eta, \pi) \sim \mathcal{A}(\,\cdot \mid V, \mathcal{S}, \mathcal{L}), \\
+        u_t &= \pi(t, x_{\le t}), \qquad x_{t+1} = F_\eta(x_t, u_t), \\
+        \tau_P &= (x_0, u_0, x_1, \dots, u_{H-1}, x_H).
+      \end{aligned}
+    \]</div>
+    <p>Read this way, a reconstruction is a <span class="u">structural causal model of the demonstrated scene</span>: \(\eta\) sets the exogenous conditions, \(F_\eta\) the structural equations, and \(\pi\) is the only channel through which anything acts on it.</p>
+
+    <figure>
+      <img src="img/causal_world.svg" alt="Time-unrolled causal graph. The agent writes two pieces of code: the scene η, which sets the initial object state and the dynamics of every step, and the behavior π, which picks each robot action from the states so far. Object states x0, x1, x2, …, xH and actions u0, u1 form the rollout between them. A dashed arrow from the code straight to an object state is crossed out. An intervention do(move object) edits η. An evaluator column links geometry to η, dynamics to the object-state trajectory, and function to the whole rollout of states and actions." loading="lazy" />
+      <figcaption>▲ An agent-built world as a time-unrolled causal graph. The agent writes two pieces of code: the scene \(\eta\), which sets the initial state \(x_0\) and the dynamics \(F_\eta\), and the behavior \(\pi\), which picks each action \(u_t\). Everything in the rollout follows from them through physics; the code may never write an object state directly. The evaluator reads three parts of this graph: ① geometry and ② dynamics test the first rung, ③ function the second. The intervention \(\mathrm{do}(\cdot)\) on \(\eta\) is the third rung, probed in §05.</figcaption>
+    </figure>
+
+    <h3>Many worlds fit one video</h3>
+    <p>Recovering such a model from one observation is fundamentally <strong>underdetermined</strong>. A cup that was lifted smoothly could be light with a gentle grasp or heavy with a firm one. A bowl seen from one viewpoint could be a few millimeters wider or shallower than it looks. A peg that slid in could have had generous clearance or almost none. These worlds are <em>observationally equivalent but interventionally different</em>: they agree on the recorded trajectory and disagree on what happens when the robot acts.</p>
+    <p>So fitting the footage is not enough. A good reconstruction has to climb the ladder: reproduce what was seen, let the robot cause what was seen, and keep behaving correctly when something changes. The rest of this post follows that ladder: the benchmark that poses the problem (§02), the tests that check each rung (§03), how far today's agents get (§04), and what happens at the top rung (§05).</p>
+
+    <h2 id="benchmark"><span class="num">02</span>The Benchmark: One Clip In, One Executable World Out</h2>
+    <p>For each instance the agent receives the source video, the designated simulator and robot interface, public documentation and resources, and general coding tools. It does <em>not</em> receive the source scene geometry, the ground-truth object trajectories, or the private task specification; otherwise the benchmark would measure how faithfully an agent copies a given model, not whether it can infer one.</p>
+    <p>Within those limits the agent works like an experimental scientist with a single recording of reality. It watches the clip, reads the simulator interface, writes a candidate scene and behavior, runs it, watches what happens, and revises. Every run is an intervention on the agent's <em>own</em> hypothesis world; none is an intervention on the real scene, and none of the hidden annotations ever comes back as feedback. The submitted program is then <strong>frozen</strong> and executed by the evaluator.</p>
+
+    <figure class="wide-figure">
+      <img src="img/figure2_agent_protocol.png" alt="Video2World pipeline diagram with agent video input, code and tools, feedback loop, human-assisted reference, and object-centric geometry dynamics and functionality evaluation" loading="lazy" />
+      <figcaption>▲ The Video2World workflow (paper Figure 2). A coding agent uses the input video, simulator tools and execution feedback to build a scene and robot behavior. A hidden evaluation separately checks geometry, observed object motion and task requirements.</figcaption>
+    </figure>
+
+    <div class="metric-callout" aria-label="Benchmark size">
+      <div><b>222</b><span>Reconstruction instances</span></div>
+      <div><b>189</b><span>Source video clips</span></div>
+      <div><b>39</b><span>Task families</span></div>
+    </div>
+    <p class="figure-caption">Video2World pairs demonstration videos with target simulator configurations and hidden object-centric annotations. One source clip can yield several reconstruction instances when different robot embodiments or control interfaces are required.</p>
+
+    <p>The tasks span furniture assembly, rigid-object pick-and-place, human hand interactions, dual-arm tasks, household manipulation, and contact-rich pushing and deformable-object tasks. Some reward accurate placement; others need tight geometric tolerances, stable grasps, or correctly ordered contacts, which is exactly where the unobserved variables matter most.</p>
+
+    <div class="rtable-wrap">
+      <table class="rtable" aria-label="Video2World benchmark source groups">
+        <thead><tr><th>Video source</th><th>Families</th><th>Clips</th><th>Instances</th></tr></thead>
+        <tbody>
+          <tr><td>FurnitureBench</td><td>9</td><td>64</td><td>64</td></tr>
+          <tr><td>DROID</td><td>2</td><td>20</td><td>20</td></tr>
+          <tr><td>Human videos (HOI4D, HOT3D, DexYCB, OakInk2)</td><td>8</td><td>33</td><td>66</td></tr>
+          <tr><td>RoboDojo</td><td>2</td><td>25</td><td>25</td></tr>
+          <tr><td>In-house household</td><td>15</td><td>37</td><td>37</td></tr>
+          <tr><td>Reconstructed digital twins</td><td>3</td><td>10</td><td>10</td></tr>
+          <tr class="gain"><td><strong>Total</strong></td><td><strong>39</strong></td><td><strong>189</strong></td><td class="highlight"><strong>222</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="figure-caption">Source-group totals from the paper's Table A8 and 39 family assignments (Appendix 8.2). The 33 human videos each produce an arm-targeted and a hand-targeted reconstruction, giving 66 instances. Related windows from longer recordings are counted as separate clips.</p>
+
+    <p>The human videos make the causal reading concrete. In the source clip the cause is a human hand; in the simulator it must be a robot. What must transfer is therefore not the actor's joint angles but the <strong>effect on the objects and the mechanism that produced it</strong>: grasp, lift, insert, release. That is why Video2World defines success on object-centric conditions under a designated robot embodiment. The task is a property of the scene's causal structure, and it should not change with who performs the intervention.</p>
+
+    <h3 id="trailer">Video2World in 90 seconds</h3>
+    <figure class="wide-figure">
+      <video class="teaser-video" src="img/video2world_trailer.mp4" poster="img/video2world_trailer_poster.jpg" controls playsinline preload="metadata" aria-label="Video2World 90-second trailer"></video>
+      <figcaption>▲ The 90-second trailer: from embodied videos to agent-written simulators, and how the benchmark checks whether those worlds work. Sound on.</figcaption>
+    </figure>
+
+    <h2 id="evaluation"><span class="num">03</span>Evaluation as a Ladder</h2>
+    <p>Each rung asks a harder question about the submitted program, and each is checked against held-out annotations the agent never sees. Before any of them, the authored package must build and run.</p>
+
+    <h3>Rung 1 · Seeing: does the world reproduce what was observed?</h3>
+    <p><strong>Geometry</strong> compares the scene specification \(\eta\) with the source scene: object shape, scale, placement and scene-level surface correspondence, reported as interaction-weighted Scene Chamfer Distance and object-level Shape CD and size error. The weighting is itself a causal judgment: a receiving bowl or insertion slot lies on the causal path of the task, a decorative background object does not. <strong>Dynamics</strong> compares the motion of the participating objects with the demonstration, using translation and rotation absolute pose error (T-APE, R-APE) and translation relative pose error (T-RPE), on what actually moved in simulation rather than what a script intended to move.</p>
+    <p>Both are observational fits: they ask whether the world agrees with the recording. Because many worlds agree with one recording, passing rung 1 does not mean the causes are right.</p>
+
+    <h3>Rung 2 · Doing: does the robot cause the outcome?</h3>
+    <p>During evaluation the robot's commands are the agent's only input to the world; every later change in object state must arise from the simulator's dynamics. Directly writing an object's pose mid-rollout, in effect a \(\mathrm{do}(\text{object pose})\) shortcut that bypasses physics, is prohibited. The rollout is then checked against <strong>object-centric success conditions</strong>: required initial relations, the essential interaction events in their required order, physical validity, and the terminal goal. A world is functionally correct when</p>
+    <div class="math">\[
+      \tau_P \in \Gamma(V), \quad u_t \in \mathcal{U}_r \;\; \forall\, t \in \{0, \dots, H-1\},
+    \]</div>
+    <p>where \(\Gamma(V)\) is the set of rollouts that satisfy the task demonstrated in \(V\) and \(\mathcal{U}_r\) contains only robot actuation commands. Reaching a similar final configuration through a <em>different</em> interaction is not in \(\Gamma(V)\). Task Progress credits intermediate milestones; Task Success requires the whole mechanism.</p>
+
+    <h3>Rung 3 · Imagining: does it still hold when the world is different?</h3>
+    <p>The benchmark's main score stops at rung 2: each world is judged on the layout it was built from. Rung 3 asks the counterfactual question directly. Change something the task does not depend on, such as where the target stands, and check whether the robot still succeeds. We probe this rung in §05.</p>
+    <p>Video2World also reports <strong>V2WScore</strong>, a 0–100 summary of executability, functionality (success and progress), geometry and dynamics, macro-averaged across task families so the largest group does not dominate. The components remain essential, because they show <em>which rung</em> a world fails on.</p>
+    <p class="pull">A world is not judged by whether the outcome appears, but by whether the robot causes it.</p>
+
+    <h2 id="results"><span class="num">04</span>Results: How Far Up the Ladder Do Agents Get?</h2>
+    <p>We evaluate <strong>nine frontier coding-agent systems</strong> on the same 222-instance, 39-family benchmark. They share a task interface; each keeps its own model, coding scaffold and inference settings. Seven run with OpenCode; GPT-6 Astra and Claude Fable 5.1 use Codex CLI and Claude Code, respectively. All have simulation and rollout feedback during their autonomous construction attempt.</p>
+
+    <h3>Almost every world runs; few reach rung 2</h3>
+    <p>Almost every system reaches <strong>roughly 88–93% Build Rate</strong>: agents can write a program that the simulator accepts and executes. But a program that runs is only a model with the right type signature. Whether the robot in it causes the demonstrated effect is a separate question, and on that question every automated system succeeds on fewer than 26% of tasks.</p>
+    <figure>
+      <img src="img/build_vs_success.svg" alt="Chart comparing high build rates with much lower task-success rates for Claude Fable 5.1, Claude Opus 5, GPT-6 Astra and human-assisted reconstruction" loading="lazy" />
+      <figcaption>▲ Build Rate versus Task Success. Fable 5.1 builds 93.1% of the instances but succeeds on 25.5% of tasks; the human-assisted reference reaches 58.8% success. Numbers are 39-family macro averages from Table 2, including failed builds as failures.</figcaption>
+    </figure>
+
+    <div class="rtable-wrap">
+      <table class="rtable" aria-label="Main Video2World leaderboard table">
+        <thead><tr><th>System</th><th>V2WScore ↑</th><th>Build % ↑</th><th>Success % ↑</th><th>Scene CD<br>cm ↓</th><th>Shape CD<br>cm ↓</th></tr></thead>
+        <tbody>
+          <tr class="reference"><td>Human-assisted ref.</td><td>74.24</td><td>100.0</td><td>58.8</td><td>2.19</td><td>0.15</td></tr>
+          <tr class="divider"><td colspan="6"></td></tr>
+          <tr><td>Claude Fable 5.1</td><td class="highlight">48.52</td><td>93.1</td><td class="highlight">25.5</td><td class="highlight">5.35</td><td>1.00</td></tr>
+          <tr><td>GPT-6 Astra</td><td>43.55</td><td>93.1</td><td>10.7</td><td>6.23</td><td class="highlight">0.69</td></tr>
+          <tr><td>Claude Opus 5</td><td>41.56</td><td>92.8</td><td>16.0</td><td>6.01</td><td>1.14</td></tr>
+          <tr><td>Kimi K3</td><td>33.19</td><td>92.0</td><td>4.8</td><td>8.08</td><td>1.41</td></tr>
+          <tr><td>GPT-5.6 Sol</td><td>31.00</td><td>92.5</td><td>2.5</td><td>7.79</td><td>1.37</td></tr>
+          <tr><td>DeepSeek V4.1 Flash</td><td>30.54</td><td>92.4</td><td>4.1</td><td>8.59</td><td>1.50</td></tr>
+          <tr><td>Gemini 3.8 Flash</td><td>30.11</td><td>93.1</td><td>2.0</td><td>8.57</td><td>1.25</td></tr>
+          <tr><td>Qwen3.8 Max</td><td>26.55</td><td>87.6</td><td>1.5</td><td>8.36</td><td>1.51</td></tr>
+          <tr><td>GLM-5.3 Flash</td><td>25.69</td><td>87.7</td><td>2.0</td><td>9.58</td><td>1.62</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="figure-caption">Main results, reproduced from Video2World Table 2 (arXiv v3). Lower CD is better. V2WScore and the reported percentages are family macro averages across the main 222-instance evaluation. Continuous geometry metrics use evaluable comparisons; coverage can vary by metric. The human-assisted reference has extra source information and manual refinement, so it is a quality reference, not an identical-input agent baseline.</p>
+
+    <p>Claude Fable 5.1 leads the automated systems at <strong>48.52 V2WScore</strong> and <strong>25.5% Task Success</strong>. Claude Opus 5 completes <strong>16.0%</strong>. The remaining agents do not exceed <strong>10.7%</strong>, despite widespread executable submissions. The human-assisted reference scores <strong>74.24</strong> with <strong>58.8% success</strong>: much stronger, but far from perfect even with extra scene knowledge and human iteration, a reminder of how underdetermined the inverse problem is.</p>
+
+    <h3>Seeing well is not the same as doing right</h3>
+    <p>The gap between rungs shows up directly between agents. GPT-6 Astra has the best automated <strong>object-shape accuracy</strong>, with a Shape CD of <strong>0.69 cm</strong> against Fable's <strong>1.00 cm</strong>. Yet Astra succeeds on just <strong>10.7%</strong> of tasks, versus <strong>25.5%</strong> for Fable, which is better on scene-level geometry and on the end-to-end interaction.</p>
+    <figure>
+      <img src="img/geometry_vs_function.svg" alt="Comparison of GPT-6 Astra and Claude Fable 5.1: better object Shape CD but lower task success for Astra" loading="lazy" />
+      <figcaption>▲ The geometry–functionality mismatch. Object-level shape reconstruction is useful but does not, on its own, establish that the robot can perform the intended interaction. Data from Table 2.</figcaption>
+    </figure>
+    <p>This is a cross-system comparison, not a controlled experiment. The two agents differ in model, scaffold and strategy, so it does not show that better shapes <em>cause</em> lower success. It does show that rung 1 is not sufficient for rung 2. Task success depends on a narrower set of variables: where the contact surfaces are, how much clearance an insertion has, whether the grasp can hold, whether events happen in order. A world can match the pixels well and still get one of those wrong; conversely, a robot can sometimes succeed in an imperfect-looking scene because its behavior compensates for the altered geometry. The paper's within-model, within-family analysis points the same way: better spatial reconstruction tends to help, but it does not guarantee functional correctness.</p>
+
+    <h3>What a rung-2 failure looks like</h3>
+    <p>In the paper's reference examples, the coding-agent worlds look reasonable, yet the required interaction never completes (progress 0.00 and 0.33), while human-assisted reconstructions of the same tasks complete it. This is the difference between authoring a scene and recovering the mechanism that produced it.</p>
+    <figure>
+      <img src="img/figure3_qualitative.png" alt="Source demonstration, Claude Fable 5.1 simulation, and human-assisted reference for two manipulation tasks; failing and successful execution sequences are shown" loading="lazy" />
+      <figcaption>▲ Source video, coding-agent reconstruction and human-assisted reference for two tasks (qualitative portion of paper Figure 3). These individual cases illustrate failure modes; aggregate performance is reported above.</figcaption>
+    </figure>
+    <p>So most agent-built worlds stop below rung 2. A minority pass it: on the layout they were built from, the robot does cause the demonstrated outcome. That leaves the question the benchmark's main score cannot answer. Have those worlds captured the mechanism, or only the one configuration they were shown?</p>
+
+    <h2 id="counterfactual"><span class="num">05</span>Rung 3: Do Working Worlds Survive Intervention?</h2>
+    <p>A world that has truly captured <em>why</em> the marker ends up in the pot should keep working when we change something the task does not depend on, such as exactly where the pot stands. A world that has fitted only the recorded configuration should break. That is the counterfactual question: <em>had the pot been 5 cm further left, would the same robot behavior still have put the marker in it?</em></p>
+    <!--CF_RESULTS-->
+    <p>To find out, we took worlds that pass rung 2 and intervened on them. This is <strong>an additional experiment run for this post, not part of the arXiv v3 results</strong>. The setup:</p>
+    <ul>
+      <li><strong>Worlds.</strong> We rebuilt pick-and-place source videos with GPT-6 Astra (Codex CLI) and Claude Fable 5.1 (Claude Code), each delivering a scene and a layout-conditioned behavior program, in a rigid-body SAPIEN setup. Following a selection rule fixed in advance, we took the first 3 videos in a fixed list where <em>both</em> agents' worlds succeeded on the unmodified layout. The same rule found no qualifying video in the stacking and insertion lists, so the test covers pick-and-place only.</li>
+      <li><strong>Interventions.</strong> In each world we moved either the manipulated object or the target by 2, 5 or 10 cm in two opposite directions, giving 12 interventions per world and 72 paired cells in total. The interventions were chosen before any run, by a rule that looks only at robot reach and object separation, and they are <em>identical</em> for both agents. An earlier version let each package's own declared layout ranges decide, which would have let each agent pick its own test set.</li>
+      <li><strong>Three ways to act in the intervened world.</strong> <em>Open-loop replay</em> executes the trajectory planned for the original layout, ignoring the change. <em>Direct reuse</em> runs the agent's original behavior program, which reads the new layout. <em>Agent adaptation</em> gives the same agent a fresh session to revise the program, with at most 10 rollouts and 10 minutes; its tool reports object poses, never task success.</li>
+    </ul>
+
+    <figure>
+      <img src="img/counterfactual_reuse.svg" alt="Two line charts of task success versus displacement (0, 2, 5, 10 cm). In both GPT-6 Astra and Claude Fable 5.1 worlds, open-loop replay falls from 100% at 0 cm to 0% at 10 cm, while direct reuse and agent adaptation stay between 83% and 100%." loading="lazy" />
+      <figcaption>▲ Counterfactual reuse in agent-built worlds. Every world succeeds at 0 cm by selection. Open-loop replay collapses as the scene moves; the agents' own programs keep producing the effect. \(3 \times 12\) interventions per agent (pick-and-place videos); averaged within video, then across videos.</figcaption>
+    </figure>
+
+    <div class="rtable-wrap">
+      <table class="rtable" aria-label="Counterfactual reuse results">
+        <thead><tr><th>World built by</th><th>Open-loop<br>replay</th><th>Direct<br>reuse</th><th>Agent<br>adaptation</th><th>Recovered<br>failures</th><th>Broken<br>successes</th><th>Rollouts<br>used</th></tr></thead>
+        <tbody>
+          <tr><td>GPT-6 Astra</td><td>31%</td><td>92%</td><td class="highlight">94%</td><td>1/3</td><td>0/33</td><td>2.3</td></tr>
+          <tr><td>Claude Fable 5.1</td><td>25%</td><td>86%</td><td class="highlight">92%</td><td>2/5</td><td>0/31</td><td>2.6</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="figure-caption">Task success over the 12 interventions (2–10 cm), averaged within each video and then across 3 videos. “Recovered”: direct-reuse failures that adaptation fixed. “Broken”: direct-reuse successes that adaptation turned into failures. Rollouts: mean adaptation attempts per intervention. One seed; every row is re-executed from a clean reset by the evaluator.</p>
+
+    <h3>The recorded trajectory does not carry the cause</h3>
+    <p>Replaying the original plan works when almost nothing changes and fails as soon as something does. Its success falls from 67% (GPT-6 Astra worlds) and 50% (Fable 5.1 worlds) at 2 cm to 0% for both at 10 cm. In 3 cells the replay ended with the object thrown out of the scene entirely. This is the observational baseline in miniature: a trajectory is a record of what happened, and it does not say what to do when the world is different.</p>
+
+    <h3>The agents' programs mostly do</h3>
+    <p>The same worlds, driven by the agents' original programs, keep producing the effect: <strong>92%</strong> of interventions succeed in GPT-6 Astra worlds and <strong>86%</strong> in Fable 5.1 worlds, without any change to the code. These programs condition on the scene. They grasp relative to where the object is and release relative to where the target is, which is the dependency the task actually has. In causal terms, the agents encoded a mechanism, not a trajectory, and the simulators propagate the intervention through physics consistently enough for that mechanism to keep working.</p>
+    <p>The failures are informative too. In Fable 5.1's <code>rail_marker_pot</code> world, moving the pot never hurt: 6/6 successes. Moving the marker almost always did: 1/6. The program does recompute its grasp from the marker's new pose, and the arm reaches it without IK failures. Yet in the failed cases the gripper never registers a grasp: whatever made the grasp work in that world held only at the recorded pose. One link in the chain worked for the observed case without generalizing. Success on the source layout could not reveal this. A 2 cm intervention did.</p>
+    <p>Giving the agent a short repair session helps at the margin. Adaptation raised success to <strong>94%</strong> and <strong>92%</strong>, recovering 1/3 and 2/5 of the direct-reuse failures with about 2–3 rollouts each. On these 3 videos it broke none of the cases that already worked. On a fourth qualifying video, run as a check outside the pre-selected set, the pattern held for direct reuse (both 92%). There, GPT-6 Astra's adaptation did turn 1 working case into a failure.</p>
+
+    <h3>What this does and does not show</h3>
+    <p>The test is <em>conditional</em>: it uses only worlds that already succeed on the source layout, and in Video2World's main results such worlds are a minority for every agent. It is <em>small</em>: 3 videos per agent, one task family, one seed. Most importantly, it measures whether the world and behavior stay <em>internally</em> consistent under intervention. We have no recording of the real scene with the pot moved 10 cm, so we cannot check that the simulated counterfactual matches what would really have happened. Closing that gap, with paired real counterfactuals, is exactly the kind of evaluation the causal framing calls for next.</p>
+    <p class="pull">Success on the source layout says a world reproduces what happened. Success under intervention says it captured why.</p>
+<!--/CF_RESULTS-->
+
+    <h2 id="implications"><span class="num">06</span>What It Takes to Climb</h2>
+    <p>Video2World changes the question we ask of autonomous world construction from “does it look right?” or “does it run?” to “which rung does it reach?”. Today's agents mostly write worlds that run and look plausible; few reach rung 2, and in our small test those that do mostly carry their mechanism to rung 3. Each rung points to its own next step.</p>
+    <ul>
+      <li><strong>Rung 1: experiment, don't just fit.</strong> One video cannot pin down mass, friction or hidden clearances. An agent can design interventions in its own world, such as perturbing a grasp, varying a clearance or replaying with a heavier object, to find which unobserved variables the outcome is sensitive to, and then look back at the video for evidence on exactly those.</li>
+      <li><strong>Rung 2: attribute the failure.</strong> A failed interaction can come from a wrong \(\eta\) or a wrong \(\pi\). Holding one fixed while varying the other is how evaluation can say which link of the chain broke.</li>
+      <li><strong>Rung 3: evaluate counterfactually, then against reality.</strong> Success under controlled interventions is cheap to test once a world exists. The next step is paired real counterfactuals, recordings of the same scene changed on purpose, so a world's answers can be checked against what really happens, not only for consistency.</li>
+    </ul>
+    <p>The ambition is not just to automate simulator setup. It is to turn diverse embodied observations into <span class="u">reusable worlds whose causes are right</span>, worlds that support physical reasoning and robot learning beyond the clip they came from.</p>
+    <p class="pull">The future of Video-to-Sim is not more believable footage. It is worlds you can intervene on, and get the right answer.</p>
+
+    <section id="resources" class="resources">
+      <div class="res-label">Paper, code &amp; citation</div>
+      <div class="head-links">
+        <a class="btn" href="https://arxiv.org/abs/2610.04432" target="_blank" rel="noopener">Read the paper</a>
+        <a class="btn ghost" href="https://github.com/AetherLabsAI/Video2World" target="_blank" rel="noopener">Code</a>
+        <a class="btn ghost" href="https://huggingface.co/datasets/AetherLabs-AI/Video2World" target="_blank" rel="noopener">Dataset</a>
+        <a class="btn ghost" href="https://aetherlabsai.github.io/Video2World/" target="_blank" rel="noopener">Project page</a>
+      </div>
+      <pre class="bibtex">@article{tang2026video2world,
+  title   = {Video2World: Benchmarking Coding Agents for Interactive
+             World Modeling from Embodied Videos},
+  author  = {Tang, Jinzhou and Zhang, Zijun and Yang, Jing and Yan, Yuchen and
+             Zhou, Kun and Mao, Lingjun and Han, Ruobing and Cao, Jinglin and
+             Xu, Wenpeng and He, Lukun and Fu, Minghao and Feng, Fan and Huang, Biwei},
+  journal = {arXiv preprint arXiv:2610.04432},
+  year    = {2026}
+}</pre>
+    </section>
+  </article>
+</div>
+<footer class="footer">
+  <span class="brand-mini">© 2026 · Video2World · Aether AI</span>
+  <span class="links"><a href="https://arxiv.org/abs/2610.04432">Paper</a><a href="https://github.com/AetherLabsAI/Video2World">Code</a><a href="https://aetherlabsai.github.io/Video2World/">Project</a></span>
+</footer>
+
+</body>
+</html>

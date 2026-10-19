@@ -1,0 +1,683 @@
+{
+  "source_page": "https://aetherlabsai.github.io/Video2World/",
+  "retrieved_at": "2026-10-13T20:42:43.401506+00:00",
+  "scope": "Only verified public Video2World assets. No Opus 5.5 case media.",
+  "case_count": 4,
+  "downloaded": 45,
+  "failed": 0,
+  "total_bytes": 12038236,
+  "assets": [
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/logos/aether-ai.png",
+      "relative_path": "assets/aether-ai.png",
+      "group": "logo",
+      "max_bytes": 2097152,
+      "content_type": "image/png",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 20620,
+      "sha256": "a45edee4b67c35bdb581a35617025816e3caac52087b1c27a491fa337ae70c37",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/aether-ai.png"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-fable51.mp4",
+      "relative_path": "assets/cases/carton-fable51.mp4",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 189243,
+      "sha256": "07a7d70b63600975e1b0a2cc5858f539689a4139635718feab54cc9527dd345c",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-fable51.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 9.4
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-fable51.webp",
+      "relative_path": "assets/cases/carton-fable51.webp",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 9210,
+      "sha256": "024911bf4a08bea647bab7abc18c35dce93e74756cfe9e99607a9790885853cf",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-fable51.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-gpt6astra.mp4",
+      "relative_path": "assets/cases/carton-gpt6astra.mp4",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 162167,
+      "sha256": "634c0a765d79a9b501e586b654450faa0652b6fc3d78208e336db7ffff9aad65",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-gpt6astra.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 9.6
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-gpt6astra.webp",
+      "relative_path": "assets/cases/carton-gpt6astra.webp",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 6888,
+      "sha256": "a5f00bfb7e4a3309942c79033254f2d08f6f3789bad0fcafd38d8e92b02d6bc5",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-gpt6astra.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-har.mp4",
+      "relative_path": "assets/cases/carton-har.mp4",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 104678,
+      "sha256": "1a5d6dfa8defb5f694362695c84c51c620c75f6d80d4569d01b06766c8dc7ee8",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-har.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 1.633333
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-har.webp",
+      "relative_path": "assets/cases/carton-har.webp",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 7082,
+      "sha256": "89e4a521fe5629164bd151e5b97c8214a9951923331d74fd790a78850038c467",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-har.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-opus5.mp4",
+      "relative_path": "assets/cases/carton-opus5.mp4",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 135640,
+      "sha256": "015f3e392e8008479cc5cc2b21b9016a98d46cbf7fa7c2d1c31bf5aa019d981e",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-opus5.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 9.4
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-opus5.webp",
+      "relative_path": "assets/cases/carton-opus5.webp",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 6638,
+      "sha256": "057526997eadab3e005371eafef9e491d30c010cdc092fbd675019e8a4d033d5",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-opus5.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-source.mp4",
+      "relative_path": "assets/cases/carton-source.mp4",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 277551,
+      "sha256": "8f9740e4275b5329678f40758187774d790c7675e384b5a222e1c5695566448f",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-source.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 1.633333
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/carton-source.webp",
+      "relative_path": "assets/cases/carton-source.webp",
+      "case_id": "carton",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 34632,
+      "sha256": "6f184b80fcafaa694e1a11fe54044c25a6740e345343ff48052c6eb414a82e14",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/carton-source.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-fable51.mp4",
+      "relative_path": "assets/cases/hood-fable51.mp4",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 174635,
+      "sha256": "4a651ec0044eb07c9fb75b4fbc664cb6f9cf6c5695dcafa53dc683a0870a58ae",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-fable51.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 448,
+        "height": 448,
+        "duration_seconds": 17.4
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-fable51.webp",
+      "relative_path": "assets/cases/hood-fable51.webp",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 3690,
+      "sha256": "a9ce3676ff47a2b91fb31233ca3fb609409a6c6d4ffa334d4ca7e4bcd0408638",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-fable51.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-gpt6astra.mp4",
+      "relative_path": "assets/cases/hood-gpt6astra.mp4",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 192373,
+      "sha256": "26c5afbe65d0fa55913a3f5abd0b0a589638a0fd2332e45dc68657b497bb06a5",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-gpt6astra.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 448,
+        "height": 448,
+        "duration_seconds": 23.6
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-gpt6astra.webp",
+      "relative_path": "assets/cases/hood-gpt6astra.webp",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 4368,
+      "sha256": "193e4712ebe7b7bd40e6fe1afbd82b4c8c21b5e3a1b416821c4cc973f4fc6e3a",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-gpt6astra.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-har.mp4",
+      "relative_path": "assets/cases/hood-har.mp4",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 216284,
+      "sha256": "2566579192e36fd4cb70393e097cc22722f5229736f61e29ec379e25680e6830",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-har.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 448,
+        "height": 448,
+        "duration_seconds": 36.8
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-har.webp",
+      "relative_path": "assets/cases/hood-har.webp",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 7444,
+      "sha256": "5b51bbd13191d978475d60551a2a1015e9b1f88a0d14274a86a6079915021577",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-har.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-opus5.mp4",
+      "relative_path": "assets/cases/hood-opus5.mp4",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 97215,
+      "sha256": "7aa8c857c0574cae3079b72200371f23570e06293630d3367701b4eaf7a49973",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-opus5.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 448,
+        "height": 448,
+        "duration_seconds": 14.4
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-opus5.webp",
+      "relative_path": "assets/cases/hood-opus5.webp",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 3958,
+      "sha256": "3a598d2d34123fa3ae5a3d278492b6ac81b1ff59a826174168c4b9d49da7dd0e",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-opus5.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-source.mp4",
+      "relative_path": "assets/cases/hood-source.mp4",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 2555804,
+      "sha256": "b152a32dc7d63d6f3bb4fcec6d3e16bb665458523069be0f528672b9c0be7aea",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-source.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 14.4
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/hood-source.webp",
+      "relative_path": "assets/cases/hood-source.webp",
+      "case_id": "hood",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 26136,
+      "sha256": "1f5ac773d0a0d6d40d2ed83f3bd2b386f476181e71b31eb5f3a84964f577f54f",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/hood-source.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-fable51.mp4",
+      "relative_path": "assets/cases/lift-fable51.mp4",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 41677,
+      "sha256": "96eb764850475afc2df8873ba0bd8e388fdbe7fd1dacb97441085b2ed3a018ca",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-fable51.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 4.0
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-fable51.webp",
+      "relative_path": "assets/cases/lift-fable51.webp",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 4642,
+      "sha256": "d1ccd7606c42e86f5e9df956c00318710d6c3c451236485aedb619757ae5ace3",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-fable51.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-gpt6astra.mp4",
+      "relative_path": "assets/cases/lift-gpt6astra.mp4",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 52248,
+      "sha256": "519a9ae5ef26dd7ec176b1b672f8a51b13afe3f81d00175424ffef08218ca7d0",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-gpt6astra.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 6.0
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-gpt6astra.webp",
+      "relative_path": "assets/cases/lift-gpt6astra.webp",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 5186,
+      "sha256": "ebae43a8622a79eee5e234facbd138f472abda29da25e8e316a766df45d683f0",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-gpt6astra.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-har.mp4",
+      "relative_path": "assets/cases/lift-har.mp4",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 90987,
+      "sha256": "26820116a02dfc93ecc3a45428f1677a3a865035838fd7f5cc038d8f6be0f85c",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-har.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 2.466667
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-har.webp",
+      "relative_path": "assets/cases/lift-har.webp",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 6498,
+      "sha256": "9aca6242aef2538794702c14359e296ad552b66c6e915ffa949467ad3e3ba0c4",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-har.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-opus5.mp4",
+      "relative_path": "assets/cases/lift-opus5.mp4",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 39726,
+      "sha256": "52c812b798bffc6a1a64eb600b9d326499abe1966c344e0f5306de7ef8a7a749",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-opus5.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 4.0
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-opus5.webp",
+      "relative_path": "assets/cases/lift-opus5.webp",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 4806,
+      "sha256": "a3bb2929d921efd8ef99b5f827622071b728938c283ec3ecffdacb24c1498aec",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-opus5.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-source.mp4",
+      "relative_path": "assets/cases/lift-source.mp4",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 162815,
+      "sha256": "395295e8998c58c8cea1aee0217b3e71c9decb4fe99ad4ce38a452d83ea3c7cf",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-source.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 480,
+        "duration_seconds": 2.466667
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/lift-source.webp",
+      "relative_path": "assets/cases/lift-source.webp",
+      "case_id": "lift",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 32014,
+      "sha256": "81183c5b538e376221fad4cbeb85d4175ada20903ad14e189b32958bff6b75ea",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/lift-source.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-fable51.mp4",
+      "relative_path": "assets/cases/tape-fable51.mp4",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 81067,
+      "sha256": "1999d0e20fe3618ec5d99ae6f684b466f07992e5302bb46dcc47fb63d675ce00",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-fable51.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 4.533333
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-fable51.webp",
+      "relative_path": "assets/cases/tape-fable51.webp",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 8882,
+      "sha256": "e826127012931818bfcc4027d5cc0b2fbb2a89dd58c38cdf3999b3cacc272834",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-fable51.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-gpt6astra.mp4",
+      "relative_path": "assets/cases/tape-gpt6astra.mp4",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 83074,
+      "sha256": "231e4e8a587100c40247eafd97ef10cdafd82f650342a8270ab744e01157f6c8",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-gpt6astra.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 5.866667
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-gpt6astra.webp",
+      "relative_path": "assets/cases/tape-gpt6astra.webp",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 7564,
+      "sha256": "578aab140297165ddf1ef50e0a16d721be20d28c9cf6736df0fb8d9afb08a22d",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-gpt6astra.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-har.mp4",
+      "relative_path": "assets/cases/tape-har.mp4",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 95845,
+      "sha256": "ba311f118b8424ca1d8793250e4177ab9c628b83cf654af0c80acf295144acb6",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-har.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 7.733333
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-har.webp",
+      "relative_path": "assets/cases/tape-har.webp",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 6880,
+      "sha256": "8de49b9d95491defd05b355ba3224ba64a03d8207a7771d14bc298cbe48c7c14",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-har.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-opus5.mp4",
+      "relative_path": "assets/cases/tape-opus5.mp4",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 78520,
+      "sha256": "18af46ac62e668945772968b2497a8e40cfebd9f87f408a86ecb6a6dfefb0f6a",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-opus5.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 640,
+        "duration_seconds": 4.8
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-opus5.webp",
+      "relative_path": "assets/cases/tape-opus5.webp",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 7966,
+      "sha256": "486ec68bcab4b188f09012e193e046e9a59417b33f133f800e2ac7ce409fdc47",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-opus5.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-source.mp4",
+      "relative_path": "assets/cases/tape-source.mp4",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 1087063,
+      "sha256": "476c62097bba2bb5694d416b5cd0c482374b7b199589bab431a388d1db48d1f2",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-source.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.666667
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/exp/tape-source.webp",
+      "relative_path": "assets/cases/tape-source.webp",
+      "case_id": "tape",
+      "group": "cases",
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 39498,
+      "sha256": "13cce6166e6ea2dbe99ccf11bdec0e57b07e008eb6ed44484d5f03936c2c23a2",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/cases/tape-source.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/cinematic/shelf-real-poster.webp",
+      "relative_path": "assets/hero/shelf-real-poster.webp",
+      "group": "hero",
+      "max_bytes": 20971520,
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 75924,
+      "sha256": "c1efe53a02ff2a2d8797bd1051c93b48439ef14146c8f0cda6233119879a0fd4",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/hero/shelf-real-poster.webp"
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/cinematic/shelf-real.mp4",
+      "relative_path": "assets/hero/shelf-real.mp4",
+      "group": "hero",
+      "max_bytes": 20971520,
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 5213221,
+      "sha256": "ae418707b804e1f4463814a1eadef7c24c5fd276e73d7524617862557b95885e",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/hero/shelf-real.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 800,
+        "duration_seconds": 11.9
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/cinematic/shelf-sim-720.mp4",
+      "relative_path": "assets/hero/shelf-sim-720.mp4",
+      "group": "hero",
+      "max_bytes": 20971520,
+      "content_type": "video/mp4",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 552321,
+      "sha256": "6a6914a1bd07fef4ffea5b00c25a2b9d214bfb287744a132b023976553e12818",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/hero/shelf-sim-720.mp4",
+      "video_metadata": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 800,
+        "duration_seconds": 11.9
+      }
+    },
+    {
+      "source_url": "https://aetherlabsai.github.io/Video2World/video/cinematic/shelf-sim-poster.webp",
+      "relative_path": "assets/hero/shelf-sim-poster.webp",
+      "group": "hero",
+      "max_bytes": 20971520,
+      "content_type": "image/webp",
+      "http_status": 200,
+      "status": "downloaded",
+      "bytes": 23556,
+      "sha256": "5b5b59004c5c704e0501d3a2b39b10809ef3d442a1d80534d836153da38b2430",
+      "local_path": "/workspace/sites/video2world-observatory/dist/assets/hero/shelf-sim-poster.webp"
+    }
+  ]
+}

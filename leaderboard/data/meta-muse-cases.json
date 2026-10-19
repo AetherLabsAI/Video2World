@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "model_id": "meta-muse",
+  "status": "verified",
+  "snapshot_date": "2026-10-17",
+  "selection": null,
+  "selection_provenance": {
+    "common_cases": 222,
+    "selected_cases": 5,
+    "note": "One source video, four flagship models. These five illustrative cases were selected for an earlier Opus 5.5 comparison; use the full leaderboard for aggregate performance. Gemini 4 Argon is coming soon.",
+    "criterion": "Retains the five previously featured cases; all three released models use byte-identical source videos on each case. Selection originally required Opus success and Fable failure; this is not a random sample.",
+    "source": "Owner-published V2 records, retrieved 2026-10-17; formal task_success judgments and model rollout assets."
+  },
+  "intro": "These five source videos were retained from an earlier Opus 5.5 success-versus-Fable-failure selection. Each now has a verified Meta Muse Wonder output and formal task judgment. They illustrate individual executions, not a representative sample or an aggregate success rate.",
+  "featured_case": "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+  "cases": [
+    {
+      "id": "fbraw_2023-01-26-00_00_38_desk_leg2",
+      "family": "leg-insert",
+      "title": "Desk leg insertion",
+      "description": "Desk-leg insertion, from a FurnitureBench robot video.",
+      "dataset": "FurnitureBench",
+      "source": {
+        "video": "assets/cases/opus55/05_desk_leg_insert/human_assisted.mp4",
+        "poster": "assets/cases/opus55/05_desk_leg_insert/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Meta Muse Wonder",
+        "video": "assets/cases/frontier/fbraw_2023-01-26-00_00_38_desk_leg2/meta-muse.mp4",
+        "poster": "assets/cases/frontier/fbraw_2023-01-26-00_00_38_desk_leg2/meta-muse.webp",
+        "success": false,
+        "progress": 0.25,
+        "metrics": {
+          "scene_cd": 9.721084434574243,
+          "terminal_trans": 8.93032434440812
+        },
+        "description": "Formal evaluation: task failed.",
+        "provenance": {
+          "run_label": "musewonder_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+          "original_rollout_sha256": "d1c7cb0d20c2e2143b7942f0dfb72f3c861dc5f352778e13946e3cf0e33d6a6f",
+          "web_rollout_sha256": "ad3efd52683a6fd732e66e86fab4c1444fe3560ab5c0ce9a77e76d710a745b5f",
+          "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+          "published_at": "2026-10-15T08:44:39Z"
+        },
+        "final": "scene CD 9.72 cm · terminal translation metric 8.93 cm"
+      },
+      "provenance": {
+        "run_label": "musewonder_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+        "original_rollout_sha256": "d1c7cb0d20c2e2143b7942f0dfb72f3c861dc5f352778e13946e3cf0e33d6a6f",
+        "web_rollout_sha256": "ad3efd52683a6fd732e66e86fab4c1444fe3560ab5c0ce9a77e76d710a745b5f",
+        "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+        "published_at": "2026-10-15T08:44:39Z"
+      },
+      "analysis": "The desk-leg insertion fails the formal task judgment with stage progress 0.25. The geometry and terminal metrics describe this case without identifying the cause of failure."
+    },
+    {
+      "id": "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+      "family": "droid-pick-place",
+      "title": "Pick-and-place",
+      "description": "Pick-and-place, from a DROID robot video.",
+      "dataset": "DROID",
+      "source": {
+        "video": "assets/cases/opus55/01_droid_orange_pick_place/human_assisted.mp4",
+        "poster": "assets/cases/opus55/01_droid_orange_pick_place/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Meta Muse Wonder",
+        "video": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/meta-muse.mp4",
+        "poster": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/meta-muse.webp",
+        "success": true,
+        "progress": 1.0,
+        "metrics": {
+          "scene_cd": 2.001384960906405,
+          "terminal_trans": 0.7034068701682137
+        },
+        "description": "Formal evaluation: task success.",
+        "provenance": {
+          "run_label": "musewonder_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+          "original_rollout_sha256": "70758a07ca526f517cf58ce2540e2694474d5c7f356d9598115baa814add4125",
+          "web_rollout_sha256": "68aa580d10b2c731fd39a6c367c71effb50ebdfe1b6de9712602efd3d4f5003d",
+          "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+          "published_at": "2026-10-15T08:44:39Z"
+        },
+        "final": "scene CD 2.00 cm · terminal translation metric 0.70 cm"
+      },
+      "provenance": {
+        "run_label": "musewonder_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+        "original_rollout_sha256": "70758a07ca526f517cf58ce2540e2694474d5c7f356d9598115baa814add4125",
+        "web_rollout_sha256": "68aa580d10b2c731fd39a6c367c71effb50ebdfe1b6de9712602efd3d4f5003d",
+        "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+        "published_at": "2026-10-15T08:44:39Z"
+      },
+      "analysis": "This pick-and-place case passes the formal task judgment with full stage progress. It is one supplied successful example, rather than an estimate of aggregate task performance."
+    },
+    {
+      "id": "dexycb_s01_142517",
+      "family": "dexycb-lift-bimanual",
+      "title": "Two-handed lift",
+      "description": "Two-handed lift, from a DexYCB video.",
+      "dataset": "DexYCB",
+      "source": {
+        "video": "assets/cases/opus55/02_dexycb_bimanual_lift/human_assisted.mp4",
+        "poster": "assets/cases/opus55/02_dexycb_bimanual_lift/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Meta Muse Wonder",
+        "video": "assets/cases/frontier/dexycb_s01_142517/meta-muse.mp4",
+        "poster": "assets/cases/frontier/dexycb_s01_142517/meta-muse.webp",
+        "success": false,
+        "progress": 0.0,
+        "metrics": {
+          "scene_cd": 4.918095213825429
+        },
+        "description": "Formal evaluation: task failed.",
+        "provenance": {
+          "run_label": "musewonder_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "5ff6701e5d0fb085b69b184906e15d5e0fe9782f6ddfcf4c238c1f0d832c3c87",
+          "original_rollout_sha256": "a71df9b7551b18f09051855d5ef0f916d5f2172076c98807d5f42576d2142149",
+          "web_rollout_sha256": "7f681d2b404fced150a0d5f0e5545447524cdbf15f9adcb7aa63108b1d365ceb",
+          "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+          "published_at": "2026-10-15T08:44:39Z"
+        },
+        "final": "scene CD 4.92 cm"
+      },
+      "provenance": {
+        "run_label": "musewonder_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "5ff6701e5d0fb085b69b184906e15d5e0fe9782f6ddfcf4c238c1f0d832c3c87",
+        "original_rollout_sha256": "a71df9b7551b18f09051855d5ef0f916d5f2172076c98807d5f42576d2142149",
+        "web_rollout_sha256": "7f681d2b404fced150a0d5f0e5545447524cdbf15f9adcb7aa63108b1d365ceb",
+        "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+        "published_at": "2026-10-15T08:44:39Z"
+      },
+      "analysis": "The formal task judgment fails with zero stage progress. Scene CD is available; no terminal translation measurement was supplied in the published case record."
+    },
+    {
+      "id": "hot3d_002498",
+      "family": "hot3d-pickplace-bimanual",
+      "title": "Two-handed pick-and-place",
+      "description": "Two-handed pick-and-place, from a HOT3D video.",
+      "dataset": "HOT3D",
+      "source": {
+        "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/human_assisted.mp4",
+        "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Meta Muse Wonder",
+        "video": "assets/cases/frontier/hot3d_002498/meta-muse.mp4",
+        "poster": "assets/cases/frontier/hot3d_002498/meta-muse.webp",
+        "success": false,
+        "progress": 0.0,
+        "metrics": {
+          "scene_cd": 12.747564902640569,
+          "terminal_trans": 100.0
+        },
+        "description": "Formal evaluation: task failed.",
+        "provenance": {
+          "run_label": "musewonder_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+          "original_rollout_sha256": "d95fbf84cef3fd27d884268eece6e98d0ec2da508d47008f8c48859cc3c500b7",
+          "web_rollout_sha256": "07eded3ccf94dd0645a8d0752ece34656fad4604b42b7d8e1e631a80b5e6d86c",
+          "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+          "published_at": "2026-10-15T08:44:39Z"
+        },
+        "final": "scene CD 12.75 cm · terminal translation metric 100.00 cm"
+      },
+      "provenance": {
+        "run_label": "musewonder_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+        "original_rollout_sha256": "d95fbf84cef3fd27d884268eece6e98d0ec2da508d47008f8c48859cc3c500b7",
+        "web_rollout_sha256": "07eded3ccf94dd0645a8d0752ece34656fad4604b42b7d8e1e631a80b5e6d86c",
+        "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+        "published_at": "2026-10-15T08:44:39Z"
+      },
+      "analysis": "The task is judged failed with zero stage progress. The terminal translation metric is reported as 100.00 cm; its display does not establish an uncapped physical distance or a specific failure mechanism."
+    },
+    {
+      "id": "fbraw_2023-01-22-22_45_54_lamp_bulb",
+      "family": "bulb-insert",
+      "title": "Lamp bulb insertion",
+      "description": "Lamp-bulb insertion, from a FurnitureBench robot video.",
+      "dataset": "FurnitureBench",
+      "source": {
+        "video": "assets/cases/opus55/04_lamp_bulb_insert/human_assisted.mp4",
+        "poster": "assets/cases/opus55/04_lamp_bulb_insert/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Meta Muse Wonder",
+        "video": "assets/cases/frontier/fbraw_2023-01-22-22_45_54_lamp_bulb/meta-muse.mp4",
+        "poster": "assets/cases/frontier/fbraw_2023-01-22-22_45_54_lamp_bulb/meta-muse.webp",
+        "success": false,
+        "progress": 0.0,
+        "metrics": {
+          "scene_cd": 9.967510366670572,
+          "terminal_trans": 100.0
+        },
+        "description": "Formal evaluation: task failed.",
+        "provenance": {
+          "run_label": "musewonder_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+          "original_rollout_sha256": "2f48eaccf2f50ee961d8f92050b00ef0723e585b5039c2c269026dcca09af87d",
+          "web_rollout_sha256": "952ec998e29334551bda6802c885fc2629b056d75cfa9c36ce69417315592b3a",
+          "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+          "published_at": "2026-10-15T08:44:39Z"
+        },
+        "final": "scene CD 9.97 cm · terminal translation metric 100.00 cm"
+      },
+      "provenance": {
+        "run_label": "musewonder_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+        "original_rollout_sha256": "2f48eaccf2f50ee961d8f92050b00ef0723e585b5039c2c269026dcca09af87d",
+        "web_rollout_sha256": "952ec998e29334551bda6802c885fc2629b056d75cfa9c36ce69417315592b3a",
+        "published_record_sha256": "bc0bceabf012802f0ef4422c13ec302415ac5faf23e4c83b7a44a62937b37988",
+        "published_at": "2026-10-15T08:44:39Z"
+      },
+      "analysis": "The lamp-bulb insertion fails the formal task judgment with zero stage progress. The terminal translation metric is reported as 100.00 cm, which should be read as the published metric rather than an uncapped physical-distance claim."
+    }
+  ],
+  "failure_cases": []
+}

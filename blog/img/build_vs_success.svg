@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460">
+<rect width="900" height="460" fill="#f3ebdf"/>
+<text x="43" y="54" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="23" font-weight="600" >MOST WORLDS RUN. FAR FEWER SUCCEED.</text>
+<text x="43" y="82" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="15" font-weight="500" >Executability versus task completion</text>
+<rect x="43" y="101" width="16" height="12" rx="2" fill="#5c7478"/>
+<text x="68" y="113" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="15" font-weight="500" >Build rate</text>
+<rect x="191" y="101" width="16" height="12" rx="2" fill="#8f564b"/>
+<text x="217" y="113" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="15" font-weight="500" >Task success</text>
+<line x1="280.0" y1="137" x2="280.0" y2="402" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="280" y="126" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle" >0%</text>
+<line x1="413.8" y1="137" x2="413.8" y2="402" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="414" y="126" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle" >25%</text>
+<line x1="547.5" y1="137" x2="547.5" y2="402" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="548" y="126" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle" >50%</text>
+<line x1="681.2" y1="137" x2="681.2" y2="402" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="681" y="126" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle" >75%</text>
+<line x1="815.0" y1="137" x2="815.0" y2="402" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="815" y="126" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle" >100%</text>
+<text x="43" y="177" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="17" font-weight="500" >Claude Fable 5.1</text>
+<rect x="280" y="160" width="498.1" height="15" rx="3" fill="#5c7478"/>
+<text x="787" y="172" fill="#5c7478" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="600" >93.1%</text>
+<rect x="280" y="183" width="136.4" height="15" rx="3" fill="#8f564b"/>
+<text x="425" y="195" fill="#8f564b" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="600" >25.5%</text>
+<text x="43" y="242" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="17" font-weight="500" >Claude Opus 5</text>
+<rect x="280" y="225" width="496.5" height="15" rx="3" fill="#5c7478"/>
+<text x="785" y="237" fill="#5c7478" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="600" >92.8%</text>
+<rect x="280" y="248" width="85.6" height="15" rx="3" fill="#8f564b"/>
+<text x="375" y="260" fill="#8f564b" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="600" >16.0%</text>
+<text x="43" y="307" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="17" font-weight="500" >GPT-6 Astra</text>
+<rect x="280" y="290" width="498.1" height="15" rx="3" fill="#5c7478"/>
+<text x="787" y="302" fill="#5c7478" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="600" >93.1%</text>
+<rect x="280" y="313" width="57.2" height="15" rx="3" fill="#8f564b"/>
+<text x="346" y="325" fill="#8f564b" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="600" >10.7%</text>
+<text x="43" y="372" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="17" font-weight="500" >Human-assisted</text>
+<rect x="280" y="355" width="535.0" height="15" rx="3" fill="#5c7478"/>
+<text x="824" y="367" fill="#5c7478" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="600" >100.0%</text>
+<rect x="280" y="378" width="314.6" height="15" rx="3" fill="#8f564b"/>
+<text x="604" y="390" fill="#8f564b" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="600" >58.8%</text>
+<text x="43" y="436" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" >Source: Video2World, Table 2 (v3); task-family macro averages over 222 instances.</text>
+</svg>

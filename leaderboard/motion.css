@@ -1,0 +1,278 @@
+/* Page motion shared with the main project site: cursor follower, auto-hiding header and the
+   bottom-left section rail. Copied from web_v2/src/styles/motion.css and global.css; keep the
+   two in step. Script: motion.js. */
+
+/* Nav link of the section in view (motion.js), as on the main site. */
+.site-header nav > a { position: relative; }
+.site-header nav > a[aria-current] { color: var(--accent); }
+.site-header nav > a[aria-current]::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ---------- Header: tucks away while scrolling down (motion.js) ---------- */
+.site-header {
+  --nav-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.6s var(--nav-ease), opacity 0.45s ease, visibility 0s;
+}
+.site-header.is-hidden:not(:focus-within):not(:has(details[open])) {
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.5s var(--nav-ease), opacity 0.35s ease, visibility 0s 0.5s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .site-header.is-hidden:not(:focus-within):not(:has(details[open])) { transition: none; }
+}
+
+/* ---------- Smooth cursor follower (motion/cursor.ts) ----------
+   A thin ring trailing the pointer and a small dot close to it; the native cursor stays.
+   "difference" blending with --cursor-mix: on the beige page (#f1eee5) the result is the
+   warm black ink (#231c17 = bg − mix); on the dark title card it turns warm light. */
+.cursor-ring,
+.cursor-dot {
+  --cursor-mix: 206, 210, 206;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgb(var(--cursor-mix));
+}
+.cursor-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(var(--cursor-mix), 0.1);
+  transform: scale(0.4);
+  opacity: 0;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: rgb(var(--cursor-mix));
+}
+.has-cursor .cursor-ring,
+.has-cursor .cursor-dot {
+  opacity: 1;
+}
+/* Over links and buttons the ring opens and fills faintly; pressing tightens it. The size
+   change is on the border box (width/height), so the follow transform is untouched. */
+.cursor-ring {
+  transition:
+    opacity 0.3s ease,
+    width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+.cursor-ring.is-hover {
+  width: 62px;
+  height: 62px;
+  border-color: rgba(var(--cursor-mix), 0.8);
+}
+.cursor-ring.is-hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+.cursor-ring.is-down {
+  width: 30px;
+  height: 30px;
+}
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-ring,
+  .cursor-dot {
+    display: none;
+  }
+}
+
+/* ---------- Vertical section progress (motion/sectionRail.ts) ----------
+   Bottom-left, in the page margin: a column of small diamonds, one per section. The current
+   section is a short vertical bar instead — a light warm base with an --accent fill that
+   advances with progress through the section (--p) — and its name stands beside it. No
+   continuous track. Other names appear on hover / focus. */
+.section-rail {
+  --rail-step: 30px; /* distance between markers */
+  --rail-bar: 36px; /* height of the current section's bar */
+  position: fixed;
+  left: clamp(18px, 2vw, 34px);
+  bottom: clamp(28px, 5vh, 56px);
+  z-index: 15;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0s 0.4s;
+}
+.section-rail.is-shown {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease;
+}
+.section-rail ol {
+  position: relative;
+  display: grid;
+  gap: calc(var(--rail-step) - 14px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.section-rail a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 14px;
+  color: var(--text-faint);
+  text-decoration: none;
+  transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.section-rail a.is-current {
+  height: var(--rail-bar);
+  color: var(--text);
+}
+.section-rail-node {
+  position: relative;
+  flex-shrink: 0;
+  width: 9px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+/* a small diamond */
+.section-rail-node::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: color-mix(in srgb, var(--text) 45%, transparent);
+  transform: rotate(45deg);
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease;
+}
+.section-rail a.is-passed .section-rail-node::before {
+  background: var(--text);
+}
+.section-rail a:hover .section-rail-node::before {
+  background: var(--accent);
+}
+/* the current section: the diamond gives way to a bar (light base, accent fill from the top) */
+.section-rail-node > i {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent) 0 calc(var(--p, 0) * 100%),
+    color-mix(in srgb, var(--accent-warm) 30%, transparent) calc(var(--p, 0) * 100%) 100%
+  );
+  transform: scaleY(0);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.section-rail a.is-current .section-rail-node::before {
+  opacity: 0;
+}
+.section-rail a.is-current .section-rail-node > i {
+  transform: scaleY(1);
+}
+/* names: the current one always, the others on hover / focus */
+.section-rail-label {
+  font: 400 var(--fs-ui) / var(--lh-ui) var(--font-display);
+  letter-spacing: var(--ls-ui);
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none;
+}
+.section-rail a.is-current .section-rail-label,
+.section-rail:hover .section-rail-label,
+.section-rail:focus-within .section-rail-label {
+  opacity: 1;
+  transform: none;
+}
+/* the current name often sits over page content (the margin is narrow): a soft paper backing */
+.section-rail a.is-current .section-rail-label {
+  margin-left: -8px;
+  padding: 5px 9px 5px 8px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.section-rail:hover a.is-current .section-rail-label,
+.section-rail:focus-within a.is-current .section-rail-label {
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.section-rail:hover a:not(.is-current) .section-rail-label {
+  font-size: var(--fs-ui);
+  color: var(--text-faint);
+  letter-spacing: var(--ls-ui);
+}
+/* the header's "current link" underline (nav a[aria-current]::after) is not wanted here */
+.section-rail a[aria-current]::after {
+  display: none;
+}
+.section-rail a:hover .section-rail-label {
+  color: var(--text);
+}
+/* names sit over page content while all are shown: a soft paper backing */
+.section-rail:hover ol::before,
+.section-rail:focus-within ol::before {
+  content: '';
+  position: absolute;
+  inset: -10px -14px -10px -10px;
+  z-index: -1;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+@media (max-width: 760px) {
+  .section-rail {
+    display: none;
+  }
+}
+
+/* ---------- Scroll flow (motion.js), copied from the main site's immersive.css ----------
+   Content stays visible without JS or with reduced motion (the class is only added by script). */
+.has-flow [data-flow] {
+  opacity: calc(var(--in, 1) * (1 - var(--out, 0)));
+  transform: translate3d(0, calc((1 - var(--in, 1)) * 72px - var(--out, 0) * 64px), 0)
+    scale(calc(0.98 + var(--in, 1) * 0.02 - var(--out, 0) * 0.02));
+  will-change: transform, opacity;
+}
+.has-flow .section-heading[data-flow] {
+  filter: blur(calc((1 - var(--in, 1)) * 8px + var(--out, 0) * 3px));
+}
+/* The labels only fit in the left margin on wide windows (content starts at (100vw - 1320px) / 2);
+   below that the rail keeps its markers and drops the names so it never covers the text. */
+@media (max-width: 1679px) {
+  .section-rail .section-rail-label { display: none; }
+}

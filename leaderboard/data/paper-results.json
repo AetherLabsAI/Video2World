@@ -1,0 +1,199 @@
+{
+  "snapshot_id": "published-project-page-2026-10-13",
+  "label": "Published paper results",
+  "source_url": "https://aetherlabsai.github.io/Video2World/",
+  "fields": [
+    "score",
+    "build",
+    "success",
+    "progress",
+    "scene_cd",
+    "shape_cd",
+    "size_err",
+    "t_ape",
+    "r_ape",
+    "t_rpe"
+  ],
+  "models": [
+    {
+      "id": "har",
+      "name": "Human-assisted reference",
+      "provider": "Reference",
+      "reference": true,
+      "metrics": {
+        "score": 74.24,
+        "build": 100,
+        "success": 58.8,
+        "progress": 0.7,
+        "scene_cd": 2.19,
+        "shape_cd": 0.15,
+        "size_err": 0.43,
+        "t_ape": 9.4,
+        "r_ape": 41.09,
+        "t_rpe": 2.42
+      }
+    },
+    {
+      "id": "fable-5-1",
+      "name": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "reference": false,
+      "metrics": {
+        "score": 48.52,
+        "build": 93.1,
+        "success": 25.5,
+        "progress": 0.53,
+        "scene_cd": 5.35,
+        "shape_cd": 1,
+        "size_err": 2.78,
+        "t_ape": 18.71,
+        "r_ape": 104.61,
+        "t_rpe": 8.25
+      }
+    },
+    {
+      "id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "reference": false,
+      "metrics": {
+        "score": 43.55,
+        "build": 93.1,
+        "success": 10.7,
+        "progress": 0.33,
+        "scene_cd": 6.23,
+        "shape_cd": 0.69,
+        "size_err": 1.62,
+        "t_ape": 20.78,
+        "r_ape": 95.08,
+        "t_rpe": 6.19
+      }
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "provider": "Anthropic",
+      "reference": false,
+      "metrics": {
+        "score": 41.56,
+        "build": 92.8,
+        "success": 16,
+        "progress": 0.34,
+        "scene_cd": 6.01,
+        "shape_cd": 1.14,
+        "size_err": 3.13,
+        "t_ape": 19.37,
+        "r_ape": 110.85,
+        "t_rpe": 8.42
+      }
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "provider": "Moonshot AI",
+      "reference": false,
+      "metrics": {
+        "score": 33.19,
+        "build": 92,
+        "success": 4.8,
+        "progress": 0.21,
+        "scene_cd": 8.08,
+        "shape_cd": 1.41,
+        "size_err": 4.23,
+        "t_ape": 27.28,
+        "r_ape": 111.16,
+        "t_rpe": 14.29
+      }
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "name": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "reference": false,
+      "metrics": {
+        "score": 31,
+        "build": 92.5,
+        "success": 2.5,
+        "progress": 0.11,
+        "scene_cd": 7.79,
+        "shape_cd": 1.37,
+        "size_err": 3.76,
+        "t_ape": 31.68,
+        "r_ape": 105.03,
+        "t_rpe": 18
+      }
+    },
+    {
+      "id": "deepseek-v4-1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "reference": false,
+      "metrics": {
+        "score": 30.54,
+        "build": 92.4,
+        "success": 4.1,
+        "progress": 0.13,
+        "scene_cd": 8.59,
+        "shape_cd": 1.5,
+        "size_err": 4.13,
+        "t_ape": 34.64,
+        "r_ape": 104.52,
+        "t_rpe": 20.85
+      }
+    },
+    {
+      "id": "gemini-3-8-flash",
+      "name": "Gemini 3.8 Flash",
+      "provider": "Google",
+      "reference": false,
+      "metrics": {
+        "score": 30.11,
+        "build": 93.1,
+        "success": 2,
+        "progress": 0.09,
+        "scene_cd": 8.57,
+        "shape_cd": 1.25,
+        "size_err": 3.67,
+        "t_ape": 37.97,
+        "r_ape": 114.82,
+        "t_rpe": 28.65
+      }
+    },
+    {
+      "id": "qwen-3-8-max",
+      "name": "Qwen 3.8 Max",
+      "provider": "Alibaba",
+      "reference": false,
+      "metrics": {
+        "score": 26.55,
+        "build": 87.6,
+        "success": 1.5,
+        "progress": 0.11,
+        "scene_cd": 8.36,
+        "shape_cd": 1.51,
+        "size_err": 4.13,
+        "t_ape": 41.28,
+        "r_ape": 110.06,
+        "t_rpe": 27.38
+      }
+    },
+    {
+      "id": "glm-5-3-flash",
+      "name": "GLM 5.3 Flash",
+      "provider": "Z.ai",
+      "reference": false,
+      "metrics": {
+        "score": 25.69,
+        "build": 87.7,
+        "success": 2,
+        "progress": 0.09,
+        "scene_cd": 9.58,
+        "shape_cd": 1.62,
+        "size_err": 5.04,
+        "t_ape": 41.16,
+        "r_ape": 103.83,
+        "t_rpe": 30.16
+      }
+    }
+  ]
+}

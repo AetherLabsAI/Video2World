@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "title": "Video2World News",
+  "entries": [
+    {
+      "id": "opus-5-5",
+      "title": "Opus 5.5: 52.41 V2WScore, 33.6% task success",
+      "summary": "The refreshed 222-instance snapshot leads on task success, progress and build rate. Explore component metrics and five selected execution cases.",
+      "date": "2026-10-17",
+      "date_label": "Snapshot as of",
+      "status": "published",
+      "kind": "model_result",
+      "model_id": "opus-5-5",
+      "href": "updates/opus-5-5.html",
+      "image": "assets/opus-5-5-social.png",
+      "snapshot_id": "v2-published-2026-10-17",
+      "cover": "assets/cases/opus55/01_droid_orange_pick_place/report-cover.webp",
+      "cover_alt": "Claude Opus 5.5 simulation: the robot arm lifts the red block off the table (pick-and-place, verified case).",
+      "detail": "report",
+      "headline": "Claude Opus 5.5 takes the lead",
+      "dek": "33.6% task success, up from 12.9% for Claude Opus 5, with the highest build rate in the snapshot.",
+      "cover_video": "assets/cases/opus55/01_droid_orange_pick_place/opus55_success_sim.mp4",
+      "cover_start": 1.5,
+      "cover_position": "50% 44%"
+    },
+    {
+      "id": "gpt-6-1-sol",
+      "title": "GPT-6.1 Sol: 41.19 V2WScore",
+      "summary": "91.0% build rate and 10.9% task success in the published 222-instance snapshot. Inspect geometric fidelity and remaining execution gaps.",
+      "date": "2026-10-17",
+      "date_label": "Snapshot as of",
+      "status": "published",
+      "kind": "model_result",
+      "model_id": "gpt-6-1-sol",
+      "image": "assets/gpt-6-1-sol-social.png",
+      "snapshot_id": "v2-published-2026-10-17",
+      "detail": "brief",
+      "headline": "GPT-6.1 Sol makes a generational leap",
+      "dek": "Six times the task success of GPT-5.6 Sol, and 91.0% of its worlds now build.",
+      "cover": "assets/cases/frontier/fbraw_2023-01-26-00_00_38_desk_leg2/gpt-6-1-sol-cover.webp",
+      "cover_alt": "GPT-6.1 Sol simulation: the robot inserts the desk leg (verified task success).",
+      "points": [
+        {
+          "label": "Up from GPT-5.6 Sol",
+          "text": "V2WScore rises from 27.97 to 41.19 and task success from 1.8% to 10.9%. Stage progress climbs from 0.08 to 0.30."
+        },
+        {
+          "label": "More worlds build",
+          "text": "91.0% of its worlds now build, up from 86.8% for GPT-5.6 Sol and 87.2% for GPT-6 Astra."
+        },
+        {
+          "label": "Sharper reconstructions",
+          "text": "Scene error falls from 8.05 cm to 5.83 cm and object shape error from 1.63 cm to 0.92 cm across the line."
+        }
+      ],
+      "compare": {
+        "title": "Across the GPT line",
+        "models": [
+          "gpt-5-6-sol",
+          "gpt-6-astra",
+          "gpt-6-1-sol"
+        ],
+        "metrics": [
+          "score",
+          "success",
+          "progress",
+          "build",
+          "scene_cd",
+          "terminal_trans"
+        ]
+      },
+      "cases": "data/gpt-6-1-sol-cases.json",
+      "cover_video": "assets/cases/frontier/fbraw_2023-01-26-00_00_38_desk_leg2/gpt-6-1-sol.mp4",
+      "cover_start": 4.0,
+      "cover_position": "50% 34%"
+    },
+    {
+      "id": "meta-muse",
+      "title": "Muse Wonder: 27.90 V2WScore",
+      "summary": "86.7% build rate and 2.8% task success. The report examines executability, physical fidelity and diagnostic limits.",
+      "date": "2026-10-17",
+      "date_label": "Snapshot as of",
+      "status": "published",
+      "kind": "model_result",
+      "model_id": "meta-muse",
+      "image": "assets/meta-muse-social.png",
+      "snapshot_id": "v2-published-2026-10-17",
+      "detail": "brief",
+      "headline": "Meta Muse Wonder builds worlds that run",
+      "dek": "86.7% of its worlds run. Its first Video2World result maps the path from a running world to a completed task.",
+      "cover": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/meta-muse-cover.webp",
+      "cover_alt": "Meta Muse Wonder simulation: the robot arm picks up the block (verified task success).",
+      "points": [
+        {
+          "label": "Worlds that run",
+          "text": "86.7% of its worlds build, matching the median of all twelve evaluated models."
+        },
+        {
+          "label": "A first baseline",
+          "text": "Task success is 2.8% and stage progress 0.08: the step from a running world to a completed task is where the next versions can grow."
+        },
+        {
+          "label": "Reconstruction",
+          "text": "Scenes are reconstructed within 8.04 cm on average (scene CD), and object shapes within 1.40 cm."
+        }
+      ],
+      "funnel": {
+        "title": "From a running world to a finished task"
+      },
+      "cases": "data/meta-muse-cases.json",
+      "cover_video": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/meta-muse.mp4",
+      "cover_start": 0.6,
+      "cover_position": "50% 36%"
+    }
+  ],
+  "campaign": {
+    "id": "frontier-four-2026-10",
+    "title": "Four flagship models. One benchmark.",
+    "description": "A joint comparison of Claude Opus 5.5, Gemini 4 Argon, Meta Muse Wonder and GPT-6.1 Sol, supported by model reports and verified executions.",
+    "status": "testing",
+    "model_ids": [
+      "opus-5-5",
+      "gemini-4-argon",
+      "meta-muse",
+      "gpt-6-1-sol"
+    ],
+    "release_rule": "Publish the joint comparison after all four results are verified on a compatible protocol.",
+    "roundup_href": null,
+    "publication_status": "in_preparation",
+    "publication_note": "Three model reports are available. Gemini 4 Argon remains in testing; the four-model comparison is in preparation. The methodology blog is a separate technical report."
+  }
+}

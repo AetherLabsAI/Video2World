@@ -1,0 +1,80 @@
+/*
+ * Design tokens — mirror of the main project site (v2s_web/web_v2/src/styles/tokens.css,
+ * live at https://aetherlabsai.github.io/Video2World/). Keep the two in step: change a value
+ * there first, then copy it here. styles.css and collaboration.css only use these variables.
+ */
+:root {
+  color-scheme: light;
+  /* Palette */
+  --bg: #f1eee5; /* pale warm beige page */
+  --fog: #cececb;
+  --text: #231c17; /* warm black */
+  --blue: #3d4c64;
+  --accent-warm: #82645e; /* italic heading emphasis */
+  --surface: #f7f5ef; /* a step lighter than --bg: panels, cards */
+  --surface-soft: #e7e3d9; /* a step darker than --bg: wells, placeholders */
+  --text-muted: #55504a;
+  --text-faint: #6c665e;
+  --accent: #6e5243; /* labels, active nav, link hover, highlight bars */
+  --warm-tint: #d9cbb8; /* light warm brown fills (leaderboard group row) */
+  --warm-ink: #3b2e26; /* text on --warm-tint */
+  --warm-solid: #5a4436; /* solid buttons */
+  --warm-solid-hover: #7a5c4a;
+  --line: #d7d1c4;
+  --ink-deep: #19222f; /* dark media surfaces */
+  --on-ink: #f4f5f7;
+  --on-ink-muted: rgba(244, 245, 247, 0.72);
+  /* Outcome colours (leaderboard only; muted to sit on the beige) */
+  --positive: #4f6b57;
+  --positive-soft: #dfe3d6;
+  --negative: #9a5038;
+  --negative-soft: #ecdccf;
+  --ladder-arrow: #c5b9aa; /* warm taupe arrow on the capability ladder (2026-10-14, on request) */
+  --ladder-arrow-opacity: 0.8;
+  /* Dumbbell chart (2026-10-14, on request): main model / compared model / guide lines */
+  --db-main: #2a221d;
+  --db-compare: #b8a898;
+  --db-guide: #d7cfc2;
+  --media-black: #0e0d0c; /* letterbox behind case videos (most renders have black backgrounds) */
+  /* Aliases still referenced by inline styles in app.js */
+  --green: var(--positive);
+  --orange: var(--negative);
+
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --content-width: 1320px;
+  --reading-width: 780px;
+  --nav-height: 96px;
+  --gutter: clamp(22px, 5vw, 80px);
+  --space-section: clamp(56px, 6.67vw, 96px);
+  --space-block: clamp(64px, 8.89vw, 128px);
+  --space-head: 48px;
+  --grid-gap: clamp(24px, 3.33vw, 48px);
+
+  /* Type scale: exact at 1440px and 1920px, linear between, floored below. */
+  --fs-d1: clamp(48px, calc(64px + (100vw - 1440px) / 60), 72px);
+  --fs-d2: clamp(38px, calc(48px + (100vw - 1440px) / 60), 56px);
+  --fs-h1: clamp(32px, calc(40px + (100vw - 1440px) / 120), 44px);
+  --fs-h2: clamp(26px, calc(30px + (100vw - 1440px) / 240), 32px);
+  --fs-h3: clamp(21px, calc(24px + (100vw - 1440px) / 240), 26px);
+  --fs-lead: 20px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-ui: 12px;
+  --fs-label: 10px;
+  --fs-micro: 9px;
+  --lh-d1: 1.02; --lh-d2: 1.08; --lh-h1: 1.1; --lh-h2: 1.15; --lh-h3: 1.2;
+  --lh-lead: 1.5; --lh-body: 1.6; --lh-small: 1.5; --lh-ui: 1.4; --lh-label: 1.3; --lh-micro: 1.3;
+  --ls-d1: 0.06em; --ls-d2: 0.09em; --ls-h1: 0.12em; --ls-h2: 0.07em; --ls-h3: 0.04em;
+  --ls-small: 0.01em; --ls-ui: 0.06em; --ls-label: 0.12em; --ls-micro: 0.06em;
+  --fw-display: 300;
+  --fw-text: 400;
+  --fw-label: 500;
+}
+@media (max-width: 760px) {
+  :root {
+    --nav-height: 72px;
+  }
+}

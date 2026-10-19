@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-label="Task success under layout interventions, by displacement, for open-loop replay, direct reuse and agent adaptation, in GPT-6 Astra and Claude Fable 5.1 worlds.">
+<rect width="900" height="500" fill="#f3ebdf"/>
+<text x="43.0" y="50.0" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="23" font-weight="600" text-anchor="start">DOES THE WORLD SURVIVE AN INTERVENTION?</text>
+<text x="43.0" y="78.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="15" font-weight="500" text-anchor="start">Task success after moving the object or the target, in worlds that succeeded at 0 cm</text>
+<line x1="43" y1="111" x2="67" y2="111" stroke="#7b746c" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="75.0" y="115.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" text-anchor="start">Open-loop replay</text>
+<line x1="237" y1="111" x2="261" y2="111" stroke="#1f72a0" stroke-width="2"/>
+<text x="269.0" y="115.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" text-anchor="start">Direct reuse</text>
+<line x1="399" y1="111" x2="423" y2="111" stroke="#b4533a" stroke-width="3"/>
+<text x="431.0" y="115.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" text-anchor="start">Agent adaptation</text>
+<text x="86.0" y="158.0" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="17" font-weight="500" text-anchor="start">GPT-6 Astra</text>
+<line x1="86" y1="426.0" x2="386" y2="426.0" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="76.0" y="430.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">0%</text>
+<line x1="86" y1="363.5" x2="386" y2="363.5" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="76.0" y="367.5" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">25%</text>
+<line x1="86" y1="301.0" x2="386" y2="301.0" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="76.0" y="305.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">50%</text>
+<line x1="86" y1="238.5" x2="386" y2="238.5" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="76.0" y="242.5" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">75%</text>
+<line x1="86" y1="176.0" x2="386" y2="176.0" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="76.0" y="180.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">100%</text>
+<text x="86.0" y="446.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle">0 cm</text>
+<text x="146.0" y="446.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle">2 cm</text>
+<text x="236.0" y="446.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle">5 cm</text>
+<text x="386.0" y="446.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle">10 cm</text>
+<polyline points="86.0,176.0 146.0,259.3 236.0,363.5 386.0,426.0" fill="none" stroke="#7b746c" stroke-width="2" stroke-dasharray="6 5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="86.0" cy="176.0" r="4" fill="#7b746c" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="146.0" cy="259.3" r="4" fill="#7b746c" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="236.0" cy="363.5" r="4" fill="#7b746c" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="386.0" cy="426.0" r="4" fill="#7b746c" stroke="#f3ebdf" stroke-width="2"/>
+<polyline points="86.0,176.0 146.0,176.0 236.0,176.0 386.0,217.7" fill="none" stroke="#b4533a" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="86.0" cy="176.0" r="5.5" fill="#b4533a" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="146.0" cy="176.0" r="5.5" fill="#b4533a" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="236.0" cy="176.0" r="5.5" fill="#b4533a" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="386.0" cy="217.7" r="5.5" fill="#b4533a" stroke="#f3ebdf" stroke-width="2"/>
+<polyline points="86.0,176.0 146.0,176.0 236.0,196.8 386.0,217.7" fill="none" stroke="#1f72a0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="86.0" cy="176.0" r="4" fill="#1f72a0" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="146.0" cy="176.0" r="4" fill="#1f72a0" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="236.0" cy="196.8" r="4" fill="#1f72a0" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="386.0" cy="217.7" r="4" fill="#1f72a0" stroke="#f3ebdf" stroke-width="2"/>
+<text x="394.0" y="222.5" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="600" text-anchor="start">83%</text>
+<text x="394.0" y="430.0" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="600" text-anchor="start">0%</text>
+<text x="530.0" y="158.0" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="17" font-weight="500" text-anchor="start">Claude Fable 5.1</text>
+<line x1="530" y1="426.0" x2="830" y2="426.0" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="520.0" y="430.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">0%</text>
+<line x1="530" y1="363.5" x2="830" y2="363.5" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="520.0" y="367.5" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">25%</text>
+<line x1="530" y1="301.0" x2="830" y2="301.0" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="520.0" y="305.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">50%</text>
+<line x1="530" y1="238.5" x2="830" y2="238.5" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="520.0" y="242.5" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">75%</text>
+<line x1="530" y1="176.0" x2="830" y2="176.0" stroke="#d4c9b8" stroke-dasharray="3 5" stroke-width="1"/>
+<text x="520.0" y="180.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="end">100%</text>
+<text x="530.0" y="446.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle">0 cm</text>
+<text x="590.0" y="446.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle">2 cm</text>
+<text x="680.0" y="446.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle">5 cm</text>
+<text x="830.0" y="446.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="middle">10 cm</text>
+<polyline points="530.0,176.0 590.0,301.0 680.0,363.5 830.0,426.0" fill="none" stroke="#7b746c" stroke-width="2" stroke-dasharray="6 5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="530.0" cy="176.0" r="4" fill="#7b746c" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="590.0" cy="301.0" r="4" fill="#7b746c" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="680.0" cy="363.5" r="4" fill="#7b746c" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="830.0" cy="426.0" r="4" fill="#7b746c" stroke="#f3ebdf" stroke-width="2"/>
+<polyline points="530.0,176.0 590.0,196.8 680.0,217.7 830.0,176.0" fill="none" stroke="#b4533a" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="530.0" cy="176.0" r="5.5" fill="#b4533a" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="590.0" cy="196.8" r="5.5" fill="#b4533a" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="680.0" cy="217.7" r="5.5" fill="#b4533a" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="830.0" cy="176.0" r="5.5" fill="#b4533a" stroke="#f3ebdf" stroke-width="2"/>
+<polyline points="530.0,176.0 590.0,217.7 680.0,217.7 830.0,196.8" fill="none" stroke="#1f72a0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="530.0" cy="176.0" r="4" fill="#1f72a0" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="590.0" cy="217.7" r="4" fill="#1f72a0" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="680.0" cy="217.7" r="4" fill="#1f72a0" stroke="#f3ebdf" stroke-width="2"/>
+<circle cx="830.0" cy="196.8" r="4" fill="#1f72a0" stroke="#f3ebdf" stroke-width="2"/>
+<text x="838.0" y="180.0" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="600" text-anchor="start">100%</text>
+<text x="838.0" y="200.0" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="600" text-anchor="start">92%</text>
+<text x="838.0" y="430.0" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="600" text-anchor="start">0%</text>
+<text x="43.0" y="482.0" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="12" font-weight="500" text-anchor="start">3 pick-and-place videos per model · 0 cm = unmodified world</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="364" viewBox="0 0 900 364">
+<rect width="900" height="364" fill="#f3ebdf"/>
+<text x="40" y="47" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="22" font-weight="600" >BEST OBJECT SHAPES ≠ BEST TASK PERFORMANCE</text>
+<text x="40" y="74" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="14" font-weight="500" >A cross-metric contrast from Table 2</text>
+<rect x="40" y="98" width="395" height="218" rx="10" fill="#ffffff" fill-opacity=".42" stroke="#d4c9b8"/>
+<rect x="40" y="98" width="395" height="5" rx="2" fill="#5c7478"/>
+<text x="62" y="137" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="20" font-weight="600" >GPT-6 Astra</text>
+<text x="62" y="173" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" >Object Shape CD  ↓</text>
+<text x="62" y="205" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="27" font-weight="600" >0.69 cm</text>
+<text x="62" y="244" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" >Task success  ↑</text>
+<text x="62" y="282" fill="#5c7478" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="33" font-weight="600" >10.7%</text>
+<rect x="213" y="263" width="186" height="12" rx="6" fill="#d4c9b8"/>
+<rect x="213" y="263" width="51.7" height="12" rx="6" fill="#5c7478"/>
+<rect x="465" y="98" width="395" height="218" rx="10" fill="#ffffff" fill-opacity=".42" stroke="#d4c9b8"/>
+<rect x="465" y="98" width="395" height="5" rx="2" fill="#8f564b"/>
+<text x="487" y="137" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="20" font-weight="600" >Claude Fable 5.1</text>
+<text x="487" y="173" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" >Object Shape CD  ↓</text>
+<text x="487" y="205" fill="#151722" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="27" font-weight="600" >1.00 cm</text>
+<text x="487" y="244" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" >Task success  ↑</text>
+<text x="487" y="282" fill="#8f564b" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="33" font-weight="600" >25.5%</text>
+<rect x="638" y="263" width="186" height="12" rx="6" fill="#d4c9b8"/>
+<rect x="638" y="263" width="123.3" height="12" rx="6" fill="#8f564b"/>
+<text x="40" y="342" fill="#7b746c" font-family="Space Grotesk, Helvetica Neue, sans-serif" font-size="13" font-weight="500" >Lower Shape CD means better shape fidelity; higher Task Success means more completed tasks.</text>
+</svg>

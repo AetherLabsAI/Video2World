@@ -1,0 +1,39 @@
+/* Impasto paint behind the hero "New leader" card (2026-10-17). index.html uses variant B
+   (<html data-hero-paint="b">); variant A (paint inside the card) is kept as an alternative.
+   Layers: shadow image, paint image (site/assets/hero-paint/, rendered by
+   scripts/render-hero-paint.py), then the real HTML text and numbers. The paint is mirrored so its
+   loaded end sits under the text and the dry, beaded end trails out towards the page edge. */
+html[data-hero-paint], html[data-hero-paint] body { overflow-x: clip; }
+html[data-hero-paint] .hero-release { position: relative; isolation: isolate; }
+html[data-hero-paint] .hero-release::before,
+html[data-hero-paint] .hero-release::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  background: center / 100% 100% no-repeat; transform: scaleX(-1);
+}
+
+/* A: the rectangle stays; the paint fills it, cropped by the card edge, kept quiet */
+html[data-hero-paint="a"] .hero-release { overflow: hidden; background: var(--bg); border-color: var(--line); }
+html[data-hero-paint="a"] .hero-release::before { inset: -20% -48% -20% -3%; background-image: url(assets/hero-paint/smear-a-shadow.webp); opacity: .7; }
+html[data-hero-paint="a"] .hero-release::after { inset: -20% -48% -20% -3%; background-image: url(assets/hero-paint/smear-a.webp); }
+html[data-hero-paint="a"] .hero-release .release-metrics { border-top-color: color-mix(in srgb, var(--text) 12%, transparent); }
+
+/* B: no rectangle; the smear itself carries the block. Text sits on the pressed-flat middle. */
+html[data-hero-paint="b"] .hero-release { background: none; border-color: transparent; box-shadow: none; padding: 44px 52px 40px 44px; }
+html[data-hero-paint="b"] .hero-release::before,
+html[data-hero-paint="b"] .hero-release::after { left: -16%; width: 210%; top: 50%; aspect-ratio: 2200 / 700; translate: 0 -50%; }
+html[data-hero-paint="b"] .hero-release::before { background-image: url(assets/hero-paint/smear-b-shadow.webp); }
+html[data-hero-paint="b"] .hero-release::after { background-image: url(assets/hero-paint/smear-b.webp); }
+html[data-hero-paint="b"] .hero-release .release-tag { background: color-mix(in srgb, var(--warm-tint) 70%, transparent); }
+html[data-hero-paint="b"] .hero-release .release-metrics { border-top-color: color-mix(in srgb, var(--text) 14%, transparent); }
+html[data-hero-paint="b"] .hero-release .release-arrow { background: color-mix(in srgb, #fff 55%, transparent); }
+
+/* narrow screens: paint becomes a quiet backdrop that cannot run under or past the text */
+@media (max-width: 900px) {
+  html[data-hero-paint="b"] .hero-release { padding: 28px 24px; }
+  html[data-hero-paint="b"] .hero-release::before,
+  html[data-hero-paint="b"] .hero-release::after { left: -4%; width: 108%; top: 0; bottom: 0; aspect-ratio: auto; translate: none; }
+}
+html[data-hero-paint="b"] .hero-side .hero-actions { margin-top: 64px; }  /* clear of the paint edge */
+/* The long stroke runs past the column into the gap and under the end of the intro lines: the intro
+   copy stays above it (dark text on white paint stays readable). */
+html[data-hero-paint="b"] .hero-copy { position: relative; z-index: 1; }

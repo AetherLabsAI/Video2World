@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "models": {
+    "opus-5-5": {
+      "intro": "The published 222-instance snapshot shows stronger task outcomes and more executable builds. The diagnostic profile remains mixed, so read the overall lead alongside component metrics and selected case evidence.",
+      "findings": [
+        {
+          "title": "Higher task success and progress",
+          "body": "Opus 5.5 leads the evaluated models in both task success and task progress. Together, these metrics capture not only whether a task is completed, but also how far execution proceeds. The selected cases illustrate these differences in practice, rather than represent the full test set.",
+          "metric_keys": [
+            "success",
+            "progress"
+          ],
+          "case_ids": [
+            "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+            "dexycb_s01_142517"
+          ],
+          "label": "Task performance",
+          "group": "Improvements",
+          "stamp": "Improvements",
+          "stamp_tone": "improvement"
+        },
+        {
+          "title": "More executable worlds",
+          "body": "Opus 5.5 has the highest build rate among the published configurations, ahead of GPT-6.1 Sol. Build rate measures executability; task success separately checks whether the intended interaction completes. A successful build is an essential first step, with task completion still substantially lower.",
+          "metric_keys": [
+            "build",
+            "success"
+          ],
+          "label": "Executability",
+          "group": "Improvements",
+          "stamp": "Improvements",
+          "stamp_tone": "improvement"
+        },
+        {
+          "title": "Geometry and task outcomes measure different things",
+          "body": "Opus 5.5 has lower object-shape and size errors than Fable 5.1, while Fable has a slightly lower scene-level error in the current scope. In the selected desk-leg case, Fable has the lower scene error but fails and Opus succeeds. This illustrates why geometry and task outcome are reported separately; it does not isolate a cause.",
+          "metric_keys": [
+            "scene_cd",
+            "shape_cd",
+            "size_err"
+          ],
+          "case_ids": [
+            "fbraw_2023-01-26-00_00_38_desk_leg2"
+          ],
+          "label": "Geometry vs. outcome",
+          "group": "Limitations & trade-offs",
+          "stamp": "Insight",
+          "stamp_tone": "insight"
+        },
+        {
+          "title": "Trade-offs remain in the diagnostics",
+          "body": "Opus 5.5 has lower fixed-reference task success than Fable 5.1, despite higher fixed-reference progress. Its terminal relative translation error is also higher. The overall lead therefore does not extend to every diagnostic.",
+          "metric_keys": [
+            "fixed_success",
+            "fixed_progress",
+            "terminal_trans"
+          ],
+          "label": "Diagnostic limits",
+          "group": "Limitations & trade-offs",
+          "stamp": "Limitation",
+          "stamp_tone": "limitation"
+        }
+      ],
+      "limitations": [
+        "The five featured cases were selected from 24 Opus-success/Fable-failure pairs among 222 shared cases. They illustrate specific differences rather than overall performance.",
+        "This selected collection does not include verified Opus 5.5 failure cases and therefore cannot characterize its full failure profile.",
+        "Final outcomes do not establish feedback use or recovery through revision; those behaviors require iteration logs.",
+        "Current metrics use the published 222-instance scope with family-macro aggregation; finite coverage varies by metric. The earlier screenshot snapshot is archived separately."
+      ],
+      "evidence_priorities": []
+    },
+    "gemini-4-argon": {
+      "intro": "Gemini 4 Argon is being tested. Its report will connect the verified metric profile to actual case outputs after the evaluation is complete.",
+      "findings": [],
+      "limitations": [
+        "No verified result is available yet. Ranking, strengths and weaknesses remain unreported."
+      ],
+      "evidence_priorities": [
+        "Executable builds: build rate, coverage and examples of both runnable worlds and build failures.",
+        "Task completion: success and stage progress, supported by verified successful and failed rollouts.",
+        "Physical fidelity: geometry and dynamics metrics linked to the same source videos and model outputs.",
+        "Feedback and recovery: iteration logs showing what the agent changed after feedback; this claim requires evidence beyond final scores.",
+        "Comparable setup: exact model and agent settings, evaluation version, instance manifest and per-metric coverage."
+      ]
+    },
+    "meta-muse": {
+      "intro": "Muse Wonder produces executable worlds in most measured cases, while task completion remains uncommon. The metric profile separates this construction ability from the remaining geometry and execution gaps.",
+      "findings": [
+        {
+          "title": "Worlds run more often than tasks complete",
+          "body": "Muse Wonder's build rate is much higher than its task success rate. Stage progress is also low, so the central gap is completing the intended interaction after producing a runnable world.",
+          "metric_keys": [
+            "build",
+            "success",
+            "progress"
+          ],
+          "label": "Executability vs. outcome",
+          "group": "Strengths & observations",
+          "stamp": "Insight",
+          "stamp_tone": "insight",
+          "case_ids": [
+            "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+            "dexycb_s01_142517"
+          ]
+        },
+        {
+          "title": "Geometry leaves room for improvement",
+          "body": "Scene, object-shape and size errors are higher than Opus 5.5, Fable 5.1 and GPT-6.1 Sol in this snapshot. These measurements identify a fidelity gap without establishing which geometric error caused a particular task failure.",
+          "metric_keys": [
+            "scene_cd",
+            "shape_cd",
+            "size_err"
+          ],
+          "label": "Physical fidelity",
+          "group": "Limitations & trade-offs",
+          "stamp": "Limitation",
+          "stamp_tone": "limitation",
+          "case_ids": [
+            "fbraw_2023-01-22-22_45_54_lamp_bulb"
+          ]
+        },
+        {
+          "title": "Rotation and translation tell different stories",
+          "body": "Terminal rotation error is lower than Fable 5.1, while terminal translation error is substantially higher. A better value on one dynamics metric should therefore be interpreted alongside the rest of the motion profile.",
+          "metric_keys": [
+            "terminal_rot",
+            "terminal_trans"
+          ],
+          "label": "Dynamics profile",
+          "group": "Strengths & observations",
+          "stamp": "Insight",
+          "stamp_tone": "insight"
+        },
+        {
+          "title": "Fixed-reference task performance is also low",
+          "body": "Fixed-reference task success and progress remain low. Together with the agent's own task results, this shows substantial remaining headroom in executable task behavior under the two evaluation settings.",
+          "metric_keys": [
+            "fixed_success",
+            "fixed_progress",
+            "fixed_ape"
+          ],
+          "label": "Diagnostic limits",
+          "group": "Limitations & trade-offs",
+          "stamp": "Limitation",
+          "stamp_tone": "limitation"
+        }
+      ],
+      "limitations": [
+        "Muse Wonder and DeepSeek V4.1 Flash have the same displayed V2WScore at two-decimal precision; this does not imply equal component metrics or identical behavior.",
+        "The formal score uses the full 222-instance, 39-family scope; finite component-metric coverage varies.",
+        "Aggregate results do not establish feedback use, recovery or a complete failure taxonomy. Those interpretations require case judgments and agent revision logs."
+      ],
+      "evidence_priorities": []
+    },
+    "gpt-6-1-sol": {
+      "intro": "GPT-6.1 Sol ranks third by V2WScore in the published snapshot. Its build rate and geometric fidelity are close to the strongest configurations, while task completion and fixed-reference execution remain clear gaps.",
+      "findings": [
+        {
+          "title": "Reliable builds, a larger task-completion gap",
+          "body": "GPT-6.1 Sol has the second-highest build rate in the current snapshot, behind Opus 5.5. Its task success is substantially lower than both Opus 5.5 and Fable 5.1. Executability alone does not establish that the reconstructed interaction succeeds.",
+          "metric_keys": [
+            "build",
+            "success",
+            "progress"
+          ],
+          "label": "Executability",
+          "group": "Strengths & observations",
+          "stamp": "Insight",
+          "stamp_tone": "insight",
+          "case_ids": [
+            "fbraw_2023-01-26-00_00_38_desk_leg2",
+            "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand"
+          ]
+        },
+        {
+          "title": "Competitive scene and object reconstruction",
+          "body": "Scene, shape and size errors place GPT-6.1 Sol close to the leading configurations in this snapshot. These measurements describe reconstructed geometry; they do not establish successful contact, control or task execution.",
+          "metric_keys": [
+            "scene_cd",
+            "shape_cd",
+            "size_err"
+          ],
+          "label": "Physical fidelity",
+          "group": "Strengths & observations",
+          "stamp": "Insight",
+          "stamp_tone": "insight",
+          "case_ids": [
+            "hot3d_002498"
+          ]
+        },
+        {
+          "title": "An overall gain with uneven component changes",
+          "body": "The overall score is higher than GPT-6 Astra. Task success improves, but stage progress is lower. Terminal rotation error is lower as well, while the diagnostics show that the gain is not uniform across every measurement.",
+          "metric_keys": [
+            "success",
+            "progress",
+            "terminal_rot"
+          ],
+          "label": "Compared with Astra",
+          "group": "Limitations & trade-offs",
+          "stamp": "Insight",
+          "stamp_tone": "insight",
+          "baseline_model_id": "gpt-6-astra"
+        },
+        {
+          "title": "Fixed-reference execution remains limited",
+          "body": "Fixed-reference task success and progress are lower than Opus 5.5, Fable 5.1 and GPT-6 Astra. These diagnostics complement the agent's own rollout results and should be read with their individual coverage.",
+          "metric_keys": [
+            "fixed_success",
+            "fixed_progress",
+            "fixed_ape"
+          ],
+          "label": "Diagnostic limits",
+          "group": "Limitations & trade-offs",
+          "stamp": "Limitation",
+          "stamp_tone": "limitation"
+        }
+      ],
+      "limitations": [
+        "The formal score uses 222 instances across 39 families; component metrics have their own finite coverage.",
+        "Metric differences do not identify a single cause: model, coding scaffold and inference setup can all differ.",
+        "No claim about feedback use or repair quality follows from these aggregate metrics alone. Such claims require iteration and revision logs."
+      ],
+      "evidence_priorities": []
+    }
+  }
+}
