@@ -367,7 +367,7 @@
   }
   function renderNews(){
     const published=state.news.entries.filter(n=>n.status==='published').sort((a,b)=>b.date.localeCompare(a.date)||((a.detail==='report')?-1:(b.detail==='report')?1:0));
-    const models=published.filter(e=>e.kind==='model_result');
+    const models=published.filter(e=>e.kind==='model_result').sort((a,b)=>(newsRank(a.model_id)[0]||Infinity)-(newsRank(b.model_id)[0]||Infinity));
     const pending=state.board.pending_models||[];
     const html=models.map(newsCard).join('')+pending.map(pendingCard).join('');
     const home=$('#latest-model-news');
@@ -383,9 +383,9 @@
   function newsFront(models,pending){
     const rowOf=e=>newsBoard(e).models.find(m=>m.id===e.model_id);
     const tick=[...models.map(e=>{const r=rowOf(e);return `<span class="nh-tick"><b>${esc(e.headline||e.title)}</b>${r?` <em>${format(r.metrics.score,'score')} V2WScore · ${format(r.metrics.success,'success',true)} task success</em>`:''}</span>`;}),...pending.map(m=>`<span class="nh-tick"><b>${esc(m.name)}</b> In evaluation <em>Coming soon</em></span>`)].join('<i class="nh-dot" aria-hidden="true">◆</i>');
-    const item=e=>{const r=rowOf(e),brief=e.detail==='brief';return `<li><a class="nh-item" href="${esc(newsTarget(e))}" data-news-id="${esc(e.id)}" data-detail="${esc(e.detail||'report')}"${brief?' aria-haspopup="dialog"':''}><span class="nh-story-brand"><span class="nh-model-logo" aria-hidden="true">${r?modelLogo(r):''}</span><span class="nh-story-identity"><span class="nh-item-kicker">${esc(r?.name||e.title)}</span><time datetime="${esc(e.date)}">${esc(fmtDay(e.date))}</time></span>${r?`<span class="nh-item-rank" title="Current leaderboard rank">Live #${newsRank(r.id)[0]}</span>`:''}</span><strong>${esc(e.headline||e.title)}</strong><span class="nh-item-dek">${esc(e.dek||e.summary)}</span>${r?`<span class="nc-stats"><span><b>${format(r.metrics.score,'score')}</b><small>V2WScore</small></span><span><b>${format(r.metrics.success,'success',true)}</b><small>Task success</small></span><span><b>${format(r.metrics.build,'build',true)}</b><small>Build rate</small></span></span>`:''}<span class="nh-item-cta">${brief?'Open brief <i aria-hidden="true">+</i>':'Read report <i aria-hidden="true">↗</i>'}</span></a></li>`;};
+    const item=e=>{const r=rowOf(e),brief=e.detail==='brief';return `<li><a class="nh-item" href="${esc(newsTarget(e))}" data-news-id="${esc(e.id)}" data-detail="${esc(e.detail||'report')}"${brief?' aria-haspopup="dialog"':''}><span class="nh-story-brand"><span class="nh-model-logo" aria-hidden="true">${r?modelLogo(r):''}</span><span class="nh-story-identity"><span class="nh-item-kicker">${esc(r?.name||e.title)}</span><time datetime="${esc(e.date)}">${esc(fmtDay(e.date))}</time></span>${r?`<span class="nh-item-rank" title="Current leaderboard rank">Overall #${newsRank(r.id)[0]}</span>`:''}</span><strong>${esc(e.headline||e.title)}</strong><span class="nh-item-dek">${esc(e.dek||e.summary)}</span>${r?`<span class="nc-stats"><span><b>${format(r.metrics.score,'score')}</b><small>V2WScore</small></span><span><b>${format(r.metrics.success,'success',true)}</b><small>Task success</small></span><span><b>${format(r.metrics.build,'build',true)}</b><small>Build rate</small></span></span>`:''}<span class="nh-item-cta">${brief?'Open brief <i aria-hidden="true">+</i>':'Read report <i aria-hidden="true">↗</i>'}</span></a></li>`;};
     const pend=m=>`<li><div class="nh-item is-pending" data-pending="${esc(m.id)}"><span class="nh-story-brand"><span class="nh-model-logo" aria-hidden="true">${modelLogo(m)}</span><span class="nh-story-identity"><span class="nh-item-kicker">${esc(m.name)}</span><span>Coming soon</span></span></span><strong>Results are being verified</strong><span class="nh-item-dek">The evaluation is in progress. A model report will follow once the results are verified.</span><span class="nh-pending-label">In evaluation</span></div></li>`;
-    return `<div class="nh-ticker" aria-label="Latest headlines"><span class="nh-ticker-tag">Latest</span><div class="nh-ticker-track"><div class="nh-ticker-move"><span class="nh-ticker-set">${tick}<i class="nh-dot" aria-hidden="true">◆</i></span><span class="nh-ticker-set" aria-hidden="true">${tick}<i class="nh-dot" aria-hidden="true">◆</i></span></div></div></div><ol class="nh-list">${models.map(item).join('')}${pending.map(pend).join('')}</ol>`;
+    return `<div class="nh-ticker" aria-label="Latest headlines"><span class="nh-ticker-tag">Results</span><div class="nh-ticker-track"><div class="nh-ticker-move"><span class="nh-ticker-set">${tick}<i class="nh-dot" aria-hidden="true">◆</i></span><span class="nh-ticker-set" aria-hidden="true">${tick}<i class="nh-dot" aria-hidden="true">◆</i></span></div></div></div><ol class="nh-list">${models.map(item).join('')}${pending.map(pend).join('')}</ol>`;
   }
   // Brief dialog for a news entry without a standalone page.
   let briefRequest=0;
@@ -585,12 +585,16 @@
       return;
     }
     const update=state.board.updates.find(u=>u.model_id===id)||{};
-    $('#generic-model-intro').textContent=`${row.name} records ${format(row.metrics.score,'score')} V2WScore and ${format(row.metrics.success,'success',true)} task success in this result set. Inspect the component metrics and supporting evidence below.`;
+    const [rank,total]=newsRank(id);
+    $('#generic-model-intro').textContent=`${row.name} ranks #${rank} of ${total} tested configurations, with ${format(row.metrics.score,'score')} V2WScore and ${format(row.metrics.success,'success',true)} task success. Inspect the component metrics and supporting evidence below.`;
+    if($('#generic-rank'))$('#generic-rank').textContent=`MODEL REPORT · OVERALL #${rank}`;
     $('#generic-score').innerHTML=`${format(row.metrics.score,'score')}<small>/ 100</small>`;
     $('#generic-success').textContent=format(row.metrics.success,'success',true);$('#generic-build').textContent=format(row.metrics.build,'build',true);
     $('#generic-date').textContent=`${update.date_label||'Snapshot as of'} · ${update.date||state.board.snapshot_date}`;
     const baselines=(update.compare_ids||[...state.board.models].filter(m=>m.id!==id).sort((a,b)=>b.metrics.score-a.metrics.score).slice(0,2).map(m=>m.id)).map(i=>state.board.models.find(m=>m.id===i)).filter(Boolean);
-    $('#model-results-body').innerHTML=[row,...baselines].map(r=>`<tr class="${r.id===id?'featured':''}"><td>${esc(r.name)}</td><td>${format(r.metrics.score,'score')}</td><td>${format(r.metrics.success,'success',true)}</td><td>${format(r.metrics.progress,'progress')}</td></tr>`).join('');
+    const leader=[...state.board.models].sort((a,b)=>b.metrics.score-a.metrics.score)[0];
+    const comparisons=[...new Map([row,...baselines,leader].map(r=>[r.id,r])).values()].sort((a,b)=>b.metrics.score-a.metrics.score);
+    $('#model-results-body').innerHTML=comparisons.map(r=>`<tr class="${r.id===id?'featured':''}"><td>#${newsRank(r.id)[0]} · ${esc(r.name)}</td><td>${format(r.metrics.score,'score')}</td><td>${format(r.metrics.success,'success',true)}</td><td>${format(r.metrics.progress,'progress')}</td></tr>`).join('');
     renderMetricCoverage(row);
     $('#share-result').addEventListener('click',()=>copy(location.href.split('#')[0],'Result link copied'));
     $('#download-result-card').addEventListener('click',()=>{const a=document.createElement('a');a.href=path(`assets/${id}-social.png`);a.download=`video2world-${id}.png`;a.click();});
