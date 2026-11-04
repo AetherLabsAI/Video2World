@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "model_id": "gemini-4-argon",
+  "status": "verified_media",
+  "snapshot_date": "2026-10-27",
+  "selection_provenance": "These inputs were inherited from the existing Opus-success/Fable-failure case collection. Gemini outputs were matched through the publication-selected registry. The selected cases are illustrative and cannot estimate Gemini success frequency.",
+  "intro": "Actual Gemini 4 Argon rollouts on four shared inputs, with formal task judgments. The matching two-handed-lift input has no delivered submission and therefore no rollout video.",
+  "featured_case": "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+  "cases": [
+    {
+      "id": "fbraw_2023-01-26-00_00_38_desk_leg2",
+      "family": "leg-insert",
+      "title": "Desk leg insertion",
+      "description": "Desk-leg insertion, from a FurnitureBench robot video.",
+      "dataset": "FurnitureBench",
+      "source": {
+        "video": "assets/cases/opus55/05_desk_leg_insert/human_assisted.mp4",
+        "poster": "assets/cases/opus55/05_desk_leg_insert/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Gemini 4 Argon",
+        "success": false,
+        "phase": "completed",
+        "metrics": {
+          "scene_cd": 3.085235272021797,
+          "terminal_trans": 21.620724183906812
+        },
+        "provenance": {
+          "run_label": "gemini4argon_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+          "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+          "published_at": "2026-10-27T23:57:19.444630Z",
+          "archive_sha256": "06245b9d515c6a9807f529119a5c8c09e83009d47c99210f882defac99c4102c",
+          "registry_version": "V_20261027_ARGON222_V8_C01",
+          "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+          "original_rollout_sha256": "bb51f7b907e10559e780c292b137809ae959d514b2d894752fda37f01f1a809f",
+          "web_rollout_sha256": "bb51f7b907e10559e780c292b137809ae959d514b2d894752fda37f01f1a809f"
+        },
+        "video": "assets/cases/gemini-4-argon/fbraw_2023-01-26-00_00_38_desk_leg2/rollout.mp4",
+        "poster": "assets/cases/gemini-4-argon/fbraw_2023-01-26-00_00_38_desk_leg2/poster.webp",
+        "progress": 0.0,
+        "build": true,
+        "description": "Formal evaluation: task failed."
+      },
+      "baseline": {
+        "status": "verified",
+        "name": "Claude Opus 5.5",
+        "video": "assets/cases/opus55/05_desk_leg_insert/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/05_desk_leg_insert/opus55_success_sim.webp",
+        "success": true,
+        "progress": 1.0,
+        "metrics": {
+          "scene_cd": 2.86322980612236,
+          "terminal_trans": 2.44188999038955
+        },
+        "description": "Formal evaluation: task success.",
+        "provenance": {
+          "run_label": "opus55_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+          "original_rollout_sha256": "3b348ce4743ef53c29a147fac8ec8385fc8c91844e6b72697005d2c1b6c10649",
+          "web_rollout_sha256": "3b348ce4743ef53c29a147fac8ec8385fc8c91844e6b72697005d2c1b6c10649",
+          "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+          "published_at": "2026-10-15T08:44:39Z"
+        }
+      },
+      "provenance": {
+        "run_label": "gemini4argon_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
+        "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+        "published_at": "2026-10-27T23:57:19.444630Z",
+        "archive_sha256": "06245b9d515c6a9807f529119a5c8c09e83009d47c99210f882defac99c4102c",
+        "registry_version": "V_20261027_ARGON222_V8_C01",
+        "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+        "original_rollout_sha256": "bb51f7b907e10559e780c292b137809ae959d514b2d894752fda37f01f1a809f",
+        "web_rollout_sha256": "bb51f7b907e10559e780c292b137809ae959d514b2d894752fda37f01f1a809f"
+      },
+      "analysis": "This selected same-input example pairs the actual Gemini rollout and formal judgment with the recorded Opus 5.5 output. It is not a random sample or a causal test of model identity."
+    },
+    {
+      "id": "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand",
+      "family": "droid-pick-place",
+      "title": "Pick-and-place",
+      "description": "Pick-and-place, from a DROID robot video.",
+      "dataset": "DROID",
+      "source": {
+        "video": "assets/cases/opus55/01_droid_orange_pick_place/human_assisted.mp4",
+        "poster": "assets/cases/opus55/01_droid_orange_pick_place/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Gemini 4 Argon",
+        "success": true,
+        "phase": "completed",
+        "metrics": {
+          "scene_cd": 1.3207522347285376,
+          "terminal_trans": 1.4407540016133178
+        },
+        "provenance": {
+          "run_label": "gemini4argon_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+          "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+          "published_at": "2026-10-27T23:57:19.444630Z",
+          "archive_sha256": "5b032ad3c09b32a0a064e874c58b1871c5239c17b1a68770fe8e1aeaed493a4d",
+          "registry_version": "V_20261027_ARGON222_V8_C01",
+          "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+          "original_rollout_sha256": "b3f1a142749d1eabc456789a4a8c70b2f0ed0fd88d6b1cf8ce58bc35060052b7",
+          "web_rollout_sha256": "b3f1a142749d1eabc456789a4a8c70b2f0ed0fd88d6b1cf8ce58bc35060052b7"
+        },
+        "video": "assets/cases/gemini-4-argon/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/rollout.mp4",
+        "poster": "assets/cases/gemini-4-argon/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/poster.webp",
+        "progress": 1.0,
+        "build": true,
+        "description": "Formal evaluation: task success."
+      },
+      "baseline": {
+        "status": "verified",
+        "name": "Claude Opus 5.5",
+        "video": "assets/cases/opus55/01_droid_orange_pick_place/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/01_droid_orange_pick_place/opus55_success_sim.webp",
+        "success": true,
+        "progress": 1.0,
+        "metrics": {
+          "scene_cd": 1.0831215502223375,
+          "terminal_trans": 1.2214986869764022
+        },
+        "description": "Formal evaluation: task success.",
+        "provenance": {
+          "run_label": "opus55_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+          "original_rollout_sha256": "0567ba6ae25bebdcd276fdfe7bb6af84fd1223765c24541bce899210f9ba78ba",
+          "web_rollout_sha256": "0567ba6ae25bebdcd276fdfe7bb6af84fd1223765c24541bce899210f9ba78ba",
+          "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+          "published_at": "2026-10-15T08:44:39Z"
+        }
+      },
+      "provenance": {
+        "run_label": "gemini4argon_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
+        "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+        "published_at": "2026-10-27T23:57:19.444630Z",
+        "archive_sha256": "5b032ad3c09b32a0a064e874c58b1871c5239c17b1a68770fe8e1aeaed493a4d",
+        "registry_version": "V_20261027_ARGON222_V8_C01",
+        "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+        "original_rollout_sha256": "b3f1a142749d1eabc456789a4a8c70b2f0ed0fd88d6b1cf8ce58bc35060052b7",
+        "web_rollout_sha256": "b3f1a142749d1eabc456789a4a8c70b2f0ed0fd88d6b1cf8ce58bc35060052b7"
+      },
+      "analysis": "This selected same-input example pairs the actual Gemini rollout and formal judgment with the recorded Opus 5.5 output. It is not a random sample or a causal test of model identity."
+    },
+    {
+      "id": "hot3d_002498",
+      "family": "hot3d-pickplace-bimanual",
+      "title": "Two-handed pick-and-place",
+      "description": "Two-handed pick-and-place, from a HOT3D video.",
+      "dataset": "HOT3D",
+      "source": {
+        "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/human_assisted.mp4",
+        "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Gemini 4 Argon",
+        "success": false,
+        "phase": "completed",
+        "metrics": {
+          "scene_cd": 3.699113058712679,
+          "terminal_trans": 6.411421972013938
+        },
+        "provenance": {
+          "run_label": "gemini4argon_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+          "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+          "published_at": "2026-10-27T23:57:19.444630Z",
+          "archive_sha256": "62b85e63af4d69378ad802ae955b02c22bf2a255f79a1253c23e69776493e094",
+          "registry_version": "V_20261027_ARGON222_V8_C01",
+          "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+          "original_rollout_sha256": "d361fd4e4fe63abd8aa2aec1883690985921520df30369662d944b83cda45e8b",
+          "web_rollout_sha256": "d361fd4e4fe63abd8aa2aec1883690985921520df30369662d944b83cda45e8b"
+        },
+        "video": "assets/cases/gemini-4-argon/hot3d_002498/rollout.mp4",
+        "poster": "assets/cases/gemini-4-argon/hot3d_002498/poster.webp",
+        "progress": 0.75,
+        "build": true,
+        "description": "Formal evaluation: task failed."
+      },
+      "baseline": {
+        "status": "verified",
+        "name": "Claude Opus 5.5",
+        "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/opus55_success_sim.webp",
+        "success": true,
+        "progress": 1.0,
+        "metrics": {
+          "scene_cd": 2.1807538775038653,
+          "terminal_trans": 5.047565460721531
+        },
+        "description": "Formal evaluation: task success.",
+        "provenance": {
+          "run_label": "opus55_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+          "original_rollout_sha256": "b7a1576715a36a47daa8e068c6e655e28fa6ea18acc1ec682c8600eb8e54613c",
+          "web_rollout_sha256": "d6d3f4cdefd0ca5559aca842db2e44c6629d733198957fd02022233b19f41e1d",
+          "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+          "published_at": "2026-10-15T08:44:39Z"
+        }
+      },
+      "provenance": {
+        "run_label": "gemini4argon_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
+        "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+        "published_at": "2026-10-27T23:57:19.444630Z",
+        "archive_sha256": "62b85e63af4d69378ad802ae955b02c22bf2a255f79a1253c23e69776493e094",
+        "registry_version": "V_20261027_ARGON222_V8_C01",
+        "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+        "original_rollout_sha256": "d361fd4e4fe63abd8aa2aec1883690985921520df30369662d944b83cda45e8b",
+        "web_rollout_sha256": "d361fd4e4fe63abd8aa2aec1883690985921520df30369662d944b83cda45e8b"
+      },
+      "analysis": "This selected same-input example pairs the actual Gemini rollout and formal judgment with the recorded Opus 5.5 output. It is not a random sample or a causal test of model identity."
+    },
+    {
+      "id": "fbraw_2023-01-22-22_45_54_lamp_bulb",
+      "family": "bulb-insert",
+      "title": "Lamp bulb insertion",
+      "description": "Lamp-bulb insertion, from a FurnitureBench robot video.",
+      "dataset": "FurnitureBench",
+      "source": {
+        "video": "assets/cases/opus55/04_lamp_bulb_insert/human_assisted.mp4",
+        "poster": "assets/cases/opus55/04_lamp_bulb_insert/human_assisted.webp"
+      },
+      "model": {
+        "status": "verified",
+        "name": "Gemini 4 Argon",
+        "success": false,
+        "phase": "completed",
+        "metrics": {
+          "scene_cd": 6.190646008071276,
+          "terminal_trans": 100.0
+        },
+        "provenance": {
+          "run_label": "gemini4argon_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+          "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+          "published_at": "2026-10-27T23:57:19.444630Z",
+          "archive_sha256": "2f201b3ac6ad222549e3516643149291fd93aef2a3f47c17fe1d0a794d777dfa",
+          "registry_version": "V_20261027_ARGON222_V8_C01",
+          "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+          "original_rollout_sha256": "e633ac642960cb7a42aa9fa889ee93edb7036f54627d3a6c37ca248996d28c1e",
+          "web_rollout_sha256": "e633ac642960cb7a42aa9fa889ee93edb7036f54627d3a6c37ca248996d28c1e"
+        },
+        "video": "assets/cases/gemini-4-argon/fbraw_2023-01-22-22_45_54_lamp_bulb/rollout.mp4",
+        "poster": "assets/cases/gemini-4-argon/fbraw_2023-01-22-22_45_54_lamp_bulb/poster.webp",
+        "progress": 0.0,
+        "build": true,
+        "description": "Formal evaluation: task failed."
+      },
+      "baseline": {
+        "status": "verified",
+        "name": "Claude Opus 5.5",
+        "video": "assets/cases/opus55/04_lamp_bulb_insert/opus55_success_sim.mp4",
+        "poster": "assets/cases/opus55/04_lamp_bulb_insert/opus55_success_sim.webp",
+        "success": true,
+        "progress": 1.0,
+        "metrics": {
+          "scene_cd": 3.0785697242999985,
+          "terminal_trans": 1.406821049967381
+        },
+        "description": "Formal evaluation: task success.",
+        "provenance": {
+          "run_label": "opus55_v2",
+          "evaluator_version": "eval2/4 (rev5 scoring tree)",
+          "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+          "original_rollout_sha256": "099f95477a9f07ddb1d212b2eff51bf91f7fad38052634980614909c2fa08ba9",
+          "web_rollout_sha256": "099f95477a9f07ddb1d212b2eff51bf91f7fad38052634980614909c2fa08ba9",
+          "published_record_sha256": "1b5c5175d41e8106eda67bed29c75425b99d99efd29eab1714ab4b195efac592",
+          "published_at": "2026-10-15T08:44:39Z"
+        }
+      },
+      "provenance": {
+        "run_label": "gemini4argon_v2",
+        "evaluator_version": "eval2/4 (rev5 scoring tree)",
+        "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
+        "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+        "published_at": "2026-10-27T23:57:19.444630Z",
+        "archive_sha256": "2f201b3ac6ad222549e3516643149291fd93aef2a3f47c17fe1d0a794d777dfa",
+        "registry_version": "V_20261027_ARGON222_V8_C01",
+        "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+        "original_rollout_sha256": "e633ac642960cb7a42aa9fa889ee93edb7036f54627d3a6c37ca248996d28c1e",
+        "web_rollout_sha256": "e633ac642960cb7a42aa9fa889ee93edb7036f54627d3a6c37ca248996d28c1e"
+      },
+      "analysis": "This selected same-input example pairs the actual Gemini rollout and formal judgment with the recorded Opus 5.5 output. It is not a random sample or a causal test of model identity."
+    }
+  ],
+  "failure_cases": []
+}

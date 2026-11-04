@@ -71,18 +71,81 @@
       "evidence_priorities": []
     },
     "gemini-4-argon": {
-      "intro": "Gemini 4 Argon is being tested. Its report will connect the verified metric profile to actual case outputs after the evaluation is complete.",
-      "findings": [],
-      "limitations": [
-        "No verified result is available yet. Ranking, strengths and weaknesses remain unreported."
+      "intro": "Gemini 4 Argon enters the shared 222-instance leaderboard in third place. A high build rate and low scene-level error coexist with a much lower task-completion rate; the case evidence shows both a completed pick-and-place and incomplete assembly and placement.",
+      "findings": [
+        {
+          "title": "Third overall, with stronger task completion than Sol",
+          "body": "Gemini records 42.46 V2WScore and 19.6% task success, between Fable 5.1 and GPT-6.1 Sol in the overall ranking. Stage progress is 0.41. These results describe the tested model-and-agent configuration, not a controlled intervention on model identity.",
+          "metric_keys": [
+            "score",
+            "success",
+            "progress"
+          ],
+          "baseline_model_id": "gpt-6-1-sol",
+          "label": "Task outcomes",
+          "group": "Strengths & observations",
+          "stamp": "Observation",
+          "stamp_tone": "insight"
+        },
+        {
+          "title": "Executable worlds are the starting point",
+          "body": "The 91.0% family-macro build rate ties GPT-6.1 Sol and trails Opus 5.5. Task completion remains 19.6%. The selected DROID case succeeds; the two-handed-lift record has no delivered executable submission and no rollout video.",
+          "metric_keys": [
+            "build",
+            "success"
+          ],
+          "baseline_model_id": "opus-5-5",
+          "case_ids": [
+            "droid_guptalab_2023_05_19_11h_15m_41s_orange_hand"
+          ],
+          "label": "Executability",
+          "group": "Strengths & observations",
+          "stamp": "Observation",
+          "stamp_tone": "insight"
+        },
+        {
+          "title": "Scene fidelity does not settle the interaction",
+          "body": "Scene CD is 5.50 cm, second-lowest in the current scope. Object shape and size errors are still higher than GPT-6.1 Sol. In the desk-leg case, Gemini records 3.09 cm scene CD but does not complete the task, while the matching Opus rollout succeeds.",
+          "metric_keys": [
+            "scene_cd",
+            "shape_cd",
+            "size_err"
+          ],
+          "baseline_model_id": "gpt-6-1-sol",
+          "case_ids": [
+            "fbraw_2023-01-26-00_00_38_desk_leg2"
+          ],
+          "label": "Geometry vs. outcome",
+          "group": "Limitations & trade-offs",
+          "stamp": "Insight",
+          "stamp_tone": "insight"
+        },
+        {
+          "title": "Partial progress can still miss the goal",
+          "body": "The selected two-handed pick-and-place reaches 0.75 stage progress but fails its formal task judgment. Aggregate terminal translation error is 32.38 cm. Fixed-reference success and progress provide separate diagnostics, with their own coverage; they are not the agent rollout success rate.",
+          "metric_keys": [
+            "terminal_trans",
+            "fixed_success",
+            "fixed_progress"
+          ],
+          "baseline_model_id": "fable-5-1",
+          "case_ids": [
+            "hot3d_002498"
+          ],
+          "label": "Execution limits",
+          "group": "Limitations & trade-offs",
+          "stamp": "Limitation",
+          "stamp_tone": "limitation"
+        }
       ],
-      "evidence_priorities": [
-        "Executable builds: build rate, coverage and examples of both runnable worlds and build failures.",
-        "Task completion: success and stage progress, supported by verified successful and failed rollouts.",
-        "Physical fidelity: geometry and dynamics metrics linked to the same source videos and model outputs.",
-        "Feedback and recovery: iteration logs showing what the agent changed after feedback; this claim requires evidence beyond final scores.",
-        "Comparable setup: exact model and agent settings, evaluation version, instance manifest and per-metric coverage."
-      ]
+      "limitations": [
+        "The selected inputs originated in an Opus-success/Fable-failure collection. Gemini outcomes on these inputs cannot estimate its overall success rate or full failure distribution.",
+        "One matched two-handed-lift record has no delivered submission and no rollout. It is labeled No submission, not illustrated with another model's video.",
+        "The formal score includes all 222 instances across 39 families. Per-metric finite coverage varies; task success is family-macro and is not a passed-instance count.",
+        "The published execution configuration uses OpenCode 1.18.29 with high reasoning and a Token360 direct route; the upstream provider is not supplied. Historical run metadata alone does not establish a Vertex route.",
+        "Final metrics and rollouts do not establish feedback use or recovery; those claims require iteration logs."
+      ],
+      "evidence_priorities": []
     },
     "meta-muse": {
       "intro": "Muse Wonder produces executable worlds in most measured cases, while task completion remains uncommon. The metric profile separates this construction ability from the remaining geometry and execution gaps.",

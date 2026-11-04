@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
   "title": "Video2World",
-  "snapshot_id": "v2-published-2026-10-17",
-  "snapshot_date": "2026-10-17",
-  "site_updated": "2026-10-17",
+  "snapshot_id": "v2-published-2026-10-27",
+  "snapshot_date": "2026-10-27",
+  "site_updated": "2026-11-03",
   "status": "published_snapshot",
   "instances": 222,
   "families": 39,
   "videos": 189,
   "source": {
     "type": "owner_published_records",
-    "name": "Published Video2World records · snapshot as of 17 October 2026",
-    "date": "2026-10-17",
-    "published_at": "2026-10-17T15:07:46Z",
-    "source_document": "https://docs.google.com/document/d/1Yw3rTnCJQBGJVOVjMlSmQdK2qizu34KNImBXOBWr-9s",
-    "notes": "Formal V2WScore values are read from the final published score table. Component metrics are recomputed from the published per-instance records with the dashboard's exact scope and family-macro aggregation: 222 instances / 39 families. Finite per-metric coverage varies. Saved published records were read; this refresh does not constitute a fresh full runtime reevaluation.",
+    "name": "Published Video2World records · 27 October 2026 V8 release",
+    "date": "2026-10-27",
+    "published_at": "2026-10-27T23:57:19.444630Z",
+    "publication_receipt": "data/result-snapshot-2026-10-27.json",
+    "notes": "Gemini V8 is selected by the owner publication receipt, not by a directory timestamp or current alias. The other twelve models retain their previously published records and scores. Formal V2WScore values are copied from the final table; components use the same scoped family-macro aggregation. Saved records were read, without a fresh full runtime reevaluation.",
     "aggregation": "Mean within task family, then equal mean across families with a finite value for that metric. Failure-status treatment follows the published dashboard aggregation.",
     "score_scope": "222 instances / 39 families, identical across all published model scores; failures remain in the denominator at zero.",
     "comparability": "Current rev5 internal scoring snapshot; separate from the paper results and its human-assisted reference."
@@ -306,6 +306,101 @@
         "families": 39,
         "rows_ok": 208,
         "rows_scored_zero": 12
+      }
+    },
+    {
+      "id": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "provider": "Google",
+      "model_id": "openrouter/google/gemini-4-argon",
+      "run_label": "gemini4argon_v2",
+      "metrics": {
+        "success": 19.627004050080973,
+        "progress": 0.4133772742024376,
+        "scene_cd": 5.503114689197562,
+        "shape_cd": 1.0373344748451088,
+        "size_err": 3.0946719391406274,
+        "terminal_trans": 32.38005946647089,
+        "terminal_rot": 107.02479036198599,
+        "fixed_success": 11.4126559714795,
+        "fixed_progress": 0.23539222058735632,
+        "fixed_ape": 18.82892259181035,
+        "build": 91.02564102564102,
+        "score": 42.46
+      },
+      "coverage": {
+        "success": 222,
+        "progress": 204,
+        "scene_cd": 202,
+        "shape_cd": 201,
+        "size_err": 201,
+        "terminal_trans": 152,
+        "terminal_rot": 73,
+        "fixed_success": 172,
+        "fixed_progress": 172,
+        "fixed_ape": 172,
+        "build": 213,
+        "score": 222
+      },
+      "coverage_families": {
+        "success": 39,
+        "progress": 36,
+        "scene_cd": 35,
+        "shape_cd": 34,
+        "size_err": 34,
+        "terminal_trans": 23,
+        "terminal_rot": 14,
+        "fixed_success": 26,
+        "fixed_progress": 26,
+        "fixed_ape": 26,
+        "build": 39,
+        "score": 39
+      },
+      "featured": false,
+      "configuration": {
+        "agent_harness": "opencode",
+        "agent_version": "OpenCode 1.18.29",
+        "reasoning_effort": "high",
+        "sample_budget_usd": 60,
+        "max_rounds": 3,
+        "max_attempts": 1,
+        "agent_timeout_s": 10800,
+        "eval_timeout_s": 5400,
+        "execution_config_sha256": "2d0ab935570648f3c4fdabf09bc5679759ca2b22586c03d7a458e638ea13c9f1",
+        "api_route": "token360/direct",
+        "upstream_provider": "unknown",
+        "allow_fallbacks": false,
+        "routing_note": "Historical model alias retained; the selected execution configuration records the Token360 direct route. The upstream provider is not supplied.",
+        "registry_version": "V_20261027_ARGON222_V8_C01",
+        "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+        "evaluator_schema": "eval2/4",
+        "scene_metric": "scene_cd_v5",
+        "reference_contract": "reference-candidate/1.2",
+        "relative_action_protocol": "fixed-relative-actions/1.0",
+        "public_contract": "camera-stage1/1.2",
+        "scope_sha256": "5604d1282a430adbd8e42c389a2b4f1f8faeb9c9e4be5c0ec06392d29a680d15",
+        "scoring_config_sha256": "6218e12343de847164c8988f4a812b1f00e787fbab29e93fa36ab5b9b6f82efc",
+        "global_scoring_version_sha256": "bf58ea4fcee704eb6e08880ce566791db32ac1d74b6e7c03db7d9864181601f6"
+      },
+      "source": {
+        "type": "owner_published_records",
+        "name": "Gemini 4 Argon V8 published records",
+        "date": "2026-10-27",
+        "published_at": "2026-10-27T23:57:19.444630Z",
+        "record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+        "publication_receipt": "data/result-snapshot-2026-10-27.json",
+        "verification": "Publication-selected registry, record hash, scope and family-macro components verified. Saved records were read; no fresh runtime reevaluation was performed for this import."
+      },
+      "score_components": {
+        "F": 0.2804,
+        "G": 0.5865,
+        "D": 0.407
+      },
+      "score_scope": {
+        "rows_in_denominator": 222,
+        "families": 39,
+        "rows_ok": 203,
+        "rows_scored_zero": 19
       }
     },
     {
@@ -1109,15 +1204,7 @@
       }
     }
   ],
-  "pending_models": [
-    {
-      "id": "gemini-4-argon",
-      "name": "Gemini 4 Argon",
-      "provider": "Google",
-      "status": "testing",
-      "metrics": null
-    }
-  ],
+  "pending_models": [],
   "updates": [
     {
       "slug": "opus-5-5",
@@ -1148,6 +1235,19 @@
       "snapshot_id": "v2-published-2026-10-17",
       "compare_ids": [
         "opus-5-5",
+        "gpt-6-1-sol"
+      ]
+    },
+    {
+      "slug": "gemini-4-argon",
+      "model_id": "gemini-4-argon",
+      "title": "Gemini 4 Argon enters the top three",
+      "date": "2026-10-27",
+      "date_label": "Published result snapshot",
+      "status": "results",
+      "snapshot_id": "v2-published-2026-10-27",
+      "compare_ids": [
+        "fable-5-1",
         "gpt-6-1-sol"
       ]
     }

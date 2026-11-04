@@ -111,13 +111,35 @@
       "cover_video": "assets/cases/frontier/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/meta-muse.mp4",
       "cover_start": 0.6,
       "cover_position": "50% 36%"
+    },
+    {
+      "id": "gemini-4-argon",
+      "title": "Gemini 4 Argon: 42.46 V2WScore",
+      "summary": "Third overall, with 19.6% task success and 91.0% build rate on the shared 222-instance scope. Inspect the metric coverage and actual successful and failed executions.",
+      "date": "2026-10-27",
+      "date_label": "Published result snapshot",
+      "status": "published",
+      "kind": "model_result",
+      "model_id": "gemini-4-argon",
+      "href": "updates/gemini-4-argon.html",
+      "image": "assets/gemini-4-argon-social.png",
+      "snapshot_id": "v2-published-2026-10-27",
+      "detail": "report",
+      "headline": "Gemini 4 Argon enters the top three",
+      "dek": "42.46 V2WScore, 19.6% task success and 91.0% build rate. Scene fidelity and completed interactions tell different parts of the result.",
+      "cover": "assets/cases/gemini-4-argon/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/poster.webp",
+      "cover_alt": "Actual Gemini 4 Argon pick-and-place simulation; formal task success.",
+      "cover_video": "assets/cases/gemini-4-argon/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/rollout.mp4",
+      "cover_start": 1.0,
+      "cover_position": "50% 44%",
+      "cases": "data/gemini-4-argon-cases.json"
     }
   ],
   "campaign": {
     "id": "frontier-four-2026-10",
     "title": "Four flagship models. One benchmark.",
     "description": "A joint comparison of Claude Opus 5.5, Gemini 4 Argon, Meta Muse Wonder and GPT-6.1 Sol, supported by model reports and verified executions.",
-    "status": "testing",
+    "status": "results_available",
     "model_ids": [
       "opus-5-5",
       "gemini-4-argon",
@@ -127,6 +149,6 @@
     "release_rule": "Publish the joint comparison after all four results are verified on a compatible protocol.",
     "roundup_href": null,
     "publication_status": "in_preparation",
-    "publication_note": "Three model reports are available. Gemini 4 Argon remains in testing; the four-model comparison is in preparation. The methodology blog is a separate technical report."
+    "publication_note": "All four flagship result rows are available on the compatible published scope. The joint comparison article remains in preparation; individual reports and case evidence are available."
   }
 }

@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-10-17",
+  "snapshot_date": "2026-10-27",
   "model_ids": [
     "gpt-6-1-sol",
-    "fable-5-1",
+    "gemini-4-argon",
     "meta-muse",
     "opus-5-5"
   ],
   "selection": {
     "common_cases": 222,
     "selected_cases": 5,
-    "note": "One source video, four coding agents. These five illustrative cases were selected for an earlier Opus 5.5 versus Fable 5.1 comparison; use the full leaderboard for aggregate performance.",
+    "note": "Same inputs, four flagship coding agents. The inputs were originally selected for Opus-success/Fable-failure contrasts; they illustrate specific outcomes, not overall success rates. A recorded no-delivery case is labeled separately from a failed rollout.",
     "criterion": "Retains the five previously featured cases; all four measured models use the same source video on each case. Selection originally required Opus success and Fable failure; this is not a random sample.",
     "source": "Owner-published V2 records, retrieved 2026-10-17; formal task_success judgments and model rollout assets."
   },
@@ -48,27 +48,32 @@
             "published_at": "2026-10-17T15:07:46Z"
           }
         },
-        "fable-5-1": {
+        "gemini-4-argon": {
           "status": "verified",
-          "name": "Claude Fable 5.1",
-          "video": "assets/cases/opus55/05_desk_leg_insert/fable51_failure_sim.mp4",
-          "poster": "assets/cases/opus55/05_desk_leg_insert/fable51_failure_sim.webp",
+          "name": "Gemini 4 Argon",
           "success": false,
-          "progress": 0.25,
+          "phase": "completed",
           "metrics": {
-            "scene_cd": 2.400224107242652,
-            "terminal_trans": 32.45536006351686
+            "scene_cd": 3.085235272021797,
+            "terminal_trans": 21.620724183906812
           },
-          "description": "Formal evaluation: task failed.",
           "provenance": {
-            "run_label": "fable51_v2",
+            "run_label": "gemini4argon_v2",
             "evaluator_version": "eval2/4 (rev5 scoring tree)",
             "source_video_sha256": "74f86c2c4f7d8fe9974f2da557906afff449bb35b44bb504c6f569e0b909826d",
-            "original_rollout_sha256": "2b8cc6e242a7e4f81eecb1b9e669623626545c9d9087c0eefd6dd6f56f52e693",
-            "web_rollout_sha256": "2b8cc6e242a7e4f81eecb1b9e669623626545c9d9087c0eefd6dd6f56f52e693",
-            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
-            "published_at": "2026-10-15T08:44:39Z"
-          }
+            "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+            "published_at": "2026-10-27T23:57:19.444630Z",
+            "archive_sha256": "06245b9d515c6a9807f529119a5c8c09e83009d47c99210f882defac99c4102c",
+            "registry_version": "V_20261027_ARGON222_V8_C01",
+            "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+            "original_rollout_sha256": "bb51f7b907e10559e780c292b137809ae959d514b2d894752fda37f01f1a809f",
+            "web_rollout_sha256": "bb51f7b907e10559e780c292b137809ae959d514b2d894752fda37f01f1a809f"
+          },
+          "video": "assets/cases/gemini-4-argon/fbraw_2023-01-26-00_00_38_desk_leg2/rollout.mp4",
+          "poster": "assets/cases/gemini-4-argon/fbraw_2023-01-26-00_00_38_desk_leg2/poster.webp",
+          "progress": 0.0,
+          "build": true,
+          "description": "Formal evaluation: task failed."
         },
         "meta-muse": {
           "status": "verified",
@@ -149,27 +154,32 @@
             "published_at": "2026-10-17T15:07:46Z"
           }
         },
-        "fable-5-1": {
+        "gemini-4-argon": {
           "status": "verified",
-          "name": "Claude Fable 5.1",
-          "video": "assets/cases/opus55/01_droid_orange_pick_place/fable51_failure_sim.mp4",
-          "poster": "assets/cases/opus55/01_droid_orange_pick_place/fable51_failure_sim.webp",
-          "success": false,
-          "progress": 0.0,
+          "name": "Gemini 4 Argon",
+          "success": true,
+          "phase": "completed",
           "metrics": {
-            "scene_cd": 14.171407409192069,
-            "terminal_trans": 100.0
+            "scene_cd": 1.3207522347285376,
+            "terminal_trans": 1.4407540016133178
           },
-          "description": "Formal evaluation: task failed.",
           "provenance": {
-            "run_label": "fable51_v2",
+            "run_label": "gemini4argon_v2",
             "evaluator_version": "eval2/4 (rev5 scoring tree)",
             "source_video_sha256": "8c23dfcccdbf32f7dd0935f5e175447f45ccf98887d9c08fb1fd1629e87854f0",
-            "original_rollout_sha256": "5e9767ddd99288a0ecba06847dd13ce6f6334c472da0eef9abd359d87a165442",
-            "web_rollout_sha256": "5e9767ddd99288a0ecba06847dd13ce6f6334c472da0eef9abd359d87a165442",
-            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
-            "published_at": "2026-10-15T08:44:39Z"
-          }
+            "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+            "published_at": "2026-10-27T23:57:19.444630Z",
+            "archive_sha256": "5b032ad3c09b32a0a064e874c58b1871c5239c17b1a68770fe8e1aeaed493a4d",
+            "registry_version": "V_20261027_ARGON222_V8_C01",
+            "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+            "original_rollout_sha256": "b3f1a142749d1eabc456789a4a8c70b2f0ed0fd88d6b1cf8ce58bc35060052b7",
+            "web_rollout_sha256": "b3f1a142749d1eabc456789a4a8c70b2f0ed0fd88d6b1cf8ce58bc35060052b7"
+          },
+          "video": "assets/cases/gemini-4-argon/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/rollout.mp4",
+          "poster": "assets/cases/gemini-4-argon/droid_guptalab_2023_05_19_11h_15m_41s_orange_hand/poster.webp",
+          "progress": 1.0,
+          "build": true,
+          "description": "Formal evaluation: task success."
         },
         "meta-muse": {
           "status": "verified",
@@ -249,26 +259,23 @@
             "published_at": "2026-10-17T15:07:46Z"
           }
         },
-        "fable-5-1": {
-          "status": "verified",
-          "name": "Claude Fable 5.1",
-          "video": "assets/cases/opus55/02_dexycb_bimanual_lift/fable51_failure_sim.mp4",
-          "poster": "assets/cases/opus55/02_dexycb_bimanual_lift/fable51_failure_sim.webp",
+        "gemini-4-argon": {
+          "status": "no_delivery",
+          "name": "Gemini 4 Argon",
           "success": false,
-          "progress": 0.3333333333333333,
-          "metrics": {
-            "scene_cd": 11.39024195510882
-          },
-          "description": "Formal evaluation: task failed.",
+          "phase": "method_failed",
+          "metrics": {},
           "provenance": {
-            "run_label": "fable51_v2",
+            "run_label": "gemini4argon_v2",
             "evaluator_version": "eval2/4 (rev5 scoring tree)",
             "source_video_sha256": "5ff6701e5d0fb085b69b184906e15d5e0fe9782f6ddfcf4c238c1f0d832c3c87",
-            "original_rollout_sha256": "e0ee341f20ea2614abb54732eb4061ab85aecc350c0395c01cf3e5f6fcda79c9",
-            "web_rollout_sha256": "8c74d169de0a5544a1e985942a6aa91c390be2269a00ecf75ee4831eeac1c2ac",
-            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
-            "published_at": "2026-10-15T08:44:39Z"
-          }
+            "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+            "published_at": "2026-10-27T23:57:19.444630Z",
+            "archive_sha256": "295d648149933ef7a5abde3cba1e9c90a9634bfa077ba52f7516a40aba78be15",
+            "registry_version": "V_20261027_ARGON222_V8_C01",
+            "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad"
+          },
+          "description": "The published record reports method_failed with no delivered package; no rollout video is available."
         },
         "meta-muse": {
           "status": "verified",
@@ -347,27 +354,32 @@
             "published_at": "2026-10-17T15:07:46Z"
           }
         },
-        "fable-5-1": {
+        "gemini-4-argon": {
           "status": "verified",
-          "name": "Claude Fable 5.1",
-          "video": "assets/cases/opus55/03_hot3d_bimanual_pick_place/fable51_failure_sim.mp4",
-          "poster": "assets/cases/opus55/03_hot3d_bimanual_pick_place/fable51_failure_sim.webp",
+          "name": "Gemini 4 Argon",
           "success": false,
-          "progress": 0.25,
+          "phase": "completed",
           "metrics": {
-            "scene_cd": 3.159203551308527,
-            "terminal_trans": 24.307016236318514
+            "scene_cd": 3.699113058712679,
+            "terminal_trans": 6.411421972013938
           },
-          "description": "Formal evaluation: task failed.",
           "provenance": {
-            "run_label": "fable51_v2",
+            "run_label": "gemini4argon_v2",
             "evaluator_version": "eval2/4 (rev5 scoring tree)",
             "source_video_sha256": "909634f29dbd6fcab5b4fdb26c00db53dffba61e5fe114ecc4135390ba03cac6",
-            "original_rollout_sha256": "23d0fdf6aba35b9198bbc718f05b4434ec988b6528c341ce543edb9e6843f13b",
-            "web_rollout_sha256": "d8b9ff013787fecdf40350fc647b44415191e07a7076e6dfa988d8571505fb1f",
-            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
-            "published_at": "2026-10-15T08:44:39Z"
-          }
+            "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+            "published_at": "2026-10-27T23:57:19.444630Z",
+            "archive_sha256": "62b85e63af4d69378ad802ae955b02c22bf2a255f79a1253c23e69776493e094",
+            "registry_version": "V_20261027_ARGON222_V8_C01",
+            "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+            "original_rollout_sha256": "d361fd4e4fe63abd8aa2aec1883690985921520df30369662d944b83cda45e8b",
+            "web_rollout_sha256": "d361fd4e4fe63abd8aa2aec1883690985921520df30369662d944b83cda45e8b"
+          },
+          "video": "assets/cases/gemini-4-argon/hot3d_002498/rollout.mp4",
+          "poster": "assets/cases/gemini-4-argon/hot3d_002498/poster.webp",
+          "progress": 0.75,
+          "build": true,
+          "description": "Formal evaluation: task failed."
         },
         "meta-muse": {
           "status": "verified",
@@ -448,27 +460,32 @@
             "published_at": "2026-10-17T15:07:46Z"
           }
         },
-        "fable-5-1": {
+        "gemini-4-argon": {
           "status": "verified",
-          "name": "Claude Fable 5.1",
-          "video": "assets/cases/opus55/04_lamp_bulb_insert/fable51_failure_sim.mp4",
-          "poster": "assets/cases/opus55/04_lamp_bulb_insert/fable51_failure_sim.webp",
+          "name": "Gemini 4 Argon",
           "success": false,
-          "progress": 0.75,
+          "phase": "completed",
           "metrics": {
-            "scene_cd": 5.07350344768459,
+            "scene_cd": 6.190646008071276,
             "terminal_trans": 100.0
           },
-          "description": "Formal evaluation: task failed.",
           "provenance": {
-            "run_label": "fable51_v2",
+            "run_label": "gemini4argon_v2",
             "evaluator_version": "eval2/4 (rev5 scoring tree)",
             "source_video_sha256": "402ff71730b5a9443a6327e60c628ccbff20e2ff48b2a0a09009fc0d8c846d65",
-            "original_rollout_sha256": "ee025f7290bc791a8b7b48430e88c625bf628510bdf3638c78bc012f938197bf",
-            "web_rollout_sha256": "ee025f7290bc791a8b7b48430e88c625bf628510bdf3638c78bc012f938197bf",
-            "published_record_sha256": "faf7d2fe32caf996e2809ed11487c00eb41cf1c427bef49a4a62a3431b069c65",
-            "published_at": "2026-10-15T08:44:39Z"
-          }
+            "published_record_sha256": "fe9ebbb1001bfb3ddf337c106a07f6a8714a6ced3521c6d3db777c4fedcfe10a",
+            "published_at": "2026-10-27T23:57:19.444630Z",
+            "archive_sha256": "2f201b3ac6ad222549e3516643149291fd93aef2a3f47c17fe1d0a794d777dfa",
+            "registry_version": "V_20261027_ARGON222_V8_C01",
+            "registry_sha256": "a502e437516aab4655ddef95336787ec4bd7f1f0985f43eaf38ecaa077e461ad",
+            "original_rollout_sha256": "e633ac642960cb7a42aa9fa889ee93edb7036f54627d3a6c37ca248996d28c1e",
+            "web_rollout_sha256": "e633ac642960cb7a42aa9fa889ee93edb7036f54627d3a6c37ca248996d28c1e"
+          },
+          "video": "assets/cases/gemini-4-argon/fbraw_2023-01-22-22_45_54_lamp_bulb/rollout.mp4",
+          "poster": "assets/cases/gemini-4-argon/fbraw_2023-01-22-22_45_54_lamp_bulb/poster.webp",
+          "progress": 0.0,
+          "build": true,
+          "description": "Formal evaluation: task failed."
         },
         "meta-muse": {
           "status": "verified",

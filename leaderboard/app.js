@@ -5,7 +5,7 @@
   const $$ = (s) => [...document.querySelectorAll(s)];
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const path = (p) => /^https?:\/\//.test(p) ? p : `${base}/${p.replace(/^\//, '')}`;
-  const state = { board: null, archive: null, snapshot: 'current', search: '', provider: 'All', detail: false, metricView: 'key', sort: 'score', sortDir: 'desc', chart: 'score', news: null, analysis: null, cases: [], caseId: 'tape', caseA: 'opus5', caseB: 'gpt6astra' };
+  const state = { board: null, archive: null, snapshot: 'current', search: '', provider: 'All', detail: false, metricView: 'key', sort: 'score', sortDir: 'desc', chart: 'score', news: null, analysis: null, newsBoards: {}, cases: [], caseId: 'tape', caseA: 'opus5', caseB: 'gpt6astra' };
   const paperExtra = [
     {key:'t_ape',label:'Translation APE',short:'T-APE',unit:'cm',direction:'down',digits:2,group:'Dynamics',description:'Translation APE from the published-paper results.'},
     {key:'r_ape',label:'Rotation APE',short:'R-APE',unit:'deg',direction:'down',digits:2,group:'Dynamics',description:'Rotation APE from the published-paper results.'},
@@ -91,7 +91,7 @@
     const globalRanks = competitionRanks(sortedRows().filter(r => !r.reference), state.sort);
     const best = Object.fromEntries(columns.map(m => [m.key,(m.direction==='up'?Math.max:Math.min)(...getRows().filter(r=>!r.reference).map(r=>r.metrics[m.key]))]));
     const rows = filteredRows();
-    $('#table-body').innerHTML = rows.length ? rows.map(r => `<tr class="${r.featured?'featured ':''}${r.reference?'reference':''}"><td class="${r.reference?'ref-rank':''}"><span class="table-rank rank-${r.reference?'ref':globalRanks.get(r.id)}">${r.reference?'REF':String(globalRanks.get(r.id)).padStart(2,'0')}</span></td><td><button type="button" class="model-name" data-model="${esc(r.id)}"><span>${esc(r.name)}${r.featured?'<span class="inline-tag">NEW LEADER</span>':''}</span><small>${esc(r.provider)}${r.run_label?` · ${esc(r.run_label)}`:''}</small></button></td>${columns.map(m => {
+    $('#table-body').innerHTML = rows.length ? rows.map(r => `<tr class="${r.featured?'featured ':''}${r.reference?'reference':''}"><td class="${r.reference?'ref-rank':''}"><span class="table-rank rank-${r.reference?'ref':globalRanks.get(r.id)}">${r.reference?'REF':String(globalRanks.get(r.id)).padStart(2,'0')}</span></td><td><button type="button" class="model-name" data-model="${esc(r.id)}"><span>${esc(r.name)}${r.featured?'<span class="inline-tag">NEW LEADER</span>':''}</span></button></td>${columns.map(m => {
       const value = r.metrics[m.key];
       const title = r.coverage?.[m.key] != null ? `n=${r.coverage[m.key]} / ${state.board.instances}; open model details for source information` : m.description;
       if(m.key==='score') return `<td title="${esc(title)}"><div class="score-cell"><span class="score-track" aria-hidden="true"><i style="width:${Math.max(0,Math.min(100,value))}%"></i></span><span>${format(value,m.key)}</span></div></td>`;
@@ -241,12 +241,12 @@
     }).join('');
     const column=(c,id)=>{
       const output=c.models?.[id]||{},row=modelRow(id),name=row?.name||output.name||id;
-      const testing=output.status==='testing';
-      const hasMedia=!testing&&output.status!=='awaiting_evidence'&&typeof output.video==='string'&&output.video.trim()!=='';
+      const testing=output.status==='testing',noDelivery=output.status==='no_delivery';
+      const hasMedia=!testing&&!noDelivery&&output.status!=='awaiting_evidence'&&typeof output.video==='string'&&output.video.trim()!=='';
       const judged=hasMedia&&typeof output.success==='boolean';
-      const status=judged?(output.success?'success':'failed'):testing?'testing':hasMedia?'unjudged':'awaiting_evidence';
-      const label=judged?(output.success?'Success':'Failed'):testing?'Coming soon':hasMedia?'Outcome pending':'Awaiting evidence';
-      const message=testing?'Testing is in progress. Verified case evidence will appear here.':hasMedia?'A rollout is available; the formal task judgment has not been supplied.':'No verified rollout is available for this model on this source video.';
+      const status=noDelivery?'no_delivery':judged?(output.success?'success':'failed'):testing?'testing':hasMedia?'unjudged':'awaiting_evidence';
+      const label=noDelivery?'No submission':judged?(output.success?'Success':'Failed'):testing?'Coming soon':hasMedia?'Outcome pending':'Awaiting evidence';
+      const message=noDelivery?(output.description||'The published record has no delivered submission and no rollout video.'):testing?'Testing is in progress. Verified case evidence will appear here.':hasMedia?'A rollout is available; the formal task judgment has not been supplied.':'No verified rollout is available for this model on this source video.';
       const media=hasMedia?`<div class="cs-frame"><video data-case-video="${esc(id)}" src="${esc(path(output.video))}"${output.poster?` poster="${esc(path(output.poster))}"`:''} muted playsinline loop preload="metadata" controls aria-label="${esc(name)} simulation for ${esc(c.title)}"></video></div>`:`<div class="cs-placeholder"><span class="cs-placeholder-title">${label}</span><p>${message}</p></div>`;
       const measured=hasMedia?metrics(output):'';
       const evidenceNote=hasMedia?(judged?output.description:message):'';
@@ -351,9 +351,10 @@
   // entries open a dialog with story points, a comparison and the model's own cases.
   const fmtDay=d=>new Date(`${d}T00:00:00Z`).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'});
   function newsTarget(entry){return entry.detail==='brief'?`#news=${entry.id}`:path(entry.href);}
-  function newsRank(id){const order=[...state.board.models].sort((a,b)=>b.metrics.score-a.metrics.score);return [competitionRanks(order,'score').get(id)||0,order.length];}
+  function newsBoard(entry){return state.newsBoards[entry.snapshot_id]||state.board;}
+  function newsRank(id,board=state.board){const order=[...board.models].sort((a,b)=>b.metrics.score-a.metrics.score);return [competitionRanks(order,'score').get(id)||0,order.length];}
   function newsCard(entry){
-    const row=state.board.models.find(m=>m.id===entry.model_id),name=row?.name||entry.title,[rank,total]=row?newsRank(row.id):[0,0];
+    const row=newsBoard(entry).models.find(m=>m.id===entry.model_id),name=row?.name||entry.title,[rank,total]=row?newsRank(row.id):[0,0];
     const brief=entry.detail==='brief';
     const stats=row?`<span class="nc-stats"><span><b>${format(row.metrics.score,'score')}</b><small>V2WScore</small></span><span><b>${format(row.metrics.success,'success',true)}</b><small>Task success</small></span><span><b>${format(row.metrics.build,'build',true)}</b><small>Build rate</small></span></span>`:'';
     return `<a class="news-card" href="${esc(newsTarget(entry))}" data-news-id="${esc(entry.id)}" data-model="${esc(entry.model_id||'')}" data-detail="${esc(entry.detail||'report')}"${brief?' aria-haspopup="dialog"':''}><span class="nc-cover">${entry.cover?`<img src="${esc(path(entry.cover))}" alt="${esc(entry.cover_alt||'')}" loading="lazy" decoding="async">`:''}${rank?`<span class="nc-rank">#${rank} <small>of ${total}</small></span>`:''}</span><span class="nc-body"><span class="nc-kicker"><span>Model news</span><time datetime="${esc(entry.date)}">${esc(fmtDay(entry.date))}</time></span><span class="nc-model">${esc(name)}</span><strong class="nc-headline">${esc(entry.headline||entry.title)}</strong><span class="nc-dek">${esc(entry.dek||entry.summary)}</span>${stats}<span class="nc-cta">${brief?'Open the brief <i aria-hidden="true">+</i>':'Read the full report <i aria-hidden="true">↗</i>'}</span></span></a>`;
@@ -380,9 +381,9 @@
   // The homepage keeps the headline ticker and compact model-logo cards; execution videos
   // remain in the case studies and model reports.
   function newsFront(models,pending){
-    const rowOf=e=>state.board.models.find(m=>m.id===e.model_id);
+    const rowOf=e=>newsBoard(e).models.find(m=>m.id===e.model_id);
     const tick=[...models.map(e=>{const r=rowOf(e);return `<span class="nh-tick"><b>${esc(e.headline||e.title)}</b>${r?` <em>${format(r.metrics.score,'score')} V2WScore · ${format(r.metrics.success,'success',true)} task success</em>`:''}</span>`;}),...pending.map(m=>`<span class="nh-tick"><b>${esc(m.name)}</b> In evaluation <em>Coming soon</em></span>`)].join('<i class="nh-dot" aria-hidden="true">◆</i>');
-    const item=e=>{const r=rowOf(e),brief=e.detail==='brief';return `<li><a class="nh-item" href="${esc(newsTarget(e))}" data-news-id="${esc(e.id)}" data-detail="${esc(e.detail||'report')}"${brief?' aria-haspopup="dialog"':''}><span class="nh-story-brand"><span class="nh-model-logo" aria-hidden="true">${r?modelLogo(r):''}</span><span class="nh-story-identity"><span class="nh-item-kicker">${esc(r?.name||e.title)}</span><time datetime="${esc(e.date)}">${esc(fmtDay(e.date))}</time></span>${r?`<span class="nh-item-rank">#${newsRank(r.id)[0]}</span>`:''}</span><strong>${esc(e.headline||e.title)}</strong><span class="nh-item-dek">${esc(e.dek||e.summary)}</span>${r?`<span class="nc-stats"><span><b>${format(r.metrics.score,'score')}</b><small>V2WScore</small></span><span><b>${format(r.metrics.success,'success',true)}</b><small>Task success</small></span><span><b>${format(r.metrics.build,'build',true)}</b><small>Build rate</small></span></span>`:''}<span class="nh-item-cta">${brief?'Open brief <i aria-hidden="true">+</i>':'Read report <i aria-hidden="true">↗</i>'}</span></a></li>`;};
+    const item=e=>{const r=rowOf(e),brief=e.detail==='brief';return `<li><a class="nh-item" href="${esc(newsTarget(e))}" data-news-id="${esc(e.id)}" data-detail="${esc(e.detail||'report')}"${brief?' aria-haspopup="dialog"':''}><span class="nh-story-brand"><span class="nh-model-logo" aria-hidden="true">${r?modelLogo(r):''}</span><span class="nh-story-identity"><span class="nh-item-kicker">${esc(r?.name||e.title)}</span><time datetime="${esc(e.date)}">${esc(fmtDay(e.date))}</time></span>${r?`<span class="nh-item-rank" title="Current leaderboard rank">Live #${newsRank(r.id)[0]}</span>`:''}</span><strong>${esc(e.headline||e.title)}</strong><span class="nh-item-dek">${esc(e.dek||e.summary)}</span>${r?`<span class="nc-stats"><span><b>${format(r.metrics.score,'score')}</b><small>V2WScore</small></span><span><b>${format(r.metrics.success,'success',true)}</b><small>Task success</small></span><span><b>${format(r.metrics.build,'build',true)}</b><small>Build rate</small></span></span>`:''}<span class="nh-item-cta">${brief?'Open brief <i aria-hidden="true">+</i>':'Read report <i aria-hidden="true">↗</i>'}</span></a></li>`;};
     const pend=m=>`<li><div class="nh-item is-pending" data-pending="${esc(m.id)}"><span class="nh-story-brand"><span class="nh-model-logo" aria-hidden="true">${modelLogo(m)}</span><span class="nh-story-identity"><span class="nh-item-kicker">${esc(m.name)}</span><span>Coming soon</span></span></span><strong>Results are being verified</strong><span class="nh-item-dek">The evaluation is in progress. A model report will follow once the results are verified.</span><span class="nh-pending-label">In evaluation</span></div></li>`;
     return `<div class="nh-ticker" aria-label="Latest headlines"><span class="nh-ticker-tag">Latest</span><div class="nh-ticker-track"><div class="nh-ticker-move"><span class="nh-ticker-set">${tick}<i class="nh-dot" aria-hidden="true">◆</i></span><span class="nh-ticker-set" aria-hidden="true">${tick}<i class="nh-dot" aria-hidden="true">◆</i></span></div></div></div><ol class="nh-list">${models.map(item).join('')}${pending.map(pend).join('')}</ol>`;
   }
@@ -391,16 +392,17 @@
   async function openBrief(id){
     const entry=state.news.entries.find(e=>e.id===id&&e.detail==='brief'),dialog=$('#news-brief');if(!entry||!dialog)return;
     const request=++briefRequest;
-    const row=state.board.models.find(m=>m.id===entry.model_id);if(!row)return;
-    const [rank,total]=newsRank(row.id),M=k=>metric(k),byId=i=>state.board.models.find(m=>m.id===i);
+    const context=newsBoard(entry);
+    const row=context.models.find(m=>m.id===entry.model_id);if(!row)return;
+    const [rank,total]=newsRank(row.id,context),M=k=>metric(k),byId=i=>context.models.find(m=>m.id===i);
     const val=(r,k)=>{const m=M(k);const u=['%','0–1','0–100'].includes(m.unit)?(m.unit==='%'?'%':''):` ${m.unit}`;return `${format(r.metrics[k],k)}${u}`;};
     // comparisons stay inside the model's own line (its earlier versions); the funnel's reference
     // is the median of all evaluated models, not another named model
     const cmp=entry.compare,line=cmp?(cmp.models||[cmp.before,row.id]).map(byId).filter(Boolean):[];
     const better=(k,a,b)=>{const m=M(k);return m.direction==='up'?a>b:a<b;};
     const table=line.length>1?`<div class="nb-block"><h3>${esc(cmp.title)}</h3><table class="nb-compare"><thead><tr><th scope="col">Metric</th>${line.map(r=>`<th scope="col">${esc(r.name)}</th>`).join('')}</tr></thead><tbody>${cmp.metrics.map(k=>`<tr><td>${esc(M(k).short||M(k).label)} <span aria-hidden="true">${M(k).direction==='up'?'↑':'↓'}</span></td>${line.map((r,i)=>{if(r.id!==row.id)return `<td>${val(r,k)}</td>`;const p=line[i-1];return `<td class="${!p||r.metrics[k]===p.metrics[k]?'':better(k,r.metrics[k],p.metrics[k])?'is-up':'is-down'}"><b>${val(r,k)}</b></td>`;}).join('')}</tr>`).join('')}</tbody></table></div>`:'';
-    const median=k=>{const v=state.board.models.map(m=>m.metrics[k]).sort((a,b)=>a-b),n=v.length;return n%2?v[(n-1)/2]:(v[n/2-1]+v[n/2])/2;};
-    const funnel=entry.funnel?(()=>{const steps=[['build','World builds',v=>v],['progress','Stage progress',v=>v*100],['success','Task success',v=>v]];const ref={metrics:Object.fromEntries(steps.map(([k])=>[k,median(k)]))};return `<div class="nb-block"><h3>${esc(entry.funnel.title)}</h3><div class="nb-funnel">${steps.map(([k,l,f])=>`<div class="nb-step"><span class="nb-step-label">${l}</span><span class="nb-step-bars"><i class="is-a" style="width:${Math.max(1,f(row.metrics[k])).toFixed(1)}%"></i><i class="is-b" style="width:${Math.max(1,f(ref.metrics[k])).toFixed(1)}%"></i></span><span class="nb-step-val"><b>${val(row,k)}</b><small>median ${val(ref,k)}</small></span></div>`).join('')}</div><div class="af2-legend"><span class="is-a">${esc(row.name)}</span><span class="is-b">Median of all ${state.board.models.length} models</span></div></div>`;})():'';
+    const median=k=>{const v=context.models.map(m=>m.metrics[k]).sort((a,b)=>a-b),n=v.length;return n%2?v[(n-1)/2]:(v[n/2-1]+v[n/2])/2;};
+    const funnel=entry.funnel?(()=>{const steps=[['build','World builds',v=>v],['progress','Stage progress',v=>v*100],['success','Task success',v=>v]];const ref={metrics:Object.fromEntries(steps.map(([k])=>[k,median(k)]))};return `<div class="nb-block"><h3>${esc(entry.funnel.title)}</h3><div class="nb-funnel">${steps.map(([k,l,f])=>`<div class="nb-step"><span class="nb-step-label">${l}</span><span class="nb-step-bars"><i class="is-a" style="width:${Math.max(1,f(row.metrics[k])).toFixed(1)}%"></i><i class="is-b" style="width:${Math.max(1,f(ref.metrics[k])).toFixed(1)}%"></i></span><span class="nb-step-val"><b>${val(row,k)}</b><small>median ${val(ref,k)}</small></span></div>`).join('')}</div><div class="af2-legend"><span class="is-a">${esc(row.name)}</span><span class="is-b">Median of all ${context.models.length} models</span></div></div>`;})():'';
     const points=(entry.points||[]).length?`<div class="nb-points">${entry.points.map(p=>`<div class="nb-point"><span>${esc(p.label)}</span><p>${esc(p.text)}</p></div>`).join('')}</div>`:'';
     const mixBlock=mixOf(row)?`<div class="nb-block nb-mix"><h3>Where the score comes from</h3>${mixCompare([row,...line.filter(r=>r.id!==row.id).reverse()])}</div>`:'';
     $('#news-brief-content').innerHTML=`<header class="nb-head">${entry.cover?`<img class="nb-cover" src="${esc(path(entry.cover))}" alt="${esc(entry.cover_alt||'')}">`:''}<div><span class="nc-kicker"><span>Model news</span><time datetime="${esc(entry.date)}">${esc(fmtDay(entry.date))}</time></span><h2 id="news-brief-title">${esc(entry.headline)}</h2><p>${esc(entry.dek)}</p><div class="nb-stats"><span><b>#${rank}</b><small>of ${total} models</small></span><span><b>${format(row.metrics.score,'score')}</b><small>V2WScore</small></span><span><b>${format(row.metrics.success,'success',true)}</b><small>Task success</small></span><span><b>${format(row.metrics.build,'build',true)}</b><small>Build rate</small></span></div></div></header>${points}${mixBlock}${funnel}${table}<div class="nb-block nb-cases" id="news-brief-cases"></div><footer class="nb-foot"><span>Snapshot as of ${esc(fmtDay(entry.date))} · 222 instances</span><a class="text-link" href="${esc(path('index.html#leaderboard'))}" data-brief-board>See the full ranking ↗</a></footer>`;
@@ -604,6 +606,8 @@
   async function main(){
     try {
       [state.board,state.archive,state.cases,state.news,state.analysis]=await Promise.all([fetchJSON('data/leaderboard.json'),fetchJSON('data/paper-results.json'),fetchJSON('data/cases.json'),fetchJSON('data/news.json'),fetchJSON('data/model-analysis.json')]);
+      const historicalBoard=await fetchJSON('data/archive/2026-10-17-leaderboard.json');
+      state.newsBoards[historicalBoard.snapshot_id]=historicalBoard;
       commonEvents();
       if(document.body.dataset.page==='home')await initHome();else if(document.body.dataset.page==='opus'){await initUpdate();renderCampaign();}else if(document.body.dataset.page==='news'){renderNews();renderCampaign();}else if(document.body.dataset.page==='model'){await initGenericUpdate();renderNews();}
       numberSections();
